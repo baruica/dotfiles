@@ -1,0 +1,30 @@
+[user]
+	name = nelson
+	email = baruica+dev@gmail.com
+[github]
+    user = baruica
+    token = 5c3c51e353beace1997b68afe9dbc6cc29706191
+[alias]
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+[color]
+    branch = auto
+    diff = auto
+    status = always
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[push]
+	default = simple
+[credential]
+	helper = cache --timeout=36000
