@@ -3,6 +3,7 @@ export TERM=linux
 shopt -s histverify
 shopt -s checkwinsize
 
+. ~/dotfiles/colors
 . ~/dotfiles/.git-completion.bash
 . ~/dotfiles/marks.sh
 
