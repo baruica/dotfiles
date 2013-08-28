@@ -23,5 +23,3 @@ fi
 if [ -n "$PS1" -a -f ~/.bash_ps1 ]; then
     . ~/.bash_ps1
 fi
-
-#. .inputrc

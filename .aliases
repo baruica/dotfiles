@@ -10,5 +10,3 @@ alias routes='cli router:debug --env=prod'
 alias clog='echo "" > ~/temp/dev.log'
 
 alias composer='php ~/bin/composer.phar'
-#alias phpunit='php ~/bin/phpunit.phar'
-#alias atoum='php ~/bin/mageekguy.atoum.phar'
