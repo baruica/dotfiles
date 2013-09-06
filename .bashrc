@@ -1,3 +1,5 @@
+export PATH=$PATH:~/bin
+
 export TERM=linux
 
 shopt -s histverify
