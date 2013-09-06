@@ -4,7 +4,7 @@ shopt -s histverify
 shopt -s checkwinsize
 
 . ~/dotfiles/colors
-. ~/dotfiles/.git-completion.bash
+. ~/dotfiles/git-prompt.sh
 . ~/dotfiles/marks.sh
 
 if [[ $SSH_CLIENT == '' ]]; then
