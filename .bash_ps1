@@ -20,7 +20,6 @@ trap 'echo -ne "\e[0m"' DEBUG
 
 
 function prompt_command {
-
     # create a $fill of all screen width minus the time string and a space:
     let fillsize=${COLUMNS}-9
     fill=""
@@ -39,6 +38,6 @@ function prompt_command {
     *)
         ;;
     esac
-
 }
+
 PROMPT_COMMAND=prompt_command
