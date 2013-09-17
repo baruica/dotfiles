@@ -1,12 +1,9 @@
 alias ll='ls -al'
 
-alias php='/opt/lampp/bin/php'
-alias xampp='sudo /opt/lampp/lampp'
-
 alias cache='rm -rf app/cache/*'
 alias cli='php app/console'
 alias routes='cli router:debug --env=prod'
 
-alias clog='echo "" > ~/temp/dev.log'
+alias clog='echo "" > ~/www/dev.log'
 
 alias composer='php ~/bin/composer.phar'
