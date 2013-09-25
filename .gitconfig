@@ -1,9 +1,6 @@
 [user]
-	name = nelson
-	email = baruica+dev@gmail.com
-[github]
-    user = baruica
-    token = 5c3c51e353beace1997b68afe9dbc6cc29706191
+	name = Nelson da Costa
+	email = nelson.dacosta@blablacar.com
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   st = status

@@ -2,8 +2,6 @@ alias ll='ls -al'
 
 alias cache='rm -rf app/cache/*'
 alias cli='php app/console'
-alias routes='cli router:debug --env=prod'
+alias routes='cli router:debug'
 
 alias clog='echo "" > ~/www/dev.log'
-
-alias composer='php ~/bin/composer.phar'
