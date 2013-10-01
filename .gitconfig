@@ -7,6 +7,22 @@
     wdiff = diff --word-diff
 [color]
     ui = auto
+    branch = auto
+    diff = auto
+    status = always
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
 [core]
 	editor = subl -n -w
     pager = less
