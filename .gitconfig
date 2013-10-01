@@ -1,25 +1,18 @@
 [user]
-	name = Nelson da Costa
+	name = nelson
 	email = nelson.dacosta@blablacar.com
 [alias]
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  st = status
+    st = status
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    wdiff = diff --word-diff
 [color]
-    branch = auto
-    diff = auto
-    status = always
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-[color "diff"]
-    meta = yellow
-    frag = magenta
-    old = red
-    new = green
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
-[credential]
-	helper = cache --timeout=36000
+    ui = auto
+[core]
+	editor = subl -n -w
+    pager = less
+[diff]
+    mnemonicprefix = true
+[pull]
+    rebase = true
+[rebase]
+    autostash = true
