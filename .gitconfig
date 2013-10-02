@@ -1,15 +1,41 @@
 [user]
-	name = nelson
+	name = Nelson da Costa
 	email = nelson.dacosta@blablacar.com
 [alias]
     st = status
-    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    df = diff
+    co = checkout
+    ci = commit
+
+    # Log
+    lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    oneline = log --pretty=oneline --abbrev-commit --graph
+    lc      = !git oneline ORIG_HEAD.. --stat --no-merges
+
+    # Diff
+    changes = diff --name-status
+    dic = diff --cached
+    diffstat = diff --stat
+
+    # Cancel
+    undo = reset --soft HEAD^
+    unstage = reset HEAD --
+    amend = commit --amend
+
+    # Add modified files
+    addm = !git-ls-files -m -z | xargs -0 git-add && git status
+    # Add unknown files
+    addu = !git-ls-files -o --exclude-standard -z | xargs -0 git-add && git status
+    # Delete marked files
+    rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
+
     wdiff = diff --word-diff
 [color]
-    ui = auto
+    ui     = auto
+    diff   = auto
+    status = auto
     branch = auto
-    diff = auto
-    status = always
+    interactive = auto
 [color "branch"]
     current = yellow reverse
     local = yellow
@@ -25,10 +51,10 @@
     untracked = cyan
 [core]
 	editor = subl -n -w
-    pager = less
+    pager = less -RSX
 [diff]
     mnemonicprefix = true
-[pull]
-    rebase = true
+[push]
+    default = upstream
 [rebase]
     autostash = true
