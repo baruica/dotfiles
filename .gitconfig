@@ -1,6 +1,6 @@
 [user]
 	name = Nelson da Costa
-	email = nelson.dacosta@blablacar.com
+	email = ndacosta@eleven-labs.com
 [alias]
     st = status
     df = diff
@@ -52,6 +52,7 @@
 [core]
 	editor = subl -n -w
     pager = less -RSX
+	excludesfile = ~/.gitignore_global
 [diff]
     mnemonicprefix = true
 [push]
