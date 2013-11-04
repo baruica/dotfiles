@@ -56,6 +56,6 @@
 [diff]
     mnemonicprefix = true
 [push]
-    default = upstream
+	default = upstream
 [rebase]
     autostash = true
