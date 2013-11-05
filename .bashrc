@@ -1,4 +1,4 @@
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/.composer/vendor/bin
 
 export TERM=linux
 
