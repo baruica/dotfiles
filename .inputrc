@@ -1,6 +1,0 @@
-# bind '"\e[1~": beginning-of-line'
-# bind '"\e[4~": end-of-line'
-# bind '"\e[A": history-search-backward'
-# bind '"\e[B": history-search-forward'
-set show-all-if-ambiguous on
-set completion-ignore-case on

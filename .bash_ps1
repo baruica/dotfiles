@@ -1,25 +1,28 @@
-# Fill with minuses
-# (this is recalculated every time the prompt is shown in function prompt_command):
-fill="--- "
-
-reset_style='\[\033[00m\]'
-if [ -z "$VIM" ];
-then status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
-else status_style=$reset_style'\[\033[0;90;107m\]'
-fi
-prompt_style=$reset_style
-command_style=$reset_style'\[\033[1;29m\]' # bold black
-# Prompt variable:
-
-OLD_PS1="$PS1"
-PS1="$status_style"'$fill \t\n'"$prompt_style$OLD_PS1$command_style"
-
-# Reset color for command output
-# (this one is invoked every time before a command is executed):
+# Reset color for command output (this one is invoked every time before a command is executed):
 trap 'echo -ne "\e[0m"' DEBUG
 
+# set up command prompt
+function __prompt_command()
+{
+    EXIT="$?"
 
-function prompt_command {
+    # Fill with minuses
+    # (this is recalculated every time the prompt is shown in function prompt_command):
+    fill="--- "
+
+    reset_style='\[\033[00m\]'
+    if [ -z "$VIM" ];
+    then status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
+    else status_style=$reset_style'\[\033[0;90;107m\]'
+    fi
+    prompt_style=$reset_style
+    command_style=$reset_style'\[\033[1;29m\]' # bold black
+
+    # Prompt variable:
+    PS1="$status_style"'$fill \t\n'"$prompt_style$command_style"
+
+    if [ $EXIT -eq 0 ]; then PS1+="\[$txtgrn\][\!]\[$Color_Off\] "; else PS1+="\[$txtred\][\!]\[$Color_Off\] "; fi
+
     # create a $fill of all screen width minus the time string and a space:
     let fillsize=${COLUMNS}-9
     fill=""
@@ -34,10 +37,37 @@ function prompt_command {
     xterm*|rxvt*)
         bname=`basename "${PWD/$HOME/~}"`
         echo -ne "\033]0;${bname}: ${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"
-        ;;
-    *)
-        ;;
+    ;;
     esac
-}
 
-PROMPT_COMMAND=prompt_command
+
+    # if logged in via ssh shows the ip of the client
+    if [ -n "$SSH_CLIENT" ]; then PS1+="\[$txtylw\]("${$SSH_CLIENT%% *}")\[$Color_Off\]"; fi
+
+    # basic information (user@host:path)
+    PS1+="\[$BPurple\]\w\[$Color_Off\] "
+
+    # check if inside git repo
+    local git_status="`git status -unormal 2>&1`"
+    if ! [[ "$git_status" =~ Not\ a\ git\ repo ]]; then
+        # parse the porcelain output of git status
+        if [[ "$git_status" =~ nothing\ to\ commit ]]; then
+            local Color_On=$txtgrn
+        elif [[ "$git_status" =~ nothing\ added\ to\ commit\ but\ untracked\ files\ present ]]; then
+            local Color_On=$Purple
+        else
+            local Color_On=$txtred
+        fi
+
+        if [[ "$git_status" =~ On\ branch\ ([^[:space:]]+) ]]; then
+            branch=${BASH_REMATCH[1]}
+        else
+            # Detached HEAD. (branch=HEAD is a faster alternative.)
+            branch="(`git describe --all --contains --abbrev=4 HEAD 2> /dev/null || echo HEAD`)"
+        fi
+
+        # add the result to prompt
+        PS1+="\[$Color_On\][$branch]\[$Color_Off\] "
+    fi
+}
+PROMPT_COMMAND=__prompt_command
