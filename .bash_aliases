@@ -5,5 +5,3 @@ alias cache='cli cache:clear'
 alias routes='cli router:debug'
 
 alias clog='echo "" > ~/www/dev.log'
-
-alias composer='composer.phar'
