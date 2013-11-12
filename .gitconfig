@@ -67,3 +67,5 @@
 	default = upstream
 [rebase]
     autostash = true
+[credential]
+	helper = cache --timeout=43200
