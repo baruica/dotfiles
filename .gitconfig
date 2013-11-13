@@ -1,6 +1,3 @@
-[user]
-	name = Nelson da Costa
-	email = ndacosta@eleven-labs.com
 [alias]
     st = status
     df = diff
@@ -32,40 +29,41 @@
 
     wdiff = diff --word-diff
 
-    cat             = cat-file -p
-    unstage         = reset HEAD
-    uncommit        = update-ref HEAD HEAD^
-    uncommithard    = reset --hard HEAD^
-    undomerge       = reset --hard ORIG_HEAD
-    oups            = commit -a --amend -C HEAD
+    cat          = cat-file -p
+    unstage      = reset HEAD
+    uncommit     = update-ref HEAD HEAD^
+    uncommithard = reset --hard HEAD^
+    undomerge    = reset --hard ORIG_HEAD
+    oups         = commit -a --amend -C HEAD
 [color]
     ui     = auto
-    diff   = auto
-    status = auto
-    branch = auto
-    interactive = auto
 [color "branch"]
     current = yellow reverse
-    local = yellow
-    remote = green
+    local   = yellow
+    remote  = green
 [color "diff"]
-    meta = yellow
-    frag = magenta
-    old = red
-    new = green
+    meta = yellow bold
+    frag = magenta bold
+    old  = red bold
+    new  = green bold
 [color "status"]
-    added = yellow
-    changed = green
+    added     = yellow
+    changed   = green
     untracked = cyan
 [core]
-	editor = subl -n -w
+    excludesfile = ~/dotfiles/.gitignore
+    editor = subl -n -w
     pager = less -RSX
-	excludesfile = ~/.gitignore_global
+[credential]
+    helper = cache --timeout=43200
 [diff]
     mnemonicprefix = true
+[merge]
+    log = true
 [push]
-	default = upstream
+    default = upstream
 [rebase]
     autostash = true
-[credential]
-	helper = cache --timeout=43200
+[user]
+    name  = Nelson da Costa
+    email = ndacosta@eleven-labs.com
