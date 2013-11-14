@@ -1,7 +1,7 @@
 export PATH=$PATH:$HOME/bin
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
-for file in ~/dotfiles/.{aliases,bash_prompt,bash_colors,exports}; do
+for file in ~/dotfiles/.{aliases,bash_prompt,exports}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
