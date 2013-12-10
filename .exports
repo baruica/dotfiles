@@ -1,17 +1,24 @@
-# Make vim the default editor
-export EDITOR="vim"
-# Don't clear the screen after quitting a manual page
-export MANPAGER="less -X"
+export EDITOR="vim"                 # Make vim the default editor
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=32768
+export MANPAGER="less -X"           # Don't clear the screen after quitting a manual page
+
+export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
-export HISTCONTROL=ignoredups
 
-# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
-# saved for later analysis
-HISTTIMEFORMAT='%F %T '
-export HISTTIMEFORMAT
+export HISTCONTROL=ignoreboth       # don't put duplicate lines or empty spaces in the history
+
+export HISTTIMEFORMAT='%F %T '      # timestamps for bash history
 
 # Make some commands not show up in history
 export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+
+export GREP_OPTIONS='--color=auto'  # make grep highlight results using color
+
+# colorful man pages
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'         # end the info box
+export LESS_TERMCAP_so=$'\E[01;42;30m'  # begin the info box
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
