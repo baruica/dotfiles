@@ -1,11 +1,10 @@
 export EDITOR="vim"                 # Make vim the default editor
 
-export MANPAGER="less -X"           # Don't clear the screen after quitting a manual page
-
 export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
 export HISTFILESIZE=$HISTSIZE
 
-export HISTCONTROL=ignoreboth       # don't put duplicate lines or empty spaces in the history
+export HISTCONTROL=ignoredups
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"   # Make some commands not show up in history
 
 export HISTTIMEFORMAT='%F %T '      # timestamps for bash history
 
@@ -22,3 +21,5 @@ export LESS_TERMCAP_se=$'\E[0m'         # end the info box
 export LESS_TERMCAP_so=$'\E[01;42;30m'  # begin the info box
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+export MANPAGER="less -X"           # Don't clear the screen after quitting a manual page

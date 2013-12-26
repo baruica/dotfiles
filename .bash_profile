@@ -10,6 +10,7 @@ shopt -s cdspell        # corrects typos (eg: cd /ect becomes cd /etc)
 shopt -s checkwinsize   # resize ouput to fit window
 shopt -s cmdhist        # combine multiline commands in history
 shopt -s histappend     # merge session histories
+shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
