@@ -27,15 +27,15 @@ undblu='\e[4;34m' # Blue
 undpur='\e[4;35m' # Purple
 undcyn='\e[4;36m' # Cyan
 undwht='\e[4;37m' # White
-bakblk='\e[40m' # Black - Background
-bakred='\e[41m' # Red
-badgrn='\e[42m' # Green
-bakylw='\e[43m' # Yellow
-bakblu='\e[44m' # Blue
-bakpur='\e[45m' # Purple
-bakcyn='\e[46m' # Cyan
-bakwht='\e[47m' # White
-txtrst='\e[0m' # Text Reset
+bakblk='\e[40m'   # Black - Background
+bakred='\e[41m'   # Red
+badgrn='\e[42m'   # Green
+bakylw='\e[43m'   # Yellow
+bakblu='\e[44m'   # Blue
+bakpur='\e[45m'   # Purple
+bakcyn='\e[46m'   # Cyan
+bakwht='\e[47m'   # White
+txtrst='\e[0m'    # Text Reset
 
 
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
