@@ -4,7 +4,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias ls='ls -hF --color=auto'  # force ls to always use color and type indicators
 fi
 
-alias ll='ls -al'
+alias ll='ls -lsa'
 
 alias cli='php app/console'
 alias cache='cli cache:clear'
