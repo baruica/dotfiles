@@ -3,7 +3,6 @@ export PATH=$PATH:~/.composer/vendor/bin
 for file in ~/dotfiles/.{aliases,bash_prompt,exports}; do
     [ -r "$file" ] && source "$file"
 done
-unset file
 
 shopt -s cdspell        # corrects typos (eg: cd /ect becomes cd /etc)
 shopt -s checkwinsize   # resize ouput to fit window
