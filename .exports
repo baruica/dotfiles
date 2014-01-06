@@ -1,13 +1,13 @@
-export EDITOR="vim"                 # Make vim the default editor
+export EDITOR="vim"                     # Make vim the default editor
 
 # Make some commands not show up in history
-export HISTIGNORE="ll:ls:ls *:cd:cd -:pwd:exit:date:* --help:history"
+export HISTIGNORE="ll:ls:ls *:cd:cd -:pwd:exit:date:* --help:git diff:git st:history"
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=$HISTSIZE
-export HISTSIZE=32768               # Larger bash history (allow 32³ entries; default is 500)
-export HISTTIMEFORMAT='%F %T '      # timestamps for bash history
+export HISTSIZE=32768                   # Larger bash history (allow 32³ entries; default is 500)
+export HISTTIMEFORMAT='%F %T '          # timestamps for bash history
 
-export GREP_OPTIONS='--color=auto'  # make grep highlight results using color
+export GREP_OPTIONS='--color=auto'      # make grep highlight results using color
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -18,4 +18,4 @@ export LESS_TERMCAP_so=$'\E[01;42;30m'  # begin the info box
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-export MANPAGER="less -X"           # Don't clear the screen after quitting a manual page
+export MANPAGER="less -X"               # Don't clear the screen after quitting a manual page
