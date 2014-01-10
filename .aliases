@@ -10,7 +10,7 @@ alias cli='php app/console'
 alias cache='cli cache:clear'
 alias routes='cli router:debug'
 
-alias clog='echo "" > ~/www/dev.log'
+alias clog='echo "" > ~/temp/dev.log'
 
 alias path="echo $PATH | tr ':' '\n'"
 
