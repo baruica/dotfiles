@@ -35,6 +35,8 @@
     uncommithard = reset --hard HEAD^
     undomerge    = reset --hard ORIG_HEAD
     oups         = commit -a --amend -C HEAD
+[branch]
+    autosetuprebase = always
 [color]
     ui     = auto
 [color "branch"]
@@ -60,7 +62,7 @@
     mnemonicprefix = true
 [merge]
     log = true
-[push]
+    [push]
     default = upstream
 [rebase]
     autostash = true
