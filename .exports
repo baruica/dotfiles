@@ -3,8 +3,9 @@ export EDITOR="vim"                     # Make vim the default editor
 # Make some commands not show up in history
 export HISTIGNORE="* --help:cd:cd -:composer:date:exit:ll:ls:ls *:pwd:git diff:history:history *"
 export HISTCONTROL=ignoredups:erasedups
+HISTSIZE=32768                          # Larger bash history (allow 32³ entries; default is 500)
+export $HISTSIZE
 export HISTFILESIZE=$HISTSIZE
-export HISTSIZE=32768                   # Larger bash history (allow 32³ entries; default is 500)
 export HISTTIMEFORMAT='%F %T '          # timestamps for bash history
 
 export GREP_OPTIONS='--color=auto'      # make grep highlight results using color
