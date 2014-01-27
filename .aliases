@@ -1,10 +1,4 @@
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls -hF --color=auto'  # force ls to always use color and type indicators
-fi
-
-alias ll='ls -lsa'
+alias ll='ls -lsa --color'
 
 alias cli='php app/console'
 alias cache='cli cache:clear'
