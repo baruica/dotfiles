@@ -103,15 +103,7 @@ function __prompt_command()
     prompt_style=$reset_style
     command_style=$reset_style'\[\033[1;29m\]' # bold black
 
-    # iTerm Tab and Title Customization and prompt customization
-    # http://sage.ucsc.edu/xtal/iterm_tab_customization.html
-
-    # Put the string " [bash] hostname::/full/directory/path"
-    # in the title bar using the command sequence
-    # \[\e]2;[bash] \h::\]$PWD\[\a\]
-
-    # Put the penultimate and current directory
-    # in the iterm tab
+    # Put the penultimate and current directory in the iterm tab
     # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
     PS1="$status_style"'$fill \t\n'"$prompt_style$command_style\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]"
 
@@ -134,4 +126,5 @@ function __prompt_command()
 
     if [ $EXIT -eq 0 ]; then PS1+="\[$txtgrn\][\!] >\[$Color_Off\] "; else PS1+="\[$txtred\][\!] >\[$Color_Off\] "; fi
 }
+
 PROMPT_COMMAND=__prompt_command
