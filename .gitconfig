@@ -38,7 +38,7 @@
 [branch]
     autosetuprebase = always
 [color]
-    ui     = auto
+    ui = auto
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -55,14 +55,14 @@
 [core]
     excludesfile = ~/dotfiles/.gitignore
     editor = subl -n -w
-    pager = less -RSX
+    pager = less -FRSX
 [credential]
     helper = cache --timeout=43200
 [diff]
     mnemonicprefix = true
 [merge]
     log = true
-    [push]
+[push]
     default = upstream
 [rebase]
     autostash = true
