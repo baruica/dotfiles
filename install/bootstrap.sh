@@ -6,7 +6,7 @@ ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
 ln -s ./dotfiles/.gitconfig
 
-for cmd in htop pv tree; do
+for cmd in acroread htop pv tree; do
     apt-get install "$cmd"
 done
 
