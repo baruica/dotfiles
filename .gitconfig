@@ -11,14 +11,14 @@
     lc      = !git oneline ORIG_HEAD.. --stat --no-merges
 
     # Diff
-    changes = diff --name-status
-    dic = diff --cached
+    changes  = diff --name-status
+    dic      = diff --cached
     diffstat = diff --stat
 
     # Cancel
-    undo = reset --soft HEAD^
+    undo    = reset --soft HEAD^
     unstage = reset HEAD --
-    amend = commit --amend
+    amend   = commit --amend
 
     # Add modified files
     addm = !git-ls-files -m -z | xargs -0 git-add && git status
