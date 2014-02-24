@@ -38,7 +38,7 @@
 [branch]
     autosetuprebase = always
 [color]
-    ui = auto
+    ui = true
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -60,6 +60,8 @@
     helper = cache --timeout=43200
 [diff]
     mnemonicprefix = true
+[format]
+    pretty = online
 [merge]
     log = true
 [push]
