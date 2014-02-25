@@ -61,7 +61,7 @@
 [diff]
     mnemonicprefix = true
 [format]
-    pretty = online
+    pretty = oneline
 [merge]
     log = true
 [push]
