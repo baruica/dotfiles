@@ -38,6 +38,7 @@
 [branch]
     autosetuprebase = always
 [color]
+    diff = always
     ui = true
 [color "branch"]
     current = yellow reverse
