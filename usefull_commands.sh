@@ -19,3 +19,9 @@ git archive --remote=<url> --format=tgz master | tar xvz
 
 # show the file changes of the x last commits
 git show --pretty=oneline --name-status HEAD~x..HEAD
+
+# delete local branch
+git branch -D mybranch
+
+# Delete local and remote together
+git push remotename --delete :mybranch
