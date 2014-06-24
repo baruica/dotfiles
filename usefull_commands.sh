@@ -25,3 +25,19 @@ git branch -D mybranch
 
 # Delete local and remote together
 git push remotename --delete :mybranch
+
+# who worked on the project
+git shortlog --numbered --summary HEAD
+#  1834  Charles-Eric Gorron
+#   859  Kieu Anh Tuan
+#   427  clement.gautier
+#   376  Clement Gautier
+#   308  qzhang
+#   212  Nelson da Costa
+
+git grep -i todo | wc -l
+# 31
+
+phpunit -c build --filter InvoiceLineTest --testdox
+# ETS\BillingBundle\Tests\Entity\InvoiceLine
+#  [x] Add candidates
