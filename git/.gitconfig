@@ -1,8 +1,8 @@
 [alias]
-    st = status
-    df = diff
-    co = checkout
     ci = commit
+    co = checkout
+    df = diff
+    st = status
 
     # Log
     lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
@@ -38,25 +38,27 @@
 [branch]
     autosetuprebase = always
 [color]
-    diff = always
-    ui = true
+    ui = auto
 [color "branch"]
     current = yellow reverse
     local   = yellow
     remote  = green
 [color "diff"]
-    meta = yellow
-    frag = magenta
-    old  = red
-    new  = green
+    meta = yellow bold
+    frag = magenta bold
+    old  = red bold
+    new  = green bold
+    whitespace = red reverse
 [color "status"]
     added     = yellow
     changed   = green
     untracked = cyan
 [core]
+    autocrlf = true
     excludesfile = ~/dotfiles/.gitignore
     editor = subl -n -w
     pager = less -FRSX
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [credential]
     helper = cache --timeout=43200
 [diff]
