@@ -54,7 +54,6 @@
     changed   = green
     untracked = cyan
 [core]
-    autocrlf = true
     excludesfile = ~/dotfiles/.gitignore
     editor = subl -n -w
     pager = less -FRSX
