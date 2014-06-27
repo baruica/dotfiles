@@ -22,7 +22,7 @@ sudo apt-get install nodejs
 
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
-ln -s ./dotfiles/.gitconfig
+ln -s ./dotfiles/git/.gitconfig
 
 sudo apt-get install apache2
 sudo a2enmod vhost_alias rewrite
