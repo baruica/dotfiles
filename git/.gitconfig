@@ -54,7 +54,7 @@
     changed   = green
     untracked = cyan
 [core]
-    excludesfile = ~/dotfiles/.gitignore
+    excludesfile = ~/dotfiles/git/.gitignore
     editor       = subl -n -w
     filemode     = false
     pager        = less -FRSX
