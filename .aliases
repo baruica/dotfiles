@@ -1,7 +1,7 @@
 alias ll='ls -lsa --color'
 
 alias cli='php app/console'
-alias cache='cli cache:clear'
+alias cache='cli cache:clear && cli cache:clear --env=test'
 alias routes='cli router:debug'
 
 alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
