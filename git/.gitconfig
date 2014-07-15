@@ -70,9 +70,6 @@
 [merge]
     log  = true
     stat = true
-[pager]
-    diff  = false
-    graph = false
 [push]
     default = tracking
 [rebase]
