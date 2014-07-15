@@ -1,16 +1,48 @@
-#! /bin/sh
+#! /bin/bash
 # in .git/hooks/pre-commit
 # and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
-PROJECTROOT=`echo $(cd ${0%/*}/../../ && pwd -P)`/
+# Search your sourcecode for debugging code
+function var-dumps {
+    FILES_PATTERN='\.(php)(\..+)?$'
+    FORBIDDEN='var_dump'
+    git diff --cached --name-only | \
+    grep -E $FILES_PATTERN | \
+    GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo 'COMMIT REJECTED Found "$FORBIDDEN" references. Please remove them before commiting' && exit 1
+}
 
-RES=`php-cs-fixer fix $PROJECTROOT --verbose --dry-run`
+function linter {
+    git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
+    if [[ "$FILE" =~ ^.+(php|inc)$ ]]; then
+        php -l "$FILE" 1> /dev/null
+        if [ $? -ne 0 ]; then
+            echo "Aborting commit due to files with syntax errors" >&2
+            exit 1
+        fi
+    fi
+    done
+}
 
-if [ "$RES" != "" ]; then
-    echo "Committed code is not PSR-2 compliant, cancelling your commit."
-    echo $RES
-    echo "If you want to fix it, run:"
-    echo "    php-cs-fixer fix ${PROJECTROOT} --verbose"
-    exit 1
-fi
+function coding-standards {
+    PROJECTROOT=$(echo $(cd ${0%/*}/../../ && pwd -P))/
+
+    RES=$(php-cs-fixer fix $PROJECTROOT --verbose --dry-run)
+
+    if [ "$RES" != "" ]; then
+        echo "Committed code is not PSR-2 compliant, cancelling your commit."
+        echo $RES
+        echo "If you want to fix it, run:"
+        echo "    php-cs-fixer fix ${PROJECTROOT} --verbose"
+        exit 1
+    fi
+}
+
+FUNCS=$(declare -F -p | cut -d " " -f 3)
+for FUNC in $FUNCS
+do
+    DIFF=$(git diff --shortstat $PREV_COMMIT..$POST_COMMIT $FUNC 2>/dev/null)
+    if [[ $DIFF != "" ]]; then
+        $FUNC
+    fi
+done

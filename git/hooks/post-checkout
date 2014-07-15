@@ -51,3 +51,7 @@ do
         $FUNC
     fi
 done
+
+if [[ -f app/console ]]; then
+    php app/console doctrine:schema:update --dump-sql
+fi
