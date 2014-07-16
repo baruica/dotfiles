@@ -67,6 +67,8 @@
     mnemonicprefix = true
 [format]
     pretty = oneline
+[init]
+    templatedir = ~/dotfiles/git/.git_template
 [merge]
     log  = true
     stat = true
