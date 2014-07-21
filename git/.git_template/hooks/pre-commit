@@ -1,4 +1,7 @@
-#! /bin/bash
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
 # in .git/hooks/pre-commit
 # and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587

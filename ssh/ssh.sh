@@ -1,4 +1,4 @@
-#!/bin/sh -
+#!/bin/bash
 
 # http://scotch.io/tutorials/how-to-setup-ssh-public-key-authentication
 
