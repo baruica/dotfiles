@@ -5,7 +5,8 @@
     st = status
 
     # Log
-    lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    #lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    lg      = tig
     oneline = log --pretty=oneline --abbrev-commit --graph
     logfull = log --pretty=fuller --graph --stat -p
     lc      = !git oneline ORIG_HEAD.. --stat --no-merges
