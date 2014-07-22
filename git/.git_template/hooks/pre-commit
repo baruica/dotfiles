@@ -7,7 +7,8 @@ IFS=$'\n\t'
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
 # Search your sourcecode for debugging code
-function var-dumps {
+function var-dumps()
+{
     FILES_PATTERN='\.(php)(\..+)?$'
     FORBIDDEN='var_dump'
     git diff --cached --name-only | \
@@ -15,7 +16,8 @@ function var-dumps {
     GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo 'COMMIT REJECTED Found "$FORBIDDEN" references. Please remove them before commiting' && exit 1
 }
 
-function linter {
+function linter()
+{
     git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
     if [[ "$FILE" =~ ^.+(php|inc)$ ]]; then
         php -l "$FILE" 1> /dev/null
@@ -27,7 +29,8 @@ function linter {
     done
 }
 
-function coding-standards {
+function coding-standards()
+{
     PROJECTROOT=$(echo $(cd ${0%/*}/../../ && pwd -P))/
 
     RES=$(php-cs-fixer fix $PROJECTROOT --verbose --dry-run)

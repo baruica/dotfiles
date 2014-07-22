@@ -12,16 +12,6 @@ sudo apt-get install nodejs
 sudo apt-get install software-properties-common
 
 
-# ungit
-sudo -H npm install -g ungit
-# if  this does not work
-sudo apt-get update
-sudo apt-get install -y python-software-properties python g++ make
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
-
-
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
 ln -s ./dotfiles/git/.gitconfig
@@ -35,6 +25,7 @@ sudo apt-get install php5-mysql
 
 sudo apt-get install php5-cli php5-common php-apc php5-curl php5-intl php5
 
+# install peco, z
 sudo apt-get install acroread
 sudo apt-get install htop
 sudo apt-get install pv

@@ -19,7 +19,8 @@ GIT_MERGE_REBASE=false
 NOCOLOR='\e[0m'
 REDCOLOR='\e[37;41m'
 
-function composer.lock {
+function composer.lock()
+{
     echo -e "$REDCOLOR composer.lock has changed: running composer install $NOCOLOR"
 
     COMPOSER=
@@ -37,7 +38,8 @@ function composer.lock {
     fi
 }
 
-function package.json {
+function package.json()
+{
     echo -e "$REDCOLOR package.json has changed: running npm install $NOCOLOR"
 
     which npm > /dev/null 2>&1

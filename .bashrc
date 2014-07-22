@@ -1,7 +1,8 @@
 SSH_ENV=$HOME/.ssh/environment
 
 # start the ssh-agent
-function start_agent {
+function start_agent()
+{
     echo "Initializing new SSH agent..."
     # spawn ssh-agent
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
