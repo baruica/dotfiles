@@ -1,3 +1,9 @@
+# use colordiff instead of diff if available
+command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
+
+# use htop instead of top if installed
+command -v htop >/dev/null 2>&1 && alias top=htop
+
 alias ll='ls -lsa --color'
 
 alias cli='php app/console'
@@ -9,11 +15,5 @@ alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..
 alias clog='echo "" > ~/temp/dev.log'
 
 alias path="echo $PATH | tr ':' '\n'"
-
-# use colordiff instead of diff if available
-command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
-
-# use htop instead of top if installed
-command -v htop >/dev/null 2>&1 && alias top=htop
 
 alias pecho='history | peco'

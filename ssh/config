@@ -1,9 +1,12 @@
-Host BitBucket
-    HostName bitbucket.com
-    User git
+Host *
+    Compression yes
+    IdentitiesOnly yes
     IdentityFile ~/.ssh/id_rsa
 
-Host GitHub
-    HostName github.com
+Host bitbucket.com bitbucket bb
+    HostName bitbucket.com
     User git
-    IdentityFile ~/.ssh/id_rsa
+
+Host github.com github gh
+    Hostname github.com
+    User git
