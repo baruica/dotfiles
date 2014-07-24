@@ -1,0 +1,22 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# in .git/hooks/post-commit
+# and make it executable
+# You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
+
+DIR=$(git rev-parse --show-toplevel)
+EMAIL=$(git config user.email)
+TMPFILE=$(mktemp)
+
+git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
+    if [[ "$FILE" =~ ^.+(php|inc)$ ]]; then
+        php-cs-fixer --standard=zend "$FILE" >> $TMPFILE
+    fi
+done
+
+if [ -s $TMPFILE ]; then
+    mailx -s "PHPCS: Coding Standards Violations" $EMAIL < $TMPFILE
+fi
+rm $TMPFILE

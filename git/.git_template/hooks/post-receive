@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# in .git/hooks/post-receive
+# and make it executable
+# You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
+
+DIR=$(git rev-parse --show-toplevel)
+
+if [ -e "$DIR/composer.json" ]; then
+    COMPOSER=
+    if [ -f composer.phar ]; then
+        COMPOSER="php composer.phar"
+    fi
+
+    which composer > /dev/null 2>&1
+    if [ $? ]; then
+        COMPOSER="composer"
+    fi
+
+    if [ -d "$DIR/vendor" && -n "$COMPOSER" ]; then
+        $COMPOSER install
+    else
+        $COMPOSER update
+    fi
+fi
