@@ -25,6 +25,10 @@ sudo apt-get install php5-mysql
 
 sudo apt-get install php5-cli php5-common php-apc php5-curl php5-intl php5
 
+sudo add-apt-repository ppa:nijel/phpmyadmin
+sudo apt-get update
+sudo apt-get install phpmyadmin
+
 # install peco, z
 sudo apt-get install acroread
 sudo apt-get install htop
