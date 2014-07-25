@@ -16,3 +16,7 @@ cat ~/dotfiles/ssh/config ~/.ssh/config.* > ~/.ssh/config
 # If possible, add tab completion for many more commands
 # curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+
+if [ -e ~/dotfiles/symfony2-autocomplete.bash ]; then
+    . ~/dotfiles/symfony2-autocomplete.bash
+fi
