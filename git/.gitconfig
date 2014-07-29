@@ -3,39 +3,22 @@
     co = checkout
     df = diff
     st = status
+    #up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
-    # Log
-    #lg      = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    lg      = tig
-    oneline = log --pretty=oneline --abbrev-commit --graph
-    logfull = log --pretty=fuller --graph --stat -p
-    lc      = !git oneline ORIG_HEAD.. --stat --no-merges
+    #lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    lg = tig
 
-    # Diff
-    changes  = diff --name-status
-    dic      = diff --cached
-    diffstat = diff --stat
+    changes = diff --name-status
+    wdiff   = diff --word-diff
 
     # Cancel
-    undo    = reset --soft HEAD^
+    undo    = reset HEAD^ --soft
     unstage = reset HEAD --
-    amend   = commit --amend
+    # The -a adds any modifications and deletions of existing files to the commit but ignores brand new files
+    amend   = commit -a --amend
 
-    # Add modified files
-    addm = !git-ls-files -m -z | xargs -0 git-add && git status
-    # Add unknown files
-    addu = !git-ls-files -o --exclude-standard -z | xargs -0 git-add && git status
-    # Delete marked files
-    rmm  = !git ls-files -d -z | xargs -0 git-rm && git status
-
-    wdiff = diff --word-diff
-
-    cat          = cat-file -p
-    unstage      = reset HEAD
-    uncommit     = update-ref HEAD HEAD^
-    uncommithard = reset --hard HEAD^
-    undomerge    = reset --hard ORIG_HEAD
-    oups         = commit -a --amend -C HEAD
+    bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+    bdone  = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
 [branch]
     autosetuprebase = always
 [color]
