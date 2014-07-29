@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# in .git/hooks/post-receive
+# in .git/hooks/post-checkout
 # and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
@@ -19,7 +19,7 @@ if [ -e "$DIR/composer.json" ]; then
         COMPOSER="composer"
     fi
 
-    if [ -d "$DIR/vendor" && -n "$COMPOSER" ]; then
+    if [ -d "$DIR/vendor" -a -n "$COMPOSER" ]; then
         $COMPOSER install
     else
         $COMPOSER update
