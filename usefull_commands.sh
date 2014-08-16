@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 composer show -i
 composer show -i <package>

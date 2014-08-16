@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
 
@@ -6,21 +6,22 @@ IFS=$'\n\t'
 # and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
-# Search your sourcecode for var-dumps
-FILES_PATTERN='\.(php)(\..+)?$'
+# Search your sourcecode for forbidden code
 FORBIDDEN='var_dump'
 git diff --cached --name-only | \
-grep -E $FILES_PATTERN | \
-GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo 'COMMIT REJECTED Found "$FORBIDDEN" references. Please remove them before commiting' && exit 1
+    grep -E '\.(php)(\..+)?$' | \
+    GREP_COLOR='4;5;37;41' xargs grep --color --with-filename -n $FORBIDDEN && echo 'COMMIT REJECTED Found "$FORBIDDEN" references. Please remove them before commiting' && exit 1
 
 
 # PHP linter
-git diff --cached --name-status --diff-filter=ACMR | while read STATUS FILE; do
-    if [[ "$FILE" =~ ^.+(php|inc)$ ]]; then
-        php -l "$FILE" 1> /dev/null
-        if [ $? -ne 0 ]; then
-            echo "Aborting commit due to files with syntax errors" >&2
-            exit 1
-        fi
+php_files=$(git status --short | grep -E '^(A|M)' | awk '{ print $2 }' | grep -E '\.php$')
+
+for file in $php_files; do
+    php_out=$(php -l "$file" 2>&1)
+
+    if ! [ $? -eq 0 ]; then
+        echo "Syntax error with ${file}:"
+        echo "$php_out" | grep -E '^Parse error'
+        echo
     fi
 done
