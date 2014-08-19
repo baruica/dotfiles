@@ -57,7 +57,7 @@
     log  = true
     stat = true
 [push]
-    default = current
+    default = tracking
 [rebase]
     autostash = true
 [user]
