@@ -21,21 +21,21 @@ REDCOLOR='\e[37;41m'
 
 function composer.lock
 {
-    echo -e "$REDCOLOR composer.lock has changed: running composer install $NOCOLOR"
+    echo -e "$REDCOLOR composer.lock has changed: run composer install $NOCOLOR"
 
-    COMPOSER=
-    if [ -f composer.phar ]; then
-        COMPOSER="php composer.phar"
-    fi
-
-    which composer > /dev/null 2>&1
-    if [ $? ]; then
-        COMPOSER="composer"
-    fi
-
-    if [[ $GIT_MERGE_REBASE = false && -n "$COMPOSER" ]]; then
-        $COMPOSER install
-    fi
+#    COMPOSER=
+#    if [ -f composer.phar ]; then
+#        COMPOSER="php composer.phar"
+#    fi
+#
+#    which composer > /dev/null 2>&1
+#    if [ $? ]; then
+#        COMPOSER="composer"
+#    fi
+#
+#    if [[ $GIT_MERGE_REBASE = false && -n "$COMPOSER" ]]; then
+#        $COMPOSER install
+#    fi
 }
 
 function package.json
