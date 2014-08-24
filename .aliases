@@ -6,6 +6,8 @@ command -v htop >/dev/null 2>&1 && alias top=htop
 
 alias ll='ls -lsa --color'
 
+alias tree='tree -L 2'
+
 alias cli='php app/console'
 alias cache='cli cache:clear && cli cache:clear --env=test'
 alias routes='cli router:debug'
