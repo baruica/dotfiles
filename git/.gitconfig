@@ -41,6 +41,7 @@
     untracked = cyan
 [core]
     autocrlf     = input
+    safecrlf     = true
     excludesfile = ~/dotfiles/git/.gitignore
     editor       = subl -n -w
     filemode     = false
