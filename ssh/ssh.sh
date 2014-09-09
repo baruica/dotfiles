@@ -15,3 +15,5 @@ chmod 600 ~/.ssh/authorized_keys
 
 # Copying Public Keys to a Remote Server
 cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
+
+ssh-copy-id preprod.fr.crm.etsglobal.org
