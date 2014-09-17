@@ -29,3 +29,9 @@ git shortlog --numbered --summary HEAD
 
 git grep -i todo | wc -l
 # 31
+
+# see all commits from version 8.22.0
+tig 8.22.0..HEAD
+
+# rename a local branch
+git branch -m feat-3132 quiz-acceditations
