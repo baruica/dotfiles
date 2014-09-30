@@ -62,6 +62,8 @@
     default = tracking
 [rebase]
     autostash = true
+[status]
+    showUntrackedFiles = all
 [user]
     name  = Nelson da Costa
     email = ndacosta@eleven-labs.com
