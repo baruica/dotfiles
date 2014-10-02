@@ -19,3 +19,6 @@ alias clog='echo "" > ~/temp/dev.log'
 alias path="echo $PATH | tr ':' '\n'"
 
 alias pecho='history | peco'
+
+alias phps='php -S 0.0.0.0:8888'
+# then just phps public/index.php
