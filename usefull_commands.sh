@@ -21,3 +21,6 @@ curl --ipv6 ipinfo.io
 #   "loc": "48.8600,2.3500",
 #   "org": "AS3215 Orange S.A."
 # }
+
+# Listing globally installed NPM packages and version
+npm list -g --depth=0
