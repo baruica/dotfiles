@@ -35,5 +35,9 @@
 ehthumbs.db
 Thumbs.db
 
+
+# editors #
+######################
+.idea
 *.sublime-project
 *.sublime-workspace
