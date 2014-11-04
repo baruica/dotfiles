@@ -25,7 +25,7 @@ sudo apt-get install php5-mysql
 
 sudo apt-get install php5-cli php5-common php-apc php5-curl php5-intl php5
 
-curl -sS https://getcomposer.org/installer | php -- --install-dir=~/bin --filename=composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 sudo add-apt-repository ppa:nijel/phpmyadmin
 sudo apt-get update
