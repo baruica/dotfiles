@@ -35,3 +35,6 @@ tig 8.22.0..HEAD
 
 # rename a local branch
 git branch -m feat-3132 quiz-acceditations
+
+# fix permissions
+git diff -p| grep -E '^(diff|old mode|new mode)'| sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/'| git apply

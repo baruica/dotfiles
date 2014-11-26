@@ -22,6 +22,9 @@ curl --ipv6 ipinfo.io
 #   "org": "AS3215 Orange S.A."
 # }
 
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+curl http://icanhazip.com
+
 # Listing globally installed NPM packages and version
 npm list -g --depth=0
 
