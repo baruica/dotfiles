@@ -16,7 +16,7 @@ sudo add-apt-repository ppa:nijel/phpmyadmin
 sudo apt-get update
 
 # install peco, z
-sudo apt-get install acroread curl git htop pv python-software-properties rubygems ruby-dev software-properties-common tree
+sudo apt-get install acroread bash-completion curl git htop pv python-software-properties rubygems ruby-dev software-properties-common tree
 sudo gem install git-up
 
 sudo apt-get install oracle-java8-installer

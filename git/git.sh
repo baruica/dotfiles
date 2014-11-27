@@ -12,11 +12,23 @@ git archive --remote=<url> --format=tgz master | tar xvz
 # show the file changes of the x last commits
 git show --pretty=oneline --name-status HEAD~x..HEAD
 
+# liste les branches locales et distantes
+git branch -a
+
+# ajoute les 1ères lignes de commit et, pour les trackées, l'état du tracking
+git branch -vv
+
+# rename a local branch
+git branch -m feat-3132 quiz-acceditations
+
 # delete local branch
 git branch -D mybranch
 
 # Delete local and remote together
 git push remotename --delete :mybranch
+
+# La première fois que vous poussez une branche que vous voulez tracker ensuite, pensez à caler à la volée le tracking
+git push -u origin stats
 
 # who worked on the project
 git shortlog --numbered --summary HEAD
@@ -32,9 +44,6 @@ git grep -i todo | wc -l
 
 # see all commits from version 8.22.0
 tig 8.22.0..HEAD
-
-# rename a local branch
-git branch -m feat-3132 quiz-acceditations
 
 # fix permissions
 git diff -p| grep -E '^(diff|old mode|new mode)'| sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/'| git apply
