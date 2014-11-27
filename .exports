@@ -1,4 +1,6 @@
-export EDITOR="vim"                     # Make vim the default editor
+export SUBLIME=subl
+export EDITOR="$SUBLIME --wait"
+export VISUAL=$EDITOR
 
 # Make some commands not show up in history
 export HISTIGNORE="* --help:cd:cd -:date:exit:git diff:git st:ls:ls *:pwd:history"
