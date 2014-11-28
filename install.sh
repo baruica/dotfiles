@@ -15,8 +15,11 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:nijel/phpmyadmin
 sudo apt-get update
 
+sudo apt-get install ubuntu-restricted-extras
+sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
+
 # install peco, z
-sudo apt-get install acroread bash-completion curl git htop pv python-software-properties rubygems ruby-dev software-properties-common tree
+sudo apt-get install acroread bash-completion bleachbit curl git htop pv python-software-properties rubygems ruby-dev software-properties-common tree
 sudo gem install git-up
 
 sudo apt-get install oracle-java8-installer
