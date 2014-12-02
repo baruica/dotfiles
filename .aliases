@@ -8,6 +8,8 @@ alias ll='ls -lsa --color'
 
 alias tree='tree -L 2'
 
+alias composer="php -d zend.enable_gc=0 /usr/local/bin/composer"
+
 alias cli='php app/console'
 alias cache='cli cache:clear && cli cache:clear --env=test'
 alias routes='cli router:debug'
