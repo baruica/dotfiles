@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+composer dump-autoload --optimize
+composer global update fabpot/php-cs-fixer
 composer show -i
 composer show -i <package>
-composer global update fabpot/php-cs-fixer
 
 
 # Turn a Unix epoch time back into a human readable date

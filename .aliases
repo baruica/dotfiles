@@ -10,9 +10,9 @@ alias tree='tree -L 2'
 
 #alias composer="php -d zend.enable_gc=0 /usr/local/bin/composer"
 
-alias cli='php app/console'
-alias cache='cli cache:clear && cli cache:clear --env=test'
-alias routes='cli router:debug'
+alias sf='php app/console'
+alias cache='sf cache:clear && sf cache:clear --env=test'
+alias routes='sf router:debug'
 alias proutes='routes | peco'
 
 alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
