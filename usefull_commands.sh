@@ -2,6 +2,7 @@
 
 composer dump-autoload --optimize
 composer global update fabpot/php-cs-fixer
+composer global update squizlabs/php_codesniffer
 composer show -i
 composer show -i <package>
 

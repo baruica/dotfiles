@@ -1,4 +1,4 @@
-export SUBLIME=subl
+export SUBLIME="subl -n -w"
 export EDITOR="$SUBLIME --wait"
 export VISUAL=$EDITOR
 
