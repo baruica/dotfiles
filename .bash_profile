@@ -18,6 +18,6 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
 # https://github.com/KnpLabs/symfony2-autocomplete
-if [ -e ~/dotfiles/symfony2-autocomplete.bash ]; then
-    . ~/dotfiles/symfony2-autocomplete.bash
-fi
+[ -e ~/dotfiles/symfony2-autocomplete.bash ] && source ~/dotfiles/symfony2-autocomplete.bash
+
+[ -x ~/bin/z/z.sh ] && source ~/bin/z/z.sh

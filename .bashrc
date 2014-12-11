@@ -22,5 +22,3 @@ else
 fi
 
 [ -n "$PS1" ] && source ~/.bash_profile
-
-. ~/bin/z/z.sh
