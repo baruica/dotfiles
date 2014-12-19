@@ -91,8 +91,8 @@ function __prompt_command()
     PS1+="\$(git_info)\[$WHITE\]\[$RESET\]\n"
 
     if [ $EXIT -eq 0 ]
-    then PS1+="\[$GREEN\][\!] >\[$Color_Off\] "
-    else PS1+="\[$MAGENTA\][\!] >\[$Color_Off\] "
+    then PS1+="\[$GREEN\][\!] ❯\[$Color_Off\] "
+    else PS1+="\[$MAGENTA\][\!] ❯\[$Color_Off\] "
     fi
 }
 

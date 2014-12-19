@@ -6,6 +6,8 @@ composer global update squizlabs/php_codesniffer
 composer show -i
 composer show -i <package>
 
+# locate php.ini file
+php -i | grep php.ini
 
 # Turn a Unix epoch time back into a human readable date
 date -d @728737200
