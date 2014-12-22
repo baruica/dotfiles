@@ -93,7 +93,7 @@ function __prompt_command()
     else PS1+="\[$MAGENTA\]"
     fi
 
-    PS1+="》\[$Color_Off\] "
+    PS1+="❯\[$Color_Off\] "
 }
 
 PROMPT_COMMAND=__prompt_command
