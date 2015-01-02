@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# display the physical current working directory (all symlinks resolved)
+pwd -P
+
 composer dump-autoload --optimize
 composer global update fabpot/php-cs-fixer
 composer global update squizlabs/php_codesniffer

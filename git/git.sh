@@ -50,3 +50,6 @@ git diff -p| grep -E '^(diff|old mode|new mode)'| sed -e 's/^old/NEW/;s/^new/old
 
 git checkout master
 git merge --no-ff dev-branch
+
+# empty initial commit
+git ci --allow-empty -m "init commit"
