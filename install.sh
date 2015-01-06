@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 set -euo pipefail
 IFS=$'\n\t'
 
@@ -14,37 +15,45 @@ sudo add-apt-repository "deb http://archive.canonical.com/ precise partner"
 sudo add-apt-repository ppa:webupd8team/java
 sudo add-apt-repository ppa:nijel/phpmyadmin
 sudo add-apt-repository ppa:russell-s-stewart/ppa
+
 sudo apt-get update
 
-sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install -y build-essential
+sudo apt-get install -y python-software-properties
+sudo apt-get install -y ubuntu-restricted-extras
 sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
 # install peco, z
-sudo apt-get install acroread bash-completion bleachbit curl git htop pv python-software-properties rubygems ruby-dev software-properties-common sshrc tig tree
+sudo apt-get install -y acroread bash-completion bleachbit curl git htop pv rubygems ruby-dev software-properties-common sshrc tig tree
 sudo gem install git-up
 
-sudo apt-get install oracle-java8-installer
-sudo apt-get install oracle-java8-set-default
+sudo apt-get install -y oracle-java8-installer
+sudo apt-get install -y oracle-java8-set-default
 
-
-sudo apt-get install apache2
-sudo a2enmod vhost_alias rewrite
-
-sudo apt-get install mysql-server php5-mysql
-
-sudo apt-get install php5 php5-cli libapache2-mod-php5 php5-curl
-sudo apt-get install php5-intl
-# mcrypt
-sudo apt-get install php5-mcrypt
+# Install the LAMP components
+sudo apt-get install -y php5
+sudo apt-get install -y apache2
+sudo apt-get install -y libapache2-mod-php5
+sudo apt-get install -y mysql-server
+sudo apt-get install -y php5-mysql
+sudo apt-get install -y php5-curl
+sudo apt-get install -y php5-intl
+sudo apt-get install -y php5-mcrypt
 sudo php5enmod mcrypt
+
+# Set your server name (Avoid error message on reload/restart of Apache)
+echo 'ServerName localhost' | sudo tee /etc/apache2/httpd.conf
+
+sudo a2enmod vhost_alias rewrite
 sudo service apache2 restart
+
+sudo apt-get install -y git-core
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 
-sudo apt-get install phpmyadmin apache2-utils
-sudo vim /etc/apache2/apache2.conf
-# add Include /etc/phpmyadmin/apache.conf
+sudo apt-get install -y phpmyadmin apache2-utils
+echo 'Include /etc/phpmyadmin/apache.conf' | sudo tee /etc/apache2/apache2.conf
 sudo service apache2 restart
 
 
