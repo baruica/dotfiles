@@ -6,14 +6,15 @@ IFS=$'\n\t'
 # and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
-# Allows us to read user input below, assigns stdin to keyboard
-exec < /dev/tty
+PREV_COMMIT=$1
+POST_COMMIT=$2
 
-while true; do
-    read -p "Run Composer install and Assetic Dump? [Y/n]: " yn
-    case $yn in
-        [Yy]* ) composer install; php app/console assetic:dump; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+NOCOLOR='\e[0m'
+REDCOLOR='\e[37;41m'
+
+if [[ -f composer.lock ]]; then
+    DIFF=`git diff --shortstat $PREV_COMMIT..$POST_COMMIT composer.lock`
+    if [[ $DIFF != "" ]]; then
+        echo -e "$REDCOLOR composer.lock has changed. You must run composer install$NOCOLOR"
+    fi
+fi

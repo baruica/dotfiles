@@ -42,7 +42,7 @@ sudo apt-get install -y php5-mcrypt
 sudo php5enmod mcrypt
 
 # Set your server name (Avoid error message on reload/restart of Apache)
-echo 'ServerName localhost' | sudo tee /etc/apache2/httpd.conf
+echo 'ServerName localhost' >> /etc/apache2/httpd.conf
 
 sudo a2enmod vhost_alias rewrite
 sudo service apache2 restart
@@ -51,6 +51,9 @@ sudo apt-get install -y git-core
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
+composer global require squizlabs/php_codesniffer
+composer global require symfony/var-dumper
+# Add auto_prepend_file = ${HOME}/.composer/vendor/autoload.php to your php.ini file
 
 sudo apt-get install -y phpmyadmin apache2-utils
 echo 'Include /etc/phpmyadmin/apache.conf' | sudo tee /etc/apache2/apache2.conf
