@@ -3,12 +3,6 @@
 # display the physical current working directory (all symlinks resolved)
 pwd -P
 
-composer dump-autoload --optimize
-composer global update fabpot/php-cs-fixer
-composer global update squizlabs/php_codesniffer
-composer show -i
-composer show -i <package>
-
 # locate php.ini file
 php -i | grep php.ini
 

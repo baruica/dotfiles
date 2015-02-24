@@ -49,8 +49,6 @@
     pretty = oneline
 [help]
     autocorrect = -1
-[init]
-    templatedir = ~/dotfiles/git/.git_template
 [log]
     abbrevCommit = true
 [merge]
