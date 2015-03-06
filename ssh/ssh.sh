@@ -14,6 +14,6 @@ chmod 600 ~/.ssh/authorized_keys
 # The remote server is now ready to have Public Keys put on it.
 
 # Copying Public Keys to a Remote Server
-cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub |ssh user@host 'cat >> .ssh/authorized_keys'
 
 ssh-copy-id preprod.fr.crm.etsglobal.org

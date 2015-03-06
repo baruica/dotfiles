@@ -3,8 +3,17 @@
 # display the physical current working directory (all symlinks resolved)
 pwd -P
 
+lsb_release -sc
+# utopic
+
 # locate php.ini file
-php -i | grep php.ini
+php -i |grep php.ini
+
+# list modules
+php -m
+
+# exécuter Composer avec une limite mémoire à 1 Go
+php -d memory_limit=1024M composer update
 
 # Turn a Unix epoch time back into a human readable date
 date -d @728737200
@@ -24,7 +33,7 @@ curl --ipv6 ipinfo.io
 #   "org": "AS3215 Orange S.A."
 # }
 
-ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+ip addr show eth0 |grep inet |awk '{ print $2; }' |sed 's/\/.*$//'
 curl http://icanhazip.com
 
 # Listing globally installed NPM packages and version

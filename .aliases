@@ -27,3 +27,5 @@ alias phps='php -S 0.0.0.0:8888'
 # then just phps public/index.php
 
 alias tests='bin/build.sh && vendor/bin/phpunit -c build'
+
+md() { /bin/mkdir -p "$1" && cd "$1"; }

@@ -49,12 +49,6 @@ sudo service apache2 restart
 
 sudo apt-get install -y git-core
 
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-
-composer global require squizlabs/php_codesniffer
-composer global require symfony/var-dumper
-# Add auto_prepend_file = ${HOME}/.composer/vendor/autoload.php to your php.ini file
-
 sudo apt-get install -y phpmyadmin apache2-utils
 echo 'Include /etc/phpmyadmin/apache.conf' | sudo tee /etc/apache2/apache2.conf
 sudo service apache2 restart
