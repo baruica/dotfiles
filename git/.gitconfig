@@ -36,7 +36,6 @@
     autocrlf     = input
     safecrlf     = true
     excludesfile = ~/dotfiles/git/.gitignore
-    editor       = subl -n -w
     filemode     = false
     pager        = less -FRSX
     whitespace   = fix,-indent-with-non-tab,-trailing-space,cr-at-eol
