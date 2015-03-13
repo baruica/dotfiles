@@ -21,3 +21,6 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 [ -e ~/dotfiles/symfony2-autocomplete.bash ] && source ~/dotfiles/symfony2-autocomplete.bash
 
 [ -x ~/bin/z/z.sh ] && source ~/bin/z/z.sh
+
+composer self-update
+composer global update
