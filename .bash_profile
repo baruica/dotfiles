@@ -1,6 +1,6 @@
 export PATH=$PATH:~/.composer/vendor/bin
 
-for file in ~/dotfiles/.{aliases,bash_prompt,exports}; do
+for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && source "$file"
 done
 
@@ -22,5 +22,6 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 [ -x ~/bin/z/z.sh ] && source ~/bin/z/z.sh
 
-composer self-update
-composer global update
+command -v composer >/dev/null 2>&1 && composer self-update
+command -v composer >/dev/null 2>&1 && composer global update
+command -v mailcatcher >/dev/null 2>&1 && mailcatcher

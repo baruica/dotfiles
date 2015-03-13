@@ -1,0 +1,12 @@
+md() { /bin/mkdir -p "$1" && cd "$1"; }
+
+ld() {
+    app=${1:-emo}
+    dump_prefix=${2:-ets_mo}
+
+    db="dev_${app}"
+
+    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* |tail -1) \
+        |pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* |tail -1) |sed -n 2p |awk '{print $2}') --name "${db}" \
+        |mysql -uroot -pdevpass1 ${db}
+}
