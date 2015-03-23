@@ -11,17 +11,17 @@ alias tree='tree -L 2'
 alias clog='echo "" > ~/temp/dev.log'
 
 alias sf='php app/console'
-alias cache='sf cache:clear && sf cache:clear --env=test'
+alias cache='sf cache:clear'
 alias routes='sf router:debug'
 alias services='sf container:debug'
 
 alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
 
-alias path="echo $PATH |tr ':' '\n'"
+alias path="echo $PATH | tr ':' '\n'"
 
-alias pecho='history |peco'
-alias proutes='routes |peco'
-alias pservices='services |peco'
+alias pecho='history | peco'
+alias proutes='routes | peco'
+alias pservices='services | peco'
 
 alias phps='php -S 0.0.0.0:8888'
 # then just phps public/index.php

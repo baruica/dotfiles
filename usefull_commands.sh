@@ -7,7 +7,7 @@ lsb_release -sc
 # utopic
 
 # locate php.ini file
-php -i |grep php.ini
+php -i | grep php.ini
 
 # list modules
 php -m
@@ -33,7 +33,7 @@ curl --ipv6 ipinfo.io
 #   "org": "AS3215 Orange S.A."
 # }
 
-ip addr show eth0 |grep inet |awk '{ print $2; }' |sed 's/\/.*$//'
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 curl http://icanhazip.com
 
 # Listing globally installed NPM packages and version
@@ -45,3 +45,8 @@ sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
+
+# 5 biggest files
+find . -type f -exec ls -s {} \; | sort -n -r | head -5
+
+find . -type f -print0 | xargs -0 du -h | sort -hr | head -20

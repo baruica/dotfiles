@@ -6,7 +6,7 @@ ld() {
 
     db="dev_${app}"
 
-    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* |tail -1) \
-        |pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* |tail -1) |sed -n 2p |awk '{print $2}') --name "${db}" \
-        |mysql -uroot -pdevpass1 ${db}
+    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) \
+        | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
+        | mysql -uroot -pdevpass1 ${db}
 }

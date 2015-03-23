@@ -25,7 +25,11 @@ sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestion
 
 # install peco, z
 sudo apt-get install -y acroread bash-completion bleachbit curl git htop pv rubygems ruby-dev software-properties-common sshrc tig tree
+sudo gem install rubygems-update
 sudo gem install git-up
+
+sudo update_rubygems
+sudo gem update --system
 
 sudo apt-get install -y oracle-java8-installer
 sudo apt-get install -y oracle-java8-set-default

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-curl -sS https://getcomposer.org/installer |sudo php -- --install-dir=~/bin --filename=composer
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=~/bin --filename=composer
 
 composer self-update
 
@@ -18,4 +18,4 @@ composer global remove squizlabs/php_codesniffer
 composer show -i
 composer show -i <package>
 # quick view of project dependencies
-composer show --installed |cut -d' ' -f1 |xargs -n1 composer depends |sort
+composer show --installed | cut -d' ' -f1 | xargs -n1 composer depends | sort

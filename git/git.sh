@@ -7,7 +7,7 @@
 git log -S console.log --author lgiraudel --before="2013-10-01 00:00" --after="2013-06-01 00:00" -- web/js
 
 # Avoiding 'git clone' when you just need an export
-git archive --remote=<url> --format=tgz master |tar xvz
+git archive --remote=<url> --format=tgz master | tar xvz
 
 # show the file changes of the x last commits
 git show --pretty=oneline --name-status HEAD~x..HEAD
@@ -39,14 +39,14 @@ git shortlog --numbered --summary HEAD
 #   308  qzhang
 #   212  Nelson da Costa
 
-git grep -i todo |wc -l
+git grep -i todo | wc -l
 # 31
 
 # see all commits from version 8.22.0
 tig 8.22.0..HEAD
 
 # fix permissions
-git diff -p |grep -E '^(diff|old mode|new mode)' |sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' |git apply
+git diff -p | grep -E '^(diff|old mode|new mode)' | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' | git apply
 
 git checkout master
 git merge --no-ff dev-branch
@@ -56,3 +56,6 @@ git ci --allow-empty -m "init commit"
 
 # edit last commit's msg (--amend) and add currently non-committed files to that last commit (-a)
 git ci --amend -a
+
+# backup a repo as a zip file
+git archive --format zip --output ~/out/repos/emo.zip master
