@@ -15,7 +15,12 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 # If possible, add tab completion for many more commands
 # curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-[ -f /etc/bash_completion ] && source /etc/bash_completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion 2> /dev/null
+fi
+
+# Autocomple with sudo
+complete -cf sudo
 
 # https://github.com/KnpLabs/symfony2-autocomplete
 [ -e ~/dotfiles/symfony2-autocomplete.bash ] && source ~/dotfiles/symfony2-autocomplete.bash

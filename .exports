@@ -1,10 +1,10 @@
 export SUBLIME="subl -n -w"
-export EDITOR="$SUBLIME --wait"
+export EDITOR=`which vim`
 export VISUAL=$EDITOR
 
 # Make some commands not show up in history
 export HISTIGNORE="* --help:cd:cd -:date:exit:git diff:git st:ls:ls *:pwd:history"
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth
 export HISTSIZE=32768                   # Larger bash history (allow 32³ entries; default is 500)
 export HISTTIMEFORMAT='%F %T '          # timestamps for bash history
 

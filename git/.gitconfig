@@ -1,10 +1,15 @@
+[user]
+    name  = Nelson da Costa
+    email = ndacosta@eleven-labs.com
+[github]
+    user = baruica
 [alias]
-    ci = commit
+    ci = commit -v
     co = checkout
     df = diff
     st = status
-    lg = log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    oops = commit --amend --no-edit
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    #lg = log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
 
     changes = diff --name-status
     wdiff   = diff --word-diff
@@ -16,8 +21,9 @@
     amend   = commit -a --amend
 [branch]
     autosetuprebase = always
+    rebase = true
 [color]
-    ui    = auto
+    ui = always
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -34,11 +40,8 @@
     untracked = cyan
 [core]
     autocrlf     = input
-    safecrlf     = true
     excludesfile = ~/dotfiles/git/.gitignore
-    filemode     = false
     pager        = less -FRSX
-    whitespace   = fix,-indent-with-non-tab,-trailing-space,cr-at-eol
 [credential]
     helper = cache --timeout=43200
 [diff]
@@ -47,15 +50,15 @@
 [format]
     pretty = oneline
 [help]
-    autocorrect = -1
+    autocorrect = 1
+[init]
+    templatedir = ~/dotfiles/git/git-templates
 [log]
     abbrevCommit = true
-[merge]
-    conflictStyle = diff3
 [pull]
     rebase = preserve
 [push]
-    default = upstream
+    default = tracking
 [rebase]
     autostash = true
 [status]
@@ -63,6 +66,3 @@
     showUntrackedFiles = all
 [tag]
     sort = version:refname
-[user]
-    name  = Nelson da Costa
-    email = ndacosta@eleven-labs.com

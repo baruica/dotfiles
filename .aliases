@@ -6,6 +6,7 @@ command -v htop >/dev/null 2>&1 && alias top=htop
 
 alias ll='ls -lsa --color'
 
+alias path="echo $PATH | tr ':' '\n'"
 alias tree='tree -L 2'
 
 alias clog='echo "" > ~/temp/dev.log'
@@ -15,9 +16,10 @@ alias cache='sf cache:clear'
 alias routes='sf router:debug'
 alias services='sf container:debug'
 
-alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
+alias spec='vendor/bin/phpspec'
+alias unit='vendor/bin/phpunit'
 
-alias path="echo $PATH | tr ':' '\n'"
+alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
 
 alias pecho='history | peco'
 alias proutes='routes | peco'
@@ -26,4 +28,4 @@ alias pservices='services | peco'
 alias phps='php -S 0.0.0.0:8888'
 # then just phps public/index.php
 
-alias tests='bin/build.sh && vendor/bin/phpunit -c build'
+alias tests='bin/build.sh && unit -c build'
