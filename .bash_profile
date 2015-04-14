@@ -27,6 +27,5 @@ complete -cf sudo
 
 [ -x ~/bin/z/z.sh ] && source ~/bin/z/z.sh
 
-command -v composer >/dev/null 2>&1 && composer self-update
-command -v composer >/dev/null 2>&1 && composer global update
-command -v mailcatcher >/dev/null 2>&1 && mailcatcher
+command -v composer >/dev/null 2>&1 && composer self-update && composer global update
+#command -v mailcatcher >/dev/null 2>&1 && mailcatcher

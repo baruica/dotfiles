@@ -50,3 +50,7 @@ sudo apt-get install oracle-java8-installer
 find . -type f -exec ls -s {} \; | sort -n -r | head -5
 
 find . -type f -print0 | xargs -0 du -h | sort -hr | head -20
+
+
+# generate JSON as output
+tree -J

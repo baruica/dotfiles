@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+# On récupère la liste des fichiers modifiés
+modifiedFiles=$(git diff --cached --name-only --diff-filter=ACM)
+error=false
+
+for file in $modifiedFiles
+do
+    if [[ $file =~ .*\.php ]]
+    then
+        result=$(php -l $file 2>&1)
+        if [[ $result =~ .*'Parse error'.* ]]
+        then
+            echo $file
+            echo $result
+            error=true
+        fi
+    fi
+done
+
+if [ $error != false ]
+then
+    # En cas d'erreur on empêche le commit
+    echo "Erreur de syntaxe dans l'un des fichiers";
+    exit 1;
+fi

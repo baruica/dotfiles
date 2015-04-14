@@ -28,4 +28,4 @@ alias pservices='services | peco'
 alias phps='php -S 0.0.0.0:8888'
 # then just phps public/index.php
 
-alias tests='bin/build.sh && unit -c build'
+alias tests='echo "" > app/logs/test.log && bin/build.sh && unit -c build'
