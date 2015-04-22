@@ -1,5 +1,5 @@
 export SUBLIME="subl -n -w"
-export EDITOR=`which vim`
+export EDITOR=$(which vim)
 export VISUAL=$EDITOR
 
 # Make some commands not show up in history

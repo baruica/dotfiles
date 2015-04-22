@@ -1,7 +1,5 @@
-# use colordiff instead of diff if available
 command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
 
-# use htop instead of top if installed
 command -v htop >/dev/null 2>&1 && alias top=htop
 
 alias ll='ls -lsa --color'
@@ -9,23 +7,15 @@ alias ll='ls -lsa --color'
 alias path="echo $PATH | tr ':' '\n'"
 alias tree='tree -L 2'
 
-alias clog='echo "" > ~/temp/dev.log'
+command -v composer >/dev/null 2>&1 && alias sf='php app/console'
+command -v composer >/dev/null 2>&1 && alias cache='sf cache:clear'
+command -v composer >/dev/null 2>&1 && alias routes='sf router:debug'
+command -v composer >/dev/null 2>&1 && alias services='sf container:debug'
 
-alias sf='php app/console'
-alias cache='sf cache:clear'
-alias routes='sf router:debug'
-alias services='sf container:debug'
+alias clog='echo "" > ~/temp/dev.log'
 
 alias spec='vendor/bin/phpspec'
 alias unit='vendor/bin/phpunit'
 
-alias ezcache='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
-
-alias pecho='history | peco'
-alias proutes='routes | peco'
-alias pservices='services | peco'
-
 alias phps='php -S 0.0.0.0:8888'
 # then just phps public/index.php
-
-alias tests='echo "" > app/logs/test.log && bin/build.sh && unit -c build'
