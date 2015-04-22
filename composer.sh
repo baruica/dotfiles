@@ -19,3 +19,9 @@ composer show -i
 composer show -i <package>
 # quick view of project dependencies
 composer show --installed | cut -d' ' -f1 | xargs -n1 composer depends | sort
+
+# composer ~ operator changes according to number of dots:
+# ~1.3.1 will not move to 1.4
+# however
+# ~1.3   will
+# ^1.3.1 will

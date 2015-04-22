@@ -10,6 +10,7 @@ cd ~/.ssh
 touch authorized_keys
 
 chmod 700 ~/.ssh
+chmod 600 ~/.ssh/config
 chmod 600 ~/.ssh/authorized_keys
 # The remote server is now ready to have Public Keys put on it.
 
