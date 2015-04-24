@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # git: search for a specific string
 # search all commits which contain the string "console.log" in the patch content
 # it doesn't search in the commit message or information (username, date, ...)

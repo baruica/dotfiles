@@ -12,6 +12,9 @@ ln -s ./dotfiles/git/.gitconfig
 sudo apt-get autoremove apport unity-lens-shopping
 sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
+# restore Firefox menu icons
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+
 sudo apt-get purge openjdk*
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:webupd8team/java
@@ -35,10 +38,7 @@ sudo apt-get install -y htop
 sudo apt-get install -y pv
 sudo apt-get install -y tig
 sudo apt-get install -y tree
-
-sudo add-apt-repository ppa:russell-s-stewart/ppa
-sudo apt-get update
-sudo apt-get install sshrc
+sudo apt-get install -y xclip
 
 sudo apt-get install -y ruby-dev
 sudo gem install rubygems-update
@@ -80,9 +80,6 @@ chmod +x .laptop-mode.sh && ./.laptop-mode.sh
 
 # to undo/uninstall laptop tweaks
 sudo apt-get autoremove indicator-cpufreq laptop-mode-tools && FSTABFile="noatime,nodiratime,discard,errors" && sudo sed -i -e "s/$FSTABFile/errors/g" "/etc/fstab" && sudo bash -c "echo 60 > /proc/sys/vm/swappiness" && sudo sed -i '/defaults,noatime,size=512M/d' /etc/fstab
-
-# restore Firefox menu icons
-gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
 
 source ~/.bash_profile
 

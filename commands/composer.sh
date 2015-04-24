@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=~/bin --filename=composer
 
 composer self-update
@@ -25,3 +23,9 @@ composer show --installed | cut -d' ' -f1 | xargs -n1 composer depends | sort
 # however
 # ~1.3   will
 # ^1.3.1 will
+
+# exécuter Composer avec une limite mémoire à 1 Go
+php -d memory_limit=1024M composer update
+
+# get the size of each vendor
+du -h -d 2 vendor

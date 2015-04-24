@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # http://scotch.io/tutorials/how-to-setup-ssh-public-key-authentication
 
 ssh-keygen -t rsa -C "ndacosta@eleven-labs.com"
@@ -16,5 +14,7 @@ chmod 600 ~/.ssh/authorized_keys
 
 # Copying Public Keys to a Remote Server
 cat ~/.ssh/id_rsa.pub | ssh user@host 'cat >> .ssh/authorized_keys'
+
+xclip -sel clip < ~/.ssh/id_rsa.pub
 
 ssh-copy-id preprod.fr.crm.etsglobal.org

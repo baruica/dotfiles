@@ -1,19 +1,17 @@
-#!/usr/bin/env bash
-
 # display the physical current working directory (all symlinks resolved)
 pwd -P
 
 lsb_release -sc
 # utopic
 
+# 0 if SSD, 1 otherwise
+cat /sys/block/sda/queue/rotational
+
 # locate php.ini file
 php -i | grep php.ini
 
 # list modules
 php -m
-
-# exécuter Composer avec une limite mémoire à 1 Go
-php -d memory_limit=1024M composer update
 
 # Turn a Unix epoch time back into a human readable date
 date -d @728737200
@@ -38,13 +36,3 @@ curl http://icanhazip.com
 
 # Listing globally installed NPM packages and version
 npm list -g --depth=0
-
-
-# 5 biggest files
-find . -type f -exec ls -s {} \; | sort -n -r | head -5
-
-find . -type f -print0 | xargs -0 du -h | sort -hr | head -20
-
-
-# generate JSON as output
-tree -J

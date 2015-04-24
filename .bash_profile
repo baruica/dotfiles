@@ -13,8 +13,6 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh/config ~/.ssh/config.* > ~/.ssh/config
 
-cat ~/dotfiles/.aliases > ~/.sshrc
-
 # If possible, add tab completion for many more commands
 # curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
