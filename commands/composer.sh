@@ -29,3 +29,6 @@ php -d memory_limit=1024M composer update
 
 # get the size of each vendor
 du -h -d 2 vendor
+
+# Only updates the lock file hash to suppress warning about the lock file being out of date
+composer update --lock
