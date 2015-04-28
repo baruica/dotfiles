@@ -4,6 +4,10 @@ for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && source "$file"
 done
 
+for file in ~/.{aliases,exports,functions}; do
+    [ -r "$file" ] && source "$file"
+done
+
 shopt -s cdspell        # corrects typos (eg: cd /ect becomes cd /etc)
 shopt -s checkwinsize   # resize ouput to fit window
 shopt -s cmdhist        # combine multiline commands in history

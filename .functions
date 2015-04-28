@@ -11,28 +11,3 @@ ld()
         | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
         | mysql -uroot -pdevpass1 ${db}
 }
-
-branch()
-{
-    read -e -p "type (feat|fix|docs|style|refactor|perf|test|chore)>" branch_type
-    read -e -p "PMR>" -i "PMR-" pmr
-    read -e -p "subject>" subject
-    read -e -p "author>" -i "ndacosta" author
-
-    branch_name="${branch_type}/${pmr}-${subject}-${author}"
-
-    current_branch=$(git symbolic-ref -q HEAD)
-    current_branch=${current_branch##refs/heads/}
-    current_branch=${current_branch:-HEAD}
-
-    if [ "${current_branch}" != 'master' ]
-    then
-        read -p "Not creating branch from master, create anyway?" yn
-        case $yn in
-            [Nn]* ) return;;
-            * ) echo "Please answer yes or no.";;
-        esac
-    fi
-
-    git co -b ${branch_name}
-}
