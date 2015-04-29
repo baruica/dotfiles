@@ -1,8 +1,3 @@
-[user]
-    name  = Nelson da Costa
-    email = ndacosta@eleven-labs.com
-[github]
-    user = baruica
 [alias]
     ci = commit -v
     co = checkout

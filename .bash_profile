@@ -15,7 +15,7 @@ shopt -s histappend     # merge session histories
 shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
-[ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh/config ~/.ssh/config.* > ~/.ssh/config
+[ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
 
 # If possible, add tab completion for many more commands
 # curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
