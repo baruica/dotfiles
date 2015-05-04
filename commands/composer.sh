@@ -6,6 +6,8 @@ composer diag
 
 composer dump-autoload --optimize
 
+composer require some/dependency:1.3.4
+
 composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer
 
