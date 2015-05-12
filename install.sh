@@ -7,7 +7,7 @@ cd
 
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
-ln -s ./dotfiles/git/.gitconfig
+./install_client.sh
 
 sudo apt-get autoremove apport unity-lens-shopping
 sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
@@ -38,6 +38,7 @@ sudo apt-get install -y htop
 sudo apt-get install -y pv
 sudo apt-get install -y tig
 sudo apt-get install -y tree
+sudo apt-get install -y vim
 sudo apt-get install -y xclip
 
 sudo apt-get install -y ruby-dev

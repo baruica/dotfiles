@@ -1,10 +1,6 @@
-export PATH=$PATH:~/.composer/vendor/bin
+[ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
 
-for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
-    [ -r "$file" ] && source "$file"
-done
-
-for file in ~/.{aliases,exports,functions}; do
+for file in ~/dotfiles/.{aliases,bash_profile_local,bash_prompt,exports,functions}; do
     [ -r "$file" ] && source "$file"
 done
 

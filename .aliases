@@ -7,10 +7,10 @@ alias ll='ls -lsa --color'
 alias path="echo $PATH | tr ':' '\n'"
 alias tree='tree -L 2'
 
-command -v composer >/dev/null 2>&1 && alias sf='php app/console'
-command -v composer >/dev/null 2>&1 && alias cache='sf cache:clear'
-command -v composer >/dev/null 2>&1 && alias routes='sf router:debug'
-command -v composer >/dev/null 2>&1 && alias services='sf container:debug'
+command -v php >/dev/null 2>&1 && alias sf='php app/console'
+command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
+command -v php >/dev/null 2>&1 && alias routes='sf router:debug'
+command -v php >/dev/null 2>&1 && alias services='sf container:debug'
 
 alias clog='echo "" > ~/temp/dev.log'
 

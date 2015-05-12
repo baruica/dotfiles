@@ -4,7 +4,6 @@
     df = diff
     st = status
     lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    #lg = log --color --graph --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
 
     changes = diff --name-status
     wdiff   = diff --word-diff
