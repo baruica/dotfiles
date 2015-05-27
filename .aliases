@@ -12,7 +12,7 @@ command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
 command -v php >/dev/null 2>&1 && alias routes='sf router:debug'
 command -v php >/dev/null 2>&1 && alias services='sf container:debug'
 
-alias clog='echo "" > ~/temp/dev.log'
+alias clog='echo "" > ~/www/debug.log'
 
 alias spec='vendor/bin/phpspec'
 alias unit='vendor/bin/phpunit'
