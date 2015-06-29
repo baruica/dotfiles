@@ -24,7 +24,7 @@ complete -cf sudo       # Autocomple with sudo
 
 [ -r ~/bin/z/z.sh ] && source ~/bin/z/z.sh
 
-#command -v composer >/dev/null 2>&1 && composer self-update && composer global update
+command -v composer >/dev/null 2>&1 && composer self-update && composer global update
 
 [ -r ~/.bash_profile_local ] && source ~/.bash_profile_local
 
