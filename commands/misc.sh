@@ -1,8 +1,23 @@
 # display the physical current working directory (all symlinks resolved)
 pwd -P
 
+cat /etc/os-release
+# NAME="Ubuntu"
+# VERSION="14.04.2 LTS, Trusty Tahr"
+# ID=ubuntu
+# ID_LIKE=debian
+# PRETTY_NAME="Ubuntu 14.04.2 LTS"
+# VERSION_ID="14.04"
+# HOME_URL="http://www.ubuntu.com/"
+# SUPPORT_URL="http://help.ubuntu.com/"
+# BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+
 lsb_release -sc
 # utopic
+
+# current kernel version
+uname -r
+# 3.19.0-21-generic
 
 # 0 if SSD, 1 otherwise
 cat /sys/block/sda/queue/rotational
