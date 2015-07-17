@@ -82,6 +82,6 @@ chmod +x .laptop-mode.sh && ./.laptop-mode.sh
 # to undo/uninstall laptop tweaks
 sudo apt-get autoremove indicator-cpufreq laptop-mode-tools && FSTABFile="noatime,nodiratime,discard,errors" && sudo sed -i -e "s/$FSTABFile/errors/g" "/etc/fstab" && sudo bash -c "echo 60 > /proc/sys/vm/swappiness" && sudo sed -i '/defaults,noatime,size=512M/d' /etc/fstab
 
-source ~/.bash_profile
+. ~/.bash_profile
 
 exit 0

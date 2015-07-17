@@ -58,3 +58,13 @@ git ci --amend -a
 
 # backup a repo as a zip file
 git archive --format zip --output ~/out/repos/emo.zip master
+
+
+# show list of modified/added files between 2 branches
+git diff --name-status master..<branch>
+# M       composer.json
+# A       composer.lock
+
+git diff --name-only master..<branch>
+# composer.json
+# composer.lock
