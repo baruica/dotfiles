@@ -2,10 +2,17 @@ command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
 
 command -v htop >/dev/null 2>&1 && alias top=htop
 
-alias ll='ls -lsa --color'
+alias ll='ls -lsa --color=auto'
+alias grep='grep --color=auto'
 
+alias df='df -H'
+alias du='du -ch'
 alias path="echo $PATH | tr ':' '\n'"
 alias tree='tree -L 2'
+
+alias mount='mount |column -t'
+alias ping='ping -c 5'
+alias wget='wget -c'
 
 command -v php >/dev/null 2>&1 && alias sf='php app/console'
 command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
