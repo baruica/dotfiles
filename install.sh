@@ -12,8 +12,7 @@ ln -s ./dotfiles/.bashrc
 sudo apt-get autoremove apport unity-lens-shopping
 sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
-# restore Firefox menu icons
-gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/ButtonImages': <1>, 'Gtk/MenuImages': <1>}"
+https://askubuntu.com/questions/141752/keyboard-shortcut-to-move-windows-between-monitors
 
 sudo apt-get purge openjdk*
 sudo apt-get install software-properties-common
