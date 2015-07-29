@@ -45,7 +45,7 @@ tig 8.22.0..HEAD
 
 # fix permissions
 git diff -p | grep -E '^(diff|old mode|new mode)' | sed -e 's/^old/NEW/;s/^new/old/;s/^NEW/new/' | git apply
-git diff -p -R | grep -E "^(diff|(old|new) mode)" | git apply
+git diff -p -R | grep -E '^(diff|(old|new) mode)' | git apply
 
 git checkout master
 git merge --no-ff dev-branch

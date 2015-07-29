@@ -5,6 +5,11 @@ command -v htop >/dev/null 2>&1 && alias top=htop
 alias ll='ls -lsa --color=auto'
 alias grep='grep --color=auto'
 
+# http://www.nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html
+# ps | ctrlc
+alias ctrlc='xclip -selection c'
+alias ctrlv='xclip -selection c -o'
+
 alias df='df -H'
 alias du='du -ch'
 alias path="echo $PATH | tr ':' '\n'"
