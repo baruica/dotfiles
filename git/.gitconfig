@@ -1,5 +1,5 @@
 [alias]
-    ci = commit -v
+    ci = commit
     co = checkout
     df = diff
     st = status
@@ -17,7 +17,7 @@
     autosetuprebase = always
     rebase = true
 [color]
-    ui = always
+    ui = auto
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -33,6 +33,7 @@
     changed   = green
     untracked = cyan
 [core]
+    whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf     = input
     editor       = vim
     excludesfile = ~/dotfiles/git/.gitignore

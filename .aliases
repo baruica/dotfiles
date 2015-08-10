@@ -13,7 +13,6 @@ alias ctrlv='xclip -selection c -o'
 alias df='df -H'
 alias du='du -ch'
 alias path="echo $PATH | tr ':' '\n'"
-alias tree='tree -L 2'
 
 alias mount='mount |column -t'
 alias ping='ping -c 5'
