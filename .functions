@@ -1,17 +1,3 @@
-md() { /bin/mkdir -p "$1" && cd "$1"; }
-
-ld()
-{
-    app=${1:-emo}
-    dump_prefix=${2:-ets_mo}
-
-    db="dev_${app}"
-
-    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) \
-        | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
-        | mysql -uroot -pdevpass1 ${db}
-}
-
 explain()
 {
     if [ "$#" -eq 0 ]; then
@@ -31,3 +17,35 @@ explain()
 # $ curl https://www.mankier.com
 # curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s).
 # If so, try specifying a cipher in the curl commands: curl --ciphers ecdhe_ecdsa_aes_128_sha
+
+ld()
+{
+    app=${1:-emo}
+    dump_prefix=${2:-ets_mo}
+
+    db="dev_${app}"
+
+    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) \
+        | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
+        | mysql -uroot -pdevpass1 ${db}
+}
+
+md() { /bin/mkdir -p "$1" && cd "$1"; }
+
+routes()
+{
+    if [ "$#" -eq 0 ]; then
+        command -v php >/dev/null 2>&1 && sf router:debug
+    else
+        command -v php >/dev/null 2>&1 && sf router:debug | grep "$1"
+    fi
+}
+
+services()
+{
+    if [ "$#" -eq 0 ]; then
+        command -v php >/dev/null 2>&1 && sf container:debug
+    else
+        command -v php >/dev/null 2>&1 && sf container:debug | grep "$1"
+    fi
+}
