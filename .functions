@@ -35,17 +35,17 @@ md() { /bin/mkdir -p "$1" && cd "$1"; }
 routes()
 {
     if [ "$#" -eq 0 ]; then
-        command -v php >/dev/null 2>&1 && sf router:debug
+        command -v php >/dev/null 2>&1 && php app/console router:debug
     else
-        command -v php >/dev/null 2>&1 && sf router:debug | grep "$1"
+        command -v php >/dev/null 2>&1 && php app/console router:debug | grep "$1"
     fi
 }
 
 services()
 {
     if [ "$#" -eq 0 ]; then
-        command -v php >/dev/null 2>&1 && sf container:debug
+        command -v php >/dev/null 2>&1 && php app/console container:debug
     else
-        command -v php >/dev/null 2>&1 && sf container:debug | grep "$1"
+        command -v php >/dev/null 2>&1 && php app/console container:debug | grep "$1"
     fi
 }
