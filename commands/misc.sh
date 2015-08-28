@@ -51,3 +51,7 @@ curl http://icanhazip.com
 
 # Listing globally installed NPM packages and version
 npm list -g --depth=0
+
+
+# list of packages installed on your system
+comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u) | awk {'print  $0'}
