@@ -20,8 +20,8 @@ alias wget='wget -c'
 
 command -v php >/dev/null 2>&1 && alias sf='php app/console'
 command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
-#command -v php >/dev/null 2>&1 && alias routes='sf router:debug'
-#command -v php >/dev/null 2>&1 && alias services='sf container:debug'
+command -v php >/dev/null 2>&1 && alias routes='sf router:debug'
+command -v php >/dev/null 2>&1 && alias services='sf container:debug'
 
 alias clog='echo "" > ~/www/debug.log'
 
