@@ -86,7 +86,9 @@ function __prompt_command()
     [ -n "$SSH_CLIENT" ] && PS1+="\[$ORANGE\]("${$SSH_CLIENT%% *}")\[$Color_Off\]"
 
     PS1+="\[$BPurple\]\w\[$Color_Off\]"
-    PS1+="\$(git_info)\[$WHITE\]\[$RESET\]\n"
+    #PS1+="\$(git_info)\[$WHITE\]\[$RESET\]\n"
+    #PS1+="\$(git-radar --bash --fetch)"
+    PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n"
 
     if [ $EXIT -eq 0 ]
     then PS1+="\[$WHITE\]"
