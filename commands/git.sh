@@ -68,3 +68,6 @@ git diff --name-status master..<branch>
 git diff --name-only master..<branch>
 # composer.json
 # composer.lock
+
+# ignore whitespaces
+git diff -w

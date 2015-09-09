@@ -158,3 +158,7 @@ docker images -viz | dot -Tpng -o docker.png
 # to see it, run this on the host
 python -m SimpleHTTPServer
 # then browse to http://machinename:8000/docker.png
+
+
+# destroying all docker containers
+docker ps -aq | while read x; do docker stop $x; docker rm $x; done
