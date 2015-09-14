@@ -17,7 +17,7 @@
     autosetuprebase = always
     rebase = true
 [color]
-    ui = auto
+    ui = true
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -54,7 +54,7 @@
 [pull]
     rebase = preserve
 [push]
-    default = tracking
+    default = current
 [rebase]
     autostash = true
 [status]
