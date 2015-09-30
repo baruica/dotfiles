@@ -12,22 +12,13 @@ Documents
 .gitconfig
 .vim
 .vimrc
-.WebIde80
 .WebIde90
-www"
-
-to_backup_config_list="google-chrome
-google-chrome-beta
-gtk-2.0
-gtk-3.0"
+.WebIde95
+www/zip"
 
 for to_backup in ${to_backup_list}
 do
-    cp -R ~/${to_backup} ${backup_dir}
+    [ -e ~/${to_backup} ] && cp -R ~/${to_backup} ${backup_dir}/
 done
 
-for to_backup_config in ${to_backup_config_list}
-do
-    echo ~/.config/${to_backup_config}
-    #cp -R ~/.config/${to_backup_config} ${backup_dir}/.config/
-done
+exit 0
