@@ -1,4 +1,5 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
+[ -r ~/.git-radar ] && export PATH=$PATH:~/.git-radar
 
 for file in ~/dotfiles/.{aliases,bash_profile_local,bash_prompt,exports,functions}; do
     [ -r "$file" ] && . "$file"
@@ -21,8 +22,6 @@ complete -cf sudo       # Autocomple with sudo
 
 # https://github.com/KnpLabs/symfony2-autocomplete
 [ -r ~/dotfiles/symfony2-autocomplete.bash ] && . ~/dotfiles/symfony2-autocomplete.bash
-
-[ -r ~/bin/z/z.sh ] && . ~/bin/z/z.sh
 
 command -v composer >/dev/null 2>&1 && composer self-update && composer global update
 

@@ -14,7 +14,7 @@ alias df='df -H'
 alias du='du -ch'
 alias path="echo $PATH | tr ':' '\n'"
 
-alias mount='mount |column -t'
+alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
 
