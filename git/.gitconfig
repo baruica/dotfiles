@@ -36,7 +36,7 @@
     whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf     = input
     editor       = vim
-    excludesfile = .gitignore
+    excludesfile = ~/dotfiles/git/.gitignore
     pager        = less -FRSX
 [credential]
     helper = cache --timeout=43200
@@ -48,7 +48,7 @@
 [help]
     autocorrect = 1
 [init]
-    templatedir = git-templates
+    templatedir = ~/dotfiles/git/git-templates
 [log]
     abbrevCommit = true
 [pull]
