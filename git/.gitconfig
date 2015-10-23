@@ -14,6 +14,10 @@
     unstage = reset HEAD --
     # The -a adds any modifications and deletions of existing files to the commit but ignores brand new files
     amend   = commit -a --amend
+
+    whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
+    whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
+    currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
 [branch]
     autosetuprebase = always
     rebase = true
