@@ -7,6 +7,7 @@ cd
 
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
+git clone https://github.com/michaeldfallen/git-radar .git-radar
 ./install_client.sh
 
 sudo apt-get autoremove apport unity-lens-shopping
@@ -40,7 +41,8 @@ sudo apt-get install -y tree
 sudo apt-get install -y vim
 sudo apt-get install -y xclip
 
-sudo apt-get install -y ruby-dev
+sudo apt-get install rubygems
+#sudo apt-get install -y ruby-dev
 sudo gem install rubygems-update
 sudo gem install git-up
 
