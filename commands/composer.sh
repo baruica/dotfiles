@@ -1,3 +1,4 @@
+curl -sS https://getcomposer.org/installer | php -- --install-dir=~/bin --filename=composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 composer self-update
