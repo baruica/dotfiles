@@ -26,16 +26,8 @@ sudo apt-get install -y oracle-java8-set-default
 
 sudo apt-get update
 
-sudo apt-get install -y bash-completion
-sudo apt-get install -y curl
-sudo apt-get install -y git
-sudo apt-get install -y git-core
-sudo apt-get install -y htop
-sudo apt-get install -y pv
+sudo apt-get install -y bash-completion curl git git-core htop pv tree vim xclip
 sudo apt-get install -y tig
-sudo apt-get install -y tree
-sudo apt-get install -y vim
-sudo apt-get install -y xclip
 
 sudo apt-get install rubygems-integration
 #sudo apt-get install -y ruby-dev
