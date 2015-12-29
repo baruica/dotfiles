@@ -1,3 +1,6 @@
+git config --local user.email "baruic.a@gmail.com"
+git config --local user.name "Nelson da Costa"
+
 # git: search for a specific string
 # search all commits which contain the string "console.log" in the patch content
 # it doesn't search in the commit message or information (username, date, ...)

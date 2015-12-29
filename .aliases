@@ -2,7 +2,16 @@ command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
 
 command -v htop >/dev/null 2>&1 && alias top=htop
 
-alias ll='ls -lsa --color=auto'
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+else # OS X `ls`
+  colorflag="-G"
+fi
+
+alias ls='command ls ${colorflag}'
+alias ll='ls -laF ${colorflag}'
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias grep='grep --color=auto'
 
 # http://www.nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html

@@ -36,3 +36,5 @@ du -h -d 2 vendor
 
 # Only updates the lock file hash to suppress warning about the lock file being out of date
 composer update --lock
+
+#composertip change your composer.json to ^5.5 or similar unless you actually work with 7.0. If so: ^5.5 || ^7.0

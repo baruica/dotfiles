@@ -4,8 +4,21 @@ wget -qO- https://get.docker.com/ | sh
 wget -N https://get.docker.com/ | sh
 
 # install docker compose
+sudo -i
 curl -L https://github.com/docker/compose/releases/download/1.3.1/docker-compose-$(uname -s)-$(uname -m) > ~/bin/docker-compose
 chmod u+x ~/bin/docker-compose
+# docker-compose completion
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --version | awk 'NR==1{print $NF}')/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+# will work after logout
+exit
+# test it
+sudo docker run hello-world
+
+sudo groupadd docker
+sudo gpasswd -a $(whoami) docker
+sudo service docker restart
+# test it
+docker run hello-world
 
 
 docker ps       # list running containers
@@ -110,6 +123,11 @@ docker run -d --name=my_redis redis
 # cleaning up
 docker rm <container id>        # delete a container
 docker rm $(docker ps -a -q)    # delete all stopped containers
+# destroying all docker containers
+docker ps -aq | while read x; do docker stop $x; docker rm $x; done
+
+docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
+
 docker rmi <image id>           # delete images
 docker rmi $(docker ps -a -q)   # delete all images
 # You must remove all containers using an image before deleting the image
@@ -158,7 +176,3 @@ docker images -viz | dot -Tpng -o docker.png
 # to see it, run this on the host
 python -m SimpleHTTPServer
 # then browse to http://machinename:8000/docker.png
-
-
-# destroying all docker containers
-docker ps -aq | while read x; do docker stop $x; docker rm $x; done

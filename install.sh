@@ -13,10 +13,12 @@ git clone https://github.com/michaeldfallen/git-radar .git-radar
 sudo apt-get autoremove apport unity-lens-shopping
 sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
 
-https://askubuntu.com/questions/141752/keyboard-shortcut-to-move-windows-between-monitors
+sudo apt-get install -y build-essential
+sudo apt-get install -y python-software-properties
+sudo apt-get install -y software-properties-common
+sudo apt-get install -y ubuntu-restricted-extras
 
 sudo apt-get purge openjdk*
-sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
@@ -24,13 +26,7 @@ sudo apt-get install -y oracle-java8-set-default
 
 sudo apt-get update
 
-sudo apt-get install -y build-essential
-sudo apt-get install -y python-software-properties
-sudo apt-get install -y software-properties-common
-sudo apt-get install -y ubuntu-restricted-extras
-
 sudo apt-get install -y bash-completion
-sudo apt-get install -y bleachbit
 sudo apt-get install -y curl
 sudo apt-get install -y git
 sudo apt-get install -y git-core
@@ -41,7 +37,7 @@ sudo apt-get install -y tree
 sudo apt-get install -y vim
 sudo apt-get install -y xclip
 
-sudo apt-get install rubygems
+sudo apt-get install rubygems-integration
 #sudo apt-get install -y ruby-dev
 sudo gem install rubygems-update
 sudo gem install git-up
