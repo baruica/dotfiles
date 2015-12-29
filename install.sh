@@ -5,8 +5,7 @@ IFS=$'\n\t'
 
 cd
 
-sudo apt-get autoremove apport unity-lens-shopping
-sudo gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
+mkdir -p ~/workspace/www
 
 sudo apt-get install -y build-essential python-software-properties software-properties-common ubuntu-restricted-extras
 
@@ -46,7 +45,7 @@ echo 'ServerName localhost' >> /etc/apache2/httpd.conf
 sudo a2enmod vhost_alias rewrite
 sudo service apache2 restart
 
-
+# PhpMyAdmin
 sudo apt-get install -y phpmyadmin apache2-utils
 echo 'Include /etc/phpmyadmin/apache.conf' | sudo tee /etc/apache2/apache2.conf
 sudo service apache2 restart
