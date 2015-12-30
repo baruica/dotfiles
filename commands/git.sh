@@ -1,4 +1,4 @@
-git config --local user.email "baruic.a@gmail.com"
+git config --local user.email "barui.ca@gmail.com"
 git config --local user.name "Nelson da Costa"
 
 # git: search for a specific string
