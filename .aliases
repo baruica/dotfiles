@@ -37,7 +37,7 @@ alias clog='echo "" > ~/www/debug.log'
 alias spec='vendor/bin/phpspec'
 alias unit='vendor/bin/phpunit'
 
-alias phps='php -S 0.0.0.0:8888'
+alias phps='php -S localhost:8000'
 # then just phps public/index.php
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
