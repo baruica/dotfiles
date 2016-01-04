@@ -8,6 +8,7 @@ composer diag
 composer dump-autoload --optimize
 
 composer require some/dependency:1.3.4
+composer require --dev phpspec/phpspec
 
 composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer
