@@ -42,3 +42,5 @@ alias phps='php -S localhost:8000'
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
 alias hogs='for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11'
+
+alias aptclean='echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean'
