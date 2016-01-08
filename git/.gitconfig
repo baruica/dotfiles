@@ -4,15 +4,23 @@
 [github]
     user = baruica
 [alias]
-    ci = commit
-    co = checkout
-    df = diff
-    st = status
+    ci  = commit
+    co  = checkout
+    cob = checkout -b    # Checkout a new not yet existing branch
+    dc  = diff --cached  # Display the staged changes
+    df  = diff
+    st  = status
     stp = status --porcelain
-    lg = log --oneline --all --graph --decorate --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+
+    lg   = log --oneline --all --graph --decorate --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+    tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
     changes = diff --name-status
     wdiff   = diff --word-diff
+
+    # Remove all merged branches
+    bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 
     # Cancel
     undo    = reset HEAD^ --soft
@@ -23,6 +31,7 @@
     whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
+    rank = shortlog -sn --no-merges     # Contributors ordered by number of merges
 [branch]
     autosetuprebase = always
     rebase = true
@@ -43,11 +52,11 @@
     changed   = green
     untracked = cyan
 [core]
-    whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf     = input
     editor       = vim
     excludesfile = ~/dotfiles/git/.gitignore
     pager        = less -FRSX
+    whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [credential]
     helper = cache --timeout=43200
 [diff]
