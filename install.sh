@@ -21,6 +21,12 @@ sudo gem install rubygems-update
 sudo update_rubygems
 sudo gem update --system
 
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php-7.0
+sudo apt-get update
+sudo apt-get install -y php7.0 php7.0-cli
+
+
 echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean
 
 git clone https://github.com/michaeldfallen/git-radar .git-radar
