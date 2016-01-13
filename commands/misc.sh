@@ -46,6 +46,12 @@ curl --ipv6 ipinfo.io
 #   "org": "AS3215 Orange S.A."
 # }
 
+curl -x POST \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer at-80003004-19a8-46a2-908e-33d4057128e7" \
+    -d '{"state":"running"}' \
+    https://api.fakecompany.com/v1/users/007/orders?client_id=API_KEY_003
+
 ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 curl http://icanhazip.com
 
