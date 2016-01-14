@@ -23,7 +23,7 @@ complete -cf sudo       # Autocomple with sudo
 # https://github.com/KnpLabs/symfony2-autocomplete
 [ -r ~/dotfiles/symfony2-autocomplete.bash ] && . ~/dotfiles/symfony2-autocomplete.bash
 
-command -v composer >/dev/null 2>&1 && composer self-update && composer global update
+#command -v composer >/dev/null 2>&1 && composer self-update && composer global update
 
 [ -r ~/.bash_profile_local ] && . ~/.bash_profile_local
 
