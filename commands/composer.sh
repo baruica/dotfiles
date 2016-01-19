@@ -10,6 +10,7 @@ composer dump-autoload --optimize
 composer require some/dependency:1.3.4
 composer require --dev phpspec/phpspec
 
+composer global require puli/cli:^1.0
 composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer
 composer global require phpmd/phpmd
@@ -38,4 +39,6 @@ du -h -d 2 vendor
 # Only updates the lock file hash to suppress warning about the lock file being out of date
 composer update --lock
 
-#composertip change your composer.json to ^5.5 or similar unless you actually work with 7.0. If so: ^5.5 || ^7.0
+# composertip change your composer.json to ^5.5 or similar unless you actually work with 7.0. If so: ^5.5 || ^7.0
+
+# composer forwards env vars so you can use, e.g, a Git SSH wrapper : GIT_SSH=/git_wrapper php composer.phar install --dev working with composer on a really slow connexion? `export COMPOSER_PROCESS_TIMEOUT=4000` and `composer install --prefer-dist`
