@@ -27,18 +27,15 @@ alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
 
-command -v php >/dev/null 2>&1 && alias sf='php app/console'
+command -v php >/dev/null 2>&1 && alias sf='php bin/console'
 command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
-command -v php >/dev/null 2>&1 && alias routes='sf router:debug'
-command -v php >/dev/null 2>&1 && alias services='sf container:debug'
+command -v php >/dev/null 2>&1 && alias routes='sf debug:router'
+command -v php >/dev/null 2>&1 && alias services='sf debug:container'
 
 # Disable glob expansion for Puli
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}
 
-alias clog='echo "" > ~/www/debug.log'
-
-alias spec='vendor/bin/phpspec'
-alias unit='vendor/bin/phpunit'
+alias clog='echo "" > ~/workspace/debug.log'
 
 alias phps='php -S localhost:8000'
 # then just phps public/index.php
