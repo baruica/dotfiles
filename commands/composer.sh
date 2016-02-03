@@ -10,10 +10,12 @@ composer dump-autoload --optimize
 composer require some/dependency:1.3.4
 composer require --dev phpspec/phpspec
 
-composer global require puli/cli:^1.0
+composer global require vinkla/climb
+composer global require hirak/prestissimo
 composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer
 composer global require phpmd/phpmd
+composer global require puli/cli:^1.0
 
 composer global update
 

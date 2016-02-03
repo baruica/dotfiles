@@ -26,6 +26,7 @@ sudo add-apt-repository ppa:ondrej/php-7.0
 sudo apt-get update
 sudo apt-get install -y php7.0 php7.0-cli
 
+curl -LsS https://symfony.com/installer -o /home/nelson/bin/symfony
 
 echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean
 
