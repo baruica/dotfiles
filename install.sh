@@ -24,7 +24,11 @@ sudo gem update --system
 sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:ondrej/php-7.0
 sudo apt-get update
-sudo apt-get install -y php7.0 php7.0-cli
+sudo apt-get install -y php7.0 php7.0-cli php7.0-intl
+
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 curl -LsS https://symfony.com/installer -o /home/nelson/bin/symfony
 
