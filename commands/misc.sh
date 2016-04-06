@@ -57,6 +57,8 @@ curl http://icanhazip.com
 
 # Listing globally installed NPM packages and version
 npm list -g --depth=0
+# Listing outdated globally installed packages
+npm outdated -g --depth=0
 
 
 # list of packages installed on your system

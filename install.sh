@@ -41,6 +41,7 @@ curl -LsS https://symfony.com/installer -o /home/nelson/bin/symfony
 sudo apt-get install nodejs
 sudo apt-get install npm
 sudo ln -s /usr/bin/nodejs /usr/bin/node
+sudo npm install -g gnomon
 
 echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean
 
