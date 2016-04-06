@@ -10,7 +10,9 @@ composer dump-autoload --optimize
 composer require some/dependency:1.3.4
 composer require --dev phpspec/phpspec
 composer require --dev phpunit/phpunit
+composer require --dev phpunit/phpunit:5.2 --ignore-platform-reqs
 
+composer global require bamarni/symfony-console-autocomplete
 composer global require vinkla/climb
 composer global require hirak/prestissimo
 composer global require fabpot/php-cs-fixer
@@ -22,6 +24,7 @@ composer global update
 
 composer global remove squizlabs/php_codesniffer
 
+# list the current versions of all installed dependencies
 composer show -i
 composer show -i <package>
 
