@@ -36,7 +36,7 @@ sudo apt-get install -y php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-pgsql
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php5/cli/php.ini
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php5/apache2/php.ini
 
-curl -LsS https://symfony.com/installer -o /home/nelson/bin/symfony
+sudo curl -LsS https://symfony.com/installer -o /opt/symfony
 
 sudo apt-get install nodejs
 sudo apt-get install npm

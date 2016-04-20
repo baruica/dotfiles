@@ -73,7 +73,7 @@
 [pull]
     rebase = preserve
 [push]
-    default = current
+    default = simple
 [rebase]
     autostash = true
 [status]

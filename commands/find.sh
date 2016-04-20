@@ -16,3 +16,6 @@ find src -type f -name "*.php" -exec grep --with-filename -c "^class " {} \; | g
 
 # find empty files or directories
 find . -type f -empty
+
+# find dotfiles
+find ~ -maxdepth 1 \( -type f -o -type l \) -name '.*'

@@ -35,6 +35,10 @@ phpunit -c build --filter InvoiceLineTest --testdox
 # ETS\BillingBundle\Tests\Entity\InvoiceLine
 #  [x] Add candidates
 
+symfony new my_project_name
+symfony new my_project_name 2.8
+symfony new my_project_name lts
+
 curl --ipv6 ipinfo.io
 # {
 #   "ip": "212.234.170.130",
@@ -63,6 +67,3 @@ npm outdated -g --depth=0
 
 # list of packages installed on your system
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u) | awk {'print  $0'}
-
-# find dotfiles
-find ~ -maxdepth 1 \( -type f -o -type l \) -name '.*'
