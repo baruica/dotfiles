@@ -1,7 +1,7 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
 [ -r ~/git-radar ] && export PATH=$PATH:~/git-radar
 
-for file in ~/dotfiles/.{aliases,bash_profile_local,bash_prompt,exports,functions}; do
+for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && . "$file"
 done
 
@@ -22,8 +22,8 @@ complete -cf sudo       # Autocomple with sudo
 
 eval "$(symfony-autocomplete --aliases=sf)"
 
-command -v composer >/dev/null 2>&1 && composer self-update && composer global update
-
 [ -r ~/.bash_profile_local ] && . ~/.bash_profile_local
 
 [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
+
+command -v composer >/dev/null 2>&1 && composer self-update && composer global update

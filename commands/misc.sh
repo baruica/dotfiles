@@ -67,3 +67,7 @@ npm outdated -g --depth=0
 
 # list of packages installed on your system
 comm -23 <(apt-mark showmanual | sort -u) <(gzip -dc /var/log/installer/initial-status.gz | sed -n 's/^Package: //p' | sort -u) | awk {'print  $0'}
+
+# give access to someone else to your local web server through yor IP address
+sudo ufw allow 8000/tcp
+bin/console server:run 0.0.0.0:8000

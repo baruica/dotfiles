@@ -1,12 +1,12 @@
-command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
+command -v colordiff >/dev/null 2>&1 && alias diff='colordiff -u'
 
 command -v htop >/dev/null 2>&1 && alias top=htop
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-  colorflag="--color"
+    colorflag="--color"
 else # OS X `ls`
-  colorflag="-G"
+    colorflag="-G"
 fi
 
 alias ls='command ls ${colorflag}'
@@ -27,7 +27,7 @@ alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
 
-command -v php >/dev/null 2>&1 && alias sf='php bin/console'
+command -v php >/dev/null 2>&1 && alias sf='bin/console'
 command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
 command -v php >/dev/null 2>&1 && alias routes='sf debug:router'
 command -v php >/dev/null 2>&1 && alias services='sf debug:container'
@@ -45,4 +45,4 @@ alias hogs='for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | hea
 
 alias aptclean='echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean'
 
-alias meteo="curl -4 http://wttr.in/Paris"
+alias meteo='curl -4 http://wttr.in/Paris'
