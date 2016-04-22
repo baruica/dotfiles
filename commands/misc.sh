@@ -23,6 +23,7 @@ uname -r
 cat /sys/block/sda/queue/rotational
 
 # locate php.ini file
+php --ini
 php -i | grep php.ini
 
 # list modules

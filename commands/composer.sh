@@ -1,4 +1,4 @@
-sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/opt --filename=composer && ln -s /opt/composer /usr/bin/composer
+sudo curl -LsS https://getcomposer.org/installer -o ~/bin/composer && sudo ln -s ~/bin/composer /usr/local/bin/composer
 
 composer self-update
 

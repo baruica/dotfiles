@@ -28,15 +28,14 @@ sudo apt-get -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo add-apt-repository ppa:ondrej/php-7.0
 sudo apt-get update
-sudo apt-get install php5.6 php5.6-cli php5.6-curl php5.6-intl php5.6-pgsql
-sudo apt-get install php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-pgsql
-sudo apt-get install -y php5 php5-cli php5-curl php5-intl php5-pgsql
-sudo apt-get install -y php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-pgsql
+sudo apt-get install -y php php-cli php-curl php-intl php-pgsql php-xml
+sudo apt-get install -y php5 php5-cli php5-curl php5-intl php5-pgsql php5-xml
+sudo apt-get install -y php5.6 php5.6-cli php5.6-curl php5.6-intl php5.6-pgsql php5.6-xml
+sudo apt-get install -y php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-pgsql php7.0-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php5/cli/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php5/apache2/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/5.6/cli/php.ini
 
-sudo curl -LsS https://symfony.com/installer -o /opt/symfony
+sudo curl -LsS https://symfony.com/installer -o ~/bin/symfony && sudo ln -s ~/bin/symfony /usr/local/bin/symfony
 
 sudo apt-get install nodejs
 sudo apt-get install npm
@@ -50,7 +49,6 @@ git clone https://github.com/michaeldfallen/git-radar ~/git-radar
 git clone https://github.com/baruica/dotfiles ~/dotfiles
 ln -s ./dotfiles/.bash_profile
 ln -s ./dotfiles/.bashrc
-./install_client.sh
 
 . ~/.bash_profile
 
