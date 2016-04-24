@@ -30,6 +30,8 @@ composer show -i <package>
 # show a tree of all installed packages and their dependencies
 composer show -t -i
 
+composer outdated
+
 # composer ~ operator changes according to number of dots:
 # ~1.3.1 will not move to 1.4
 # however
