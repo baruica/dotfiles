@@ -12,7 +12,6 @@ composer require --dev phpunit/phpunit
 composer require --dev phpunit/phpunit:5.2 --ignore-platform-reqs
 
 composer global require bamarni/symfony-console-autocomplete
-composer global require vinkla/climb
 composer global require hirak/prestissimo
 composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer

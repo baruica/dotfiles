@@ -23,6 +23,7 @@ sudo gem update --system
 sudo apt-get install -y tig
 
 sudo apt-get install python-software-properties
+sudo apt-add-repository ppa:ansible/ansible
 
 sudo apt-get -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
