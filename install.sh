@@ -22,6 +22,12 @@ sudo gem update --system
 
 sudo apt-get install -y tig
 
+gksu nautilus /usr/share/fonts/truetype
+# copy font files into a dir
+
+# reload fonts
+sudo fc-cache -f -v
+
 sudo apt-get install python-software-properties
 sudo apt-add-repository ppa:ansible/ansible
 
