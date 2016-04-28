@@ -2,6 +2,7 @@
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ln -sf "${DIR}/dotfiles/git/.gitconfig" ~/.gitconfig
+git config --global user.name "Nelson da Costa"
+git config --global include.path dotfiles/git/.gitconfig
 
 ln -sf "${DIR}/dotfiles/.bash_profile" ~/.bash_profile

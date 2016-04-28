@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 snap find
-snap find name
+snap find package-name
 snap find | grep search
 
 sudo snap install package-name
 
-# update
+# update one package
 sudo snap refresh package-name
 
 # list installed packages

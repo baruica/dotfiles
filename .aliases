@@ -1,6 +1,6 @@
-command -v colordiff >/dev/null 2>&1 && alias diff='colordiff -u'
+hash colordiff 2>/dev/null && alias diff='colordiff -u'
 
-command -v htop >/dev/null 2>&1 && alias top=htop
+hash htop 2>/dev/null && alias top=htop
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -27,10 +27,10 @@ alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
 
-command -v php >/dev/null 2>&1 && alias sf='bin/console'
-command -v php >/dev/null 2>&1 && alias cache='sf cache:clear'
-command -v php >/dev/null 2>&1 && alias routes='sf debug:router'
-command -v php >/dev/null 2>&1 && alias services='sf debug:container'
+hash php 2>/dev/null && alias sf='bin/console'
+hash php 2>/dev/null && alias cache='sf cache:clear'
+hash php 2>/dev/null && alias routes='sf debug:router'
+hash php 2>/dev/null && alias services='sf debug:container'
 
 # Disable glob expansion for Puli
 alias puli='set -f;puli';puli(){ command puli "$@";set +f;}

@@ -3,9 +3,9 @@ trap 'echo -ne "\e[0m"' DEBUG
 
 Color_Off="\033[0m"
 
-if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
+if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color 2>/dev/null; then
     export TERM=gnome-256color
-elif infocmp xterm-256color >/dev/null 2>&1; then
+elif infocmp xterm-256color 2>/dev/null; then
     export TERM=xterm-256color
 fi
 
@@ -86,9 +86,11 @@ function __prompt_command()
     [ -n "$SSH_CLIENT" ] && PS1+="\[$ORANGE\]("${$SSH_CLIENT%% *}")\[$Color_Off\]"
 
     PS1+="\[$BPurple\]\w\[$Color_Off\]"
-    #PS1+="\$(git_info)\[$WHITE\]\[$RESET\]\n"
-    #PS1+="\$(git-radar --bash --fetch)"
-    PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n"
+
+    if hash git-radar 2>/dev/null
+    then PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n" #PS1+="\$(git-radar --bash --fetch)"
+    else PS1+="\$(git_info)\[$WHITE\]\[$RESET\]\n"
+    fi
 
     if [ $EXIT -eq 0 ]
     then PS1+="\[$WHITE\]"
