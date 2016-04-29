@@ -1,5 +1,3 @@
-sudo curl -LsS https://getcomposer.org/installer -o ~/bin/composer && sudo ln -s ~/bin/composer /usr/local/bin/composer
-
 composer self-update
 
 composer diag
@@ -11,9 +9,7 @@ composer require --dev phpspec/phpspec
 composer require --dev phpunit/phpunit
 composer require --dev phpunit/phpunit:5.2 --ignore-platform-reqs
 
-composer global require bamarni/symfony-console-autocomplete
 composer global require hirak/prestissimo
-composer global require fabpot/php-cs-fixer
 composer global require squizlabs/php_codesniffer
 composer global require phpmd/phpmd
 composer global require puli/cli:^1.0
