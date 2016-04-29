@@ -1,5 +1,4 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
-[ -r ~/git-radar ] && export PATH=$PATH:~/git-radar
 
 for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && . "$file"

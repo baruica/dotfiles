@@ -52,6 +52,7 @@ sudo npm install -g gnomon
 echo "Cleaning Up" && sudo apt-get -f install && sudo apt-get autoremove && sudo apt-get -y autoclean && sudo apt-get -y clean
 
 git clone https://github.com/michaeldfallen/git-radar ~/git-radar
+ln -s ~/git-radar/git-radar ~/bin/git-radar
 
 git clone https://github.com/baruica/dotfiles ~/dotfiles
 ln -s ./dotfiles/.bash_profile
