@@ -7,8 +7,7 @@ backup_dir=~/dotfiles_backup
 
 mkdir -p ${backup_dir}/.config
 
-to_backup_list=".bash_profile_local
-Documents
+to_backup_list="Documents
 .gitconfig
 .vim
 .vimrc
