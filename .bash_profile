@@ -25,3 +25,4 @@ hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --alia
 
 hash composer >/dev/null 2>&1 && composer self-update && composer global update
 hash symfony >/dev/null 2>&1 && symfony self-update
+hash melody >/dev/null 2>&1 && melody self-update
