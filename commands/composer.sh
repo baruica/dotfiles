@@ -5,8 +5,7 @@ composer diag
 composer dump-autoload --optimize
 
 composer require some/dependency:1.3.4
-composer require --dev phpspec/phpspec
-composer require --dev phpunit/phpunit
+composer require --dev phpspec/phpspec phpunit/phpunit
 composer require --dev phpunit/phpunit:5.2 --ignore-platform-reqs
 
 composer global require hirak/prestissimo
