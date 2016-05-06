@@ -3,7 +3,8 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 git clone https://github.com/baruica/dotfiles ~/dotfiles
-ln -s ./dotfiles/.bashrc
+ln -s ./dotfiles/.bashrc ~/.bashrc
+cp ~/dotfiles/.bash_profile_dist ~/.bash_profile
 
 git config --global user.name "Nelson da Costa"
 git config --global user.email "ndc@octo.com"
