@@ -21,7 +21,7 @@ complete -cf sudo       # Autocomple with sudo
 
 hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --aliases=sf)"
 
-[ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
+[ -d ~/.ssh ] && [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
 
 hash composer >/dev/null 2>&1 && composer self-update && composer global update
 hash symfony >/dev/null 2>&1 && symfony self-update
