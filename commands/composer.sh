@@ -6,8 +6,9 @@ composer dump-autoload --optimize
 
 composer require some/dependency:1.3.4
 composer require --dev phpspec/phpspec phpunit/phpunit
-composer require --dev phpunit/phpunit:5.2 --ignore-platform-reqs
+composer require --dev phpunit/phpunit:5.3 --ignore-platform-reqs
 
+composer global require bartlett/php-compatinfo     # then bin/phpcompatinfo analyser:run src
 composer global require hirak/prestissimo
 composer global require squizlabs/php_codesniffer
 composer global require phpmd/phpmd
