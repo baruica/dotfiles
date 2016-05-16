@@ -2,6 +2,8 @@
 
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+sudo apt-get install fonts-hack-ttf
+
 git clone https://github.com/baruica/dotfiles ~/dotfiles
 ln -s ./dotfiles/.bashrc ~/.bashrc
 cp ~/dotfiles/.bash_profile_dist ~/.bash_profile
