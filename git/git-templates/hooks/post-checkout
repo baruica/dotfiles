@@ -1,14 +1,13 @@
 #!/bin/bash
 
-# Put this file at: .git/hooks/post-checkout
-# and make it executable
+# Put this file at: .git/hooks/post-checkout and make it executable
 # You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
 file="composer.lock"
 
 if [[ $(git diff HEAD@{1}..HEAD@{0} -- "${file}" | wc -l) -gt 0 ]]; then
     echo
-    echo "NB : The file '${file}' changed, executing 'composer install' command"
+    echo "NB : '${file}' changed, executing 'composer install'"
     echo
     composer install
     echo
