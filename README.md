@@ -5,4 +5,4 @@
 * ln -s ./dotfiles/.bash_profile
 * ln -s ./dotfiles/.bashrc
 * ln -s ./dotfiles/git/.gitconfig
-* . ~/.bash_profile
+* source ~/.bash_profile

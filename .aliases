@@ -14,6 +14,8 @@ alias ll='ls -laF ${colorflag}'
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias grep='grep --color=auto'
 
+alias refresh='source ~/.bashrc'
+
 # http://www.nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html
 # ps | ctrlc
 alias ctrlc='xclip -selection c'

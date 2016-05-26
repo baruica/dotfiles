@@ -1,7 +1,7 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
 
 for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
-    [ -r "$file" ] && . "$file"
+    [ -r "$file" ] && source "$file"
 done
 
 shopt -s cdspell        # corrects typos (eg: cd /ect becomes cd /etc)
@@ -12,12 +12,11 @@ shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 # If possible, add tab completion for many more commands
-# curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-if [ -r /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion 2> /dev/null
-fi
+[ -r /etc/bash_completion ] && source /etc/bash_completion 2> /dev/null
 
 complete -cf sudo       # Autocomple with sudo
+
+bind "set show-all-if-ambiguous on"
 
 hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --aliases=sf)"
 

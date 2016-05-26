@@ -1,5 +1,5 @@
 for file in ~/.{aliases,exports,functions}; do
-    [ -r "${file}" ] && . "${file}"
+    [ -r "${file}" ] && source "${file}"
 done
 
-[ -d ~/dotfiles ] && . ~/dotfiles/.bash_profile
+[ -d ~/dotfiles ] && source ~/dotfiles/.bash_profile
