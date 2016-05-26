@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Put this file at: .git/hooks/post-checkout and make it executable
-# You can install it system wide too, see http://stackoverflow.com/a/2293578/685587
 
 file="composer.lock"
 
