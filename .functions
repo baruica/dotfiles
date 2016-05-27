@@ -20,8 +20,8 @@ explain()
 
 ld()
 {
-    app=${1:-emo}
-    dump_prefix=${2:-ets_mo}
+    app=${1:-app}
+    dump_prefix=${2:-app}
 
     db="dev_${app}"
 
@@ -30,4 +30,4 @@ ld()
         | mysql -uroot -pdevpass1 ${db}
 }
 
-md() { /bin/mkdir -p "$1" && cd "$1"; }
+md() { mkdir -p "$1" && cd "$1"; }

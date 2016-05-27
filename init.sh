@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DIR=$(dirname $(readlink -m $0))
 
 sudo apt-get install fonts-hack-ttf
 
-git clone https://github.com/baruica/dotfiles ~/dotfiles
-ln -s ./dotfiles/.bashrc ~/.bashrc
-cp ~/dotfiles/.bash_profile_dist ~/.bash_profile
+cp ${DIR}/.bash_profile_dist ~/.bash_profile
+ln -s ${DIR}/.bashrc ~/.bashrc
+source ~/.bashrc
 
 git config --global user.name "Nelson da Costa"
 git config --global user.email "ndc@octo.com"
-git config --global include.path dotfiles/git/.gitconfig
+git config --global include.path ${DIR}/git/.gitconfig
 
 git clone https://github.com/michaeldfallen/git-radar ~/git-radar
 ln -s ~/git-radar/git-radar ~/bin/git-radar
@@ -20,4 +20,4 @@ sudo curl -LsS https://symfony.com/installer -o ~/bin/symfony && sudo ln -s ~/bi
 sudo sh -c "curl http://get.sensiolabs.org/melody.phar -o ~/bin/melody && chmod u+x ~/bin/melody" && sudo ln -s ~/bin/melody /usr/local/bin/melody
 
 composer global require bamarni/symfony-console-autocomplete
-composer global require fabpot/php-cs-fixer
+composer global require friendsofphp/php-cs-fixer

@@ -51,7 +51,7 @@
 [core]
     autocrlf     = input
     editor       = vi
-    excludesfile = ~/dotfiles/git/.gitignore
+    excludesfile = .gitignore
     pager        = less -FRSX
     whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [credential]
@@ -64,7 +64,7 @@
 [help]
     autocorrect = 1
 [init]
-    templatedir = ~/dotfiles/git/git-templates
+    templatedir = git-templates
 [log]
     abbrevCommit = true
 [pull]

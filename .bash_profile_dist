@@ -2,4 +2,4 @@ for file in ~/.{aliases,exports,functions}; do
     [ -r "${file}" ] && source "${file}"
 done
 
-[ -d ~/dotfiles ] && source ~/dotfiles/.bash_profile
+[ -d ~/workspace/baruica/dotfiles ] && source ~/workspace/baruica/dotfiles/.bash_profile

@@ -1,6 +1,6 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
 
-for file in ~/dotfiles/.{aliases,bash_prompt,exports,functions}; do
+for file in ~/workspace/baruica/dotfiles/.{aliases,bash_prompt,exports,functions}; do
     [ -r "$file" ] && source "$file"
 done
 
@@ -20,7 +20,7 @@ bind "set show-all-if-ambiguous on"
 
 hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --aliases=sf)"
 
-[ -d ~/.ssh ] && [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
+[ -d ~/.ssh ] && [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/workspace/baruica/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
 
 hash composer >/dev/null 2>&1 && composer self-update && composer global update
 hash symfony >/dev/null 2>&1 && symfony self-update

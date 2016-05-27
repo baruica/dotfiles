@@ -7,8 +7,6 @@ export HISTIGNORE="* --help:* -h:cd:cd -:date:exit:git diff:git st:ls:ls *:pwd:h
 export HISTSIZE=32768                   # Larger bash history (allow 32³ entries; default is 500)
 export HISTTIMEFORMAT='%F %T '          # timestamps for bash history
 
-#export GREP_OPTIONS='--color=auto'      # make grep highlight results using color
-
 # colorful man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
