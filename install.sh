@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 
-sudo apt-add-repository ppa:ansible/ansible
+DIR=$(dirname $(readlink -m $0))
 
-# Java
-sudo apt-get purge openjdk*
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install -y build-essential python-software-properties software-properties-common ubuntu-restricted-extras
-sudo apt-get install -y oracle-java8-installer oracle-java8-set-default
+sudo apt-get install fonts-hack-ttf
 
-sudo apt-get install -y bash-completion curl git git-core htop pv tig tree vim xclip
+cp ${DIR}/.bash_profile_dist ~/.bash_profile
+ln -s ${DIR}/.bashrc ~/.bashrc
+source ~/.bashrc
 
-# git-up
-sudo apt-get install -y ruby ruby-dev rubygems-integration
-sudo gem install git-up
+git config --global user.name "Nelson da Costa"
+git config --global user.email "ndc@octo.com"
+git config --global include.path ${DIR}/git/.gitconfig
 
-sudo gem install rubygems-update
+git clone https://github.com/michaeldfallen/git-radar ~/git-radar
+ln -s ~/git-radar/git-radar ~/bin/git-radar
 
-# fonts
-gksu nautilus /usr/share/fonts/truetype # copy font files into a dir
-sudo fc-cache -f -v                     # reload fonts
+sudo curl -LsS https://getcomposer.org/installer -o ~/bin/composer && sudo ln -s ~/bin/composer /usr/local/bin/composer
+sudo curl -LsS https://symfony.com/installer -o ~/bin/symfony && sudo ln -s ~/bin/symfony /usr/local/bin/symfony
+sudo sh -c "curl http://get.sensiolabs.org/melody.phar -o ~/bin/melody && chmod u+x ~/bin/melody" && sudo ln -s ~/bin/melody /usr/local/bin/melody
+
+composer global require bamarni/symfony-console-autocomplete
+composer global require friendsofphp/php-cs-fixer

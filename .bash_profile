@@ -16,8 +16,6 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 complete -cf sudo       # Autocomple with sudo
 
-bind "set show-all-if-ambiguous on"
-
 hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --aliases=sf)"
 
 [ -d ~/.ssh ] && [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/workspace/baruica/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
