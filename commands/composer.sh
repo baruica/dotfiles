@@ -11,6 +11,7 @@ composer require --dev phpunit/phpunit:5.3 --ignore-platform-reqs
 composer global require bartlett/php-compatinfo     # then bin/phpcompatinfo analyser:run src
 composer global require hirak/prestissimo
 composer global require squizlabs/php_codesniffer
+composer global require sebastian/phpcpd
 composer global require phpmd/phpmd
 composer global require puli/cli:^1.0
 
