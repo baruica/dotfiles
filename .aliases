@@ -15,6 +15,7 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias grep='grep --color=auto'
 
 alias refresh='source ~/.bashrc'
+alias update='~/workspace/baruica/dotfiles/update.sh'
 
 # http://www.nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html
 # ps | ctrlc
