@@ -3,27 +3,17 @@
 [alias]
     ci  = commit
     co  = checkout
-    cob = checkout -b    # Checkout a new not yet existing branch
     dc  = diff --cached  # Display the staged changes
-    df  = diff
     st  = status
-    stp = status --porcelain
 
     lg   = log --oneline --all --graph --decorate --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
     changes = diff --name-status
-    wdiff   = diff --word-diff
 
     # Remove all merged branches
     bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-
-    # Cancel
-    undo    = reset HEAD^ --soft
-    unstage = reset HEAD --
-    # The -a adds any modifications and deletions of existing files to the commit but ignores brand new files
-    amend   = commit -a --amend
 
     whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
