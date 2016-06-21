@@ -36,6 +36,9 @@ phpunit -c build --filter InvoiceLineTest --testdox
 # ETS\BillingBundle\Tests\Entity\InvoiceLine
 #  [x] Add candidates
 
+# run behat in parallel
+grep -nHR "Scenario:" features/ | sort -t: -k1,1 -k2,2n | cut -d ":" -f1,2 | parallel -P 200% --gnu --halt-on-error=0 --keep-order "php bin/behat {}"
+
 symfony new my_project_name
 symfony new my_project_name 2.8
 symfony new my_project_name lts
