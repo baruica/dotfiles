@@ -17,7 +17,7 @@ composer global require puli/cli:^1.0
 
 composer global update
 
-composer global remove squizlabs/php_codesniffer
+composer global remove hirak/prestissimo
 
 # list the current versions of all installed dependencies
 composer show -i

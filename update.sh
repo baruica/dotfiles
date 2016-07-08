@@ -11,7 +11,8 @@ hash composer >/dev/null 2>&1 && composer self-update && composer global update
 hash symfony >/dev/null 2>&1 && symfony self-update
 hash melody >/dev/null 2>&1 && melody self-update
 
-readonly git_repos="git-radar
+readonly git_repos=".git_template
+git-radar
 git-standup
 workspace/baruica/document-storage
 workspace/baruica/document-storage-aws-s3

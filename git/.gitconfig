@@ -54,7 +54,7 @@
 [help]
     autocorrect = 1
 [init]
-    templatedir = ~/workspace/baruica/dotfiles/git/git-templates
+    templatedir = ~/.git_template/template
 [log]
     abbrevCommit = true
 [pull]
