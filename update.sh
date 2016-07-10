@@ -16,6 +16,7 @@ git-radar
 git-standup
 workspace/baruica/document-storage
 workspace/baruica/document-storage-aws-s3
+workspace/baruica/dotfiles
 workspace/baruica/xml
 workspace/octo/octoboard"
 
