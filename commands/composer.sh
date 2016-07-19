@@ -21,6 +21,8 @@ composer global update
 
 composer global remove hirak/prestissimo
 
+composer install --no-suggest
+
 # list the current versions of all installed dependencies
 composer show -i
 composer show -i <package>
