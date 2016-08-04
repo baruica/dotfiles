@@ -33,6 +33,9 @@ composer show -t -i
 
 composer outdated
 
+# find out why a package is installed
+composer why packagename
+
 # composer ~ operator changes according to number of dots:
 # ~1.3.1 will not move to 1.4
 # however
