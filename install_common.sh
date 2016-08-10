@@ -31,6 +31,7 @@ sudo apt-get install -y php5.6 php5.6-cli php5.6-curl php5.6-intl php5.6-mbstrin
 sudo apt-get install -y php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-mbstring php7.0-pgsql php7.0-xml
 
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/5.6/cli/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.0/cli/php.ini
 
 sudo apt-get install -y apache2
 sudo apt-get install -y libapache2-mod-php5
