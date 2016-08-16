@@ -30,4 +30,30 @@ ld()
         | mysql -uroot -pdevpass1 ${db}
 }
 
-md() { mkdir -p "$1" && cd "$1"; }
+loopdir()
+{
+    command=$*
+    for d in */
+    do
+        cd ${d}
+        ${command}
+    done
+}
+
+# loop over directory based on a glob pattern loopdirp 'a*' rm deploy.yml
+loopdirp()
+{
+    pattern=$1
+    shift 1
+    command=$*
+    for d in $pattern/
+    do
+        cd $d
+        ${command}
+    done
+}
+
+md()
+{
+    mkdir -p "$1" && cd "$1";
+}
