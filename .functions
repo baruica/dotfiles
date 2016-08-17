@@ -33,11 +33,7 @@ ld()
 loopdir()
 {
     command=$*
-    for d in */
-    do
-        cd ${d}
-        ${command}
-    done
+    for d in */ ; do (cd $d; $command); done
 }
 
 # loop over directory based on a glob pattern loopdirp 'a*' rm deploy.yml
@@ -46,11 +42,7 @@ loopdirp()
     pattern=$1
     shift 1
     command=$*
-    for d in $pattern/
-    do
-        cd $d
-        ${command}
-    done
+    for d in $pattern/ ; do (cd $d; $command); done
 }
 
 md()
