@@ -40,6 +40,9 @@ git shortlog --numbered --summary HEAD
 #   308  qzhang
 #   212  Nelson da Costa
 
+# show sorted list by number of commits for each author in all branches
+git shortlog -s -n --all
+
 git grep -i todo | wc -l
 # 31
 
