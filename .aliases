@@ -2,14 +2,7 @@ hash colordiff >/dev/null 2>&1 && alias diff='colordiff -u'
 
 hash htop >/dev/null 2>&1 && alias top=htop
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
-else # OS X `ls`
-    colorflag="-G"
-fi
-
-alias ls='command ls ${colorflag}'
+alias ls='ls –color=auto'
 alias ll='ls -laF ${colorflag}'
 alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 alias grep='grep --color=auto'
