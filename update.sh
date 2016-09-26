@@ -13,18 +13,17 @@ hash melody >/dev/null 2>&1 && melody self-update
 
 readonly git_repos=".git_template
 git-radar
-git-standup
 workspace/baruica/document-storage
 workspace/baruica/document-storage-aws-s3
 workspace/baruica/dotfiles
 workspace/baruica/xml
 workspace/octo/octoboard"
 
-for git_repo in ${git_repos}; do
-    if [ -d "${git_repo}" ]; then
+for repo in ${git_repos}; do
+    if [ -d ~/${repo} ]; then
         echo
-        echo ">>> ${git_repo}"
-        cd ~/${git_repo}
+        echo ">>> ${repo}"
+        cd ~/${repo}
         git up
         [ -f composer.json ] && composer update
     fi
