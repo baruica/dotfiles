@@ -41,3 +41,9 @@ Thumbs.db
 .idea
 *.sublime-project
 *.sublime-workspace
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
