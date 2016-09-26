@@ -31,6 +31,12 @@ git push remotename --delete :mybranch
 # La première fois que vous poussez une branche que vous voulez tracker ensuite, pensez à caler à la volée le tracking
 git push -u origin stats
 
+# instead of
+git push origin current-branch-5544
+# just use
+git push origin head
+# git obtains the current branch from head
+
 # who worked on the project
 git shortlog --numbered --summary HEAD
 #  1834  Charles-Eric Gorron
