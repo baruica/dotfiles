@@ -2,6 +2,8 @@
 
 sudo apt-add-repository ppa:ansible/ansible
 
+sudo apt-get install keychain
+
 # Java
 sudo apt-get purge openjdk*
 sudo add-apt-repository ppa:webupd8team/java
