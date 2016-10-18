@@ -10,6 +10,8 @@
 
     changes = diff --name-status
 
+    unstash = reset HEAD~1
+
     # Remove all merged branches
     bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 

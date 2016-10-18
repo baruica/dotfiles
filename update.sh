@@ -3,6 +3,8 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 
+aptclean
+
 hash update_rubygems >/dev/null 2>&1 && sudo update_rubygems
 hash gem >/dev/null 2>&1 && sudo gem update --system
 hash npm >/dev/null 2>&1 && sudo npm update -g
