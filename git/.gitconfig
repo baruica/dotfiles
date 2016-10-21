@@ -57,8 +57,6 @@
     user = baruica
 [help]
     autocorrect = 1
-[init]
-    templatedir = ~/.git_template/template
 [log]
     abbrevCommit = true
 [pull]

@@ -23,5 +23,3 @@ sudo sh -c "curl http://get.sensiolabs.org/melody.phar -o ~/bin/melody && chmod 
 
 composer global require bamarni/symfony-console-autocomplete
 composer global require fabpot/php-cs-fixer
-
-git clone https://github.com/greg0ire/git_template ~/.git_template
