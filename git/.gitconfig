@@ -70,3 +70,5 @@
     showUntrackedFiles = all
 [tag]
     sort = version:refname
+[url "git@github.com:"]
+    insteadOf = gh  # git clone gh:baruica/dotfiles
