@@ -2,6 +2,7 @@
 
 sudo apt-get update
 sudo apt-get upgrade -y
+sudo snap refresh
 
 aptclean
 
@@ -18,6 +19,7 @@ workspace/baruica/document-storage
 workspace/baruica/document-storage-aws-s3
 workspace/baruica/dotfiles
 workspace/baruica/xml
+workspace/katas/kata-starter
 workspace/octo/octoboard"
 
 for repo in ${git_repos}; do

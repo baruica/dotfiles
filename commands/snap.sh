@@ -6,6 +6,7 @@ snap find | grep search
 
 sudo snap install package-name
 
+sudo snap refresh
 # update one package
 sudo snap refresh package-name
 
