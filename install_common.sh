@@ -1,16 +1,24 @@
 #!/usr/bin/env bash
 
+sudo apt-get install -y build-essential software-properties-common ubuntu-restricted-extras
+
 sudo apt-add-repository ppa:ansible/ansible
 
 sudo apt-get install keychain
 
 # Java
 sudo apt-get purge openjdk*
+sudo apt-get update
+sudo apt-get install python-software-properties
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install -y build-essential python-software-properties software-properties-common ubuntu-restricted-extras
-sudo apt-get install -y oracle-java8-installer oracle-java8-set-default
+sudo apt-get install oracle-java8-installer
+
 sudo apt-get install maven
+
+sudo add-apt-repository ppa:cwchien/gradle
+sudo apt-get update
+sudo apt-get install gradle
 
 sudo apt-get install -y bash-completion curl git git-core htop pv tig tree vim xclip
 
