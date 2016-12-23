@@ -6,9 +6,6 @@ sudo apt-add-repository ppa:ansible/ansible
 
 sudo apt-get install keychain
 
-sudo add-apt-repository ppa:gerardpuig/ppa
-sudo apt-get install ubuntu-cleaner
-
 # Java
 sudo apt-get purge openjdk*
 sudo apt-get update

@@ -10,7 +10,7 @@ composer require --dev phpunit/phpunit:5.3 --ignore-platform-reqs
 
 composer require tm/tooly-composer-script
 
-composer global require fabpot/php-cs-fixer
+composer global require friendsofphp/php-cs-fixer
 composer global require bartlett/php-compatinfo     # then bin/phpcompatinfo analyser:run src
 composer global require hirak/prestissimo
 composer global require squizlabs/php_codesniffer

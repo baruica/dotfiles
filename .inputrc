@@ -1,25 +1,22 @@
-# Make Tab autocomplete regardless of filename case
-set completion-ignore-case on
+## SMARTER TAB-COMPLETION (Readline bindings) ##
 
-# List all matches in case multiple possible completions are possible
-set show-all-if-ambiguous on
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Treat hyphens and underscores as equivalent
+bind "set completion-map-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
 
 # Immediately add a trailing slash when autocompleting symlinks to directories
-set mark-symlinked-directories on
-
-# Use the text that has already been typed as the prefix for searching through
-# commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
-"\e[A": history-search-backward
+bind "set mark-symlinked-directories on"
 
 # Do not autocomplete hidden files unless the pattern explicitly begins with a dot
 set match-hidden-files off
 
 # Show all autocomplete results at once
 set page-completions off
-
-# Immediately show all possible completions
-set show-all-if-ambiguous on
 
 # If there are more than 200 possible completions for a word, ask to show them all
 set completion-query-items 200
@@ -41,3 +38,10 @@ set convert-meta off
 
 # Use Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
+
+# Enable incremental history search with up/down arrows (also Readline goodness)
+# Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\e[C": forward-char'
+bind '"\e[D": backward-char'

@@ -4,10 +4,10 @@ for file in ~/workspace/baruica/dotfiles/.{aliases,bash_prompt,exports,functions
     [ -r "$file" ] && source "$file"
 done
 
-shopt -s cdspell        # corrects typos (eg: cd /ect becomes cd /etc)
-shopt -s checkwinsize   # resize ouput to fit window
-shopt -s cmdhist        # combine multiline commands in history
-shopt -s histappend     # merge session histories
+shopt -s cdspell        # Correct spelling errors in arguments supplied to cd
+shopt -s checkwinsize   # Update window size after every command
+shopt -s cmdhist        # Save multi-line commands as one command
+shopt -s histappend     # Append to the history file, don't overwrite it
 shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 

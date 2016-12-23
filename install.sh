@@ -22,4 +22,4 @@ sudo curl -LsS https://symfony.com/installer -o ~/bin/symfony && sudo ln -s ~/bi
 sudo sh -c "curl http://get.sensiolabs.org/melody.phar -o ~/bin/melody && chmod u+x ~/bin/melody" && sudo ln -s ~/bin/melody /usr/local/bin/melody
 
 composer global require bamarni/symfony-console-autocomplete
-composer global require fabpot/php-cs-fixer
+composer global require friendsofphp/php-cs-fixer

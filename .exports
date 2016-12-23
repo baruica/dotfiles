@@ -2,10 +2,18 @@ export SUBLIME="subl -n -w"
 export EDITOR=$(which vim)
 export VISUAL=$EDITOR
 
-export HISTCONTROL=ignoreboth:erasedups
-export HISTIGNORE="* --help:* -h:cd:cd -:date:exit:git diff:git st:ls:ls *:pwd:history"
-export HISTSIZE=32768                   # Larger bash history (allow 32³ entries; default is 500)
-export HISTTIMEFORMAT='%F %T '          # timestamps for bash history
+# Avoid duplicate entries
+export HISTCONTROL="erasedups:ignoreboth"
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+export HISTSIZE=500000
+
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+export HISTTIMEFORMAT='%F %T '
 
 # colorful man pages
 export LESS_TERMCAP_mb=$'\E[01;31m'
