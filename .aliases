@@ -1,6 +1,5 @@
-alias ls='ls --color=auto'
-alias ll='ls -laF ${colorflag}'
-alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -laF'
 alias grep='grep --color=auto'
 
 alias refresh='source ~/.bashrc'
