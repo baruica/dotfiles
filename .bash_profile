@@ -1,6 +1,6 @@
 [ -r ~/.composer/vendor/bin ] && export PATH=$PATH:~/.composer/vendor/bin
 
-for file in ~/workspace/baruica/dotfiles/.{aliases,bash_prompt,exports,functions}; do
+for file in ~/workspace/baruica/dotfiles/.{functions,aliases,bash_prompt,exports}; do
     [ -r "$file" ] && source "$file"
 done
 
@@ -16,15 +16,22 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 complete -cf sudo       # Autocomple with sudo
 
-hash symfony-autocomplete >/dev/null 2>&1 && eval "$(symfony-autocomplete --aliases=sf)"
+cmd_exists symfony-autocomplete && eval "$(symfony-autocomplete --aliases=sf)"
 
-[ -d ~/.ssh ] && [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ] && cat ~/workspace/baruica/dotfiles/ssh_config ~/.ssh/config.* > ~/.ssh/config
+if [ -d ~/.ssh ]; then
+    cat ~/workspace/baruica/dotfiles/ssh_config > ~/.ssh/config
 
-hash composer >/dev/null 2>&1 && composer self-update
+    if [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ]; then
+        for ssh_config_file in $(find ~/.ssh -name "config.*"); do
+            cat "${ssh_config_file}" >> ~/.ssh/config
+        done
+    fi
+fi
+
+exec_if_cmd_exists composer self-update
 
 # SSH + keychain (sudo apt-get install keychain)
-for key in $(find ~/.ssh -name "*.key" -type f)
-do
+for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain $key &> /dev/null
 done
 [ -e ~/.keychain/${HOSTNAME}-sh ] && source ~/.keychain/${HOSTNAME}-sh

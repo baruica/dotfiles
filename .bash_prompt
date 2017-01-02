@@ -87,7 +87,7 @@ function __prompt_command()
 
     PS1+="\[$BPurple\]\w\[$Color_Off\]"
 
-    if hash git-radar >/dev/null 2>&1
+    if cmd_exists git-radar
     then PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n" #PS1+="\$(git-radar --bash --fetch)"
     else PS1+="$(git_info)\[$WHITE\]\[$RESET\]\n"
     fi

@@ -1,3 +1,11 @@
+aptclean()
+{
+    echo "Cleaning Up"
+    sudo apt-get -y clean
+    sudo apt-get -y autoremove --purge
+    sudo apt autoremove
+}
+
 explain()
 {
     if [ "$#" -eq 0 ]; then
@@ -47,5 +55,20 @@ loopdirp()
 
 md()
 {
-    mkdir -p "$1" && cd "$1";
+    mkdir -p "$1" && cd "$1"
+}
+
+cmd_exists()
+{
+    hash "$1" >/dev/null 2>&1
+}
+
+exec_if_cmd_exists()
+{
+    cmd_exists "$1" && "$@"
+}
+
+sudo_exec_if_cmd_exists()
+{
+    cmd_exists "$1" && sudo "$@"
 }

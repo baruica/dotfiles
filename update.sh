@@ -1,18 +1,31 @@
 #!/usr/bin/env bash
 
+cmd_exists()
+{
+    hash "$1" >/dev/null 2>&1
+}
+
+exec_if_cmd_exists()
+{
+    cmd_exists "$1" && "$@"
+}
+
+sudo_exec_if_cmd_exists()
+{
+    cmd_exists "$1" && sudo "$@"
+}
+
+exec_if_cmd_exists composer global update
+exec_if_cmd_exists symfony self-update
+exec_if_cmd_exists melody self-update
+
+sudo_exec_if_cmd_exists update_rubygems
+sudo_exec_if_cmd_exists gem update --system
+sudo_exec_if_cmd_exists npm update -g
+
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo snap refresh
-
-aptclean
-
-hash update_rubygems >/dev/null 2>&1 && sudo update_rubygems
-hash gem >/dev/null 2>&1 && sudo gem update --system
-hash npm >/dev/null 2>&1 && sudo npm update -g
-
-hash composer >/dev/null 2>&1 && composer global update
-hash symfony >/dev/null 2>&1 && symfony self-update
-hash melody >/dev/null 2>&1 && melody self-update
 
 readonly git_repos="git-radar
 workspace/baruica/document-storage
@@ -22,12 +35,14 @@ workspace/baruica/xml
 workspace/katas/kata-starter
 workspace/octo/octoboard"
 
-for repo in ${git_repos}; do
-    if [ -d ~/${repo} ]; then
+for git_repo in ${git_repos}; do
+    if [ -d ~/${git_repo} ]; then
         echo
-        echo ">>> ${repo}"
-        cd ~/${repo}
+        echo ">>> ${git_repo}"
+        cd ~/${git_repo}
         git up
         [ -f composer.json ] && composer update
     fi
 done
+
+exec_if_cmd_exists aptclean
