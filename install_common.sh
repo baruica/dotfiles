@@ -6,6 +6,8 @@ sudo apt-add-repository ppa:ansible/ansible
 
 sudo apt-get install keychain
 
+sudo apt-get install shellcheck
+
 # Java
 sudo apt-get purge openjdk*
 sudo apt-get update

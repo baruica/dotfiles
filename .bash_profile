@@ -32,6 +32,6 @@ exec_if_cmd_exists composer self-update
 
 # SSH + keychain (sudo apt-get install keychain)
 for key in $(find ~/.ssh -name "*.key" -type f); do
-    keychain $key &> /dev/null
+    keychain "$key" &> /dev/null
 done
 [ -e ~/.keychain/${HOSTNAME}-sh ] && source ~/.keychain/${HOSTNAME}-sh

@@ -39,7 +39,7 @@ for git_repo in ${git_repos}; do
     if [ -d ~/${git_repo} ]; then
         echo
         echo ">>> ${git_repo}"
-        cd ~/${git_repo}
+        cd ~/${git_repo} || exit
         git up
         [ -f composer.json ] && composer update
     fi
