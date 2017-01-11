@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+check_is_sudo() {
+    if [ "$EUID" -ne 0 ]; then
+        echo "Please run as root."
+        exit
+    fi
+}
+
 sudo apt-get install -y build-essential software-properties-common ubuntu-restricted-extras
 
 sudo apt-add-repository ppa:ansible/ansible
@@ -63,3 +70,7 @@ sudo apt-get install -y php5-curl
 sudo apt-get install -y php5-intl
 sudo apt-get install -y php5-mcrypt
 sudo php5enmod mcrypt
+
+apt-get autoremove
+apt-get autoclean
+apt-get clean

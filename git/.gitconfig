@@ -8,22 +8,33 @@
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
     changes = diff --name-status
 
     unstash = reset HEAD~1
 
-    # Remove all merged branches
-    bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+    # Remove branches that have already been merged with master
+    # a.k.a. ‘delete merged’
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
     whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
-    rank = shortlog -sn --no-merges     # Contributors ordered by number of merges
+    # List contributors with number of commits
+    contributors = shortlog --summary --numbered --no-merges
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
 [branch]
     autosetuprebase = always
     rebase = true
 [color]
-    ui = true
+    # Use colors in Git commands that are capable of colored output when outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+    ui = auto
 [color "branch"]
     current = yellow reverse
     local   = yellow
@@ -43,19 +54,17 @@
     editor       = vi
     excludesfile = ~/workspace/baruica/dotfiles/git/.gitignore_global
     pager        = less -FRSX
-    whitespace   = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    whitespace   = fix,space-before-tab,-indent-with-non-tab,trailing-space
 [credential]
     helper = cache --timeout=43200
 [diff]
     compactionHeuristic = true
     mnemonicPrefix = true
-    renames = true
+    renames = copies
 [fetch]
     prune = true
 [format]
     pretty = oneline
-[github]
-    user = baruica
 [help]
     autocorrect = 1
 [log]
@@ -72,4 +81,16 @@
 [tag]
     sort = version:refname
 [url "git@github.com:"]
-    insteadOf = gh  # git clone gh:baruica/dotfiles
+    pushInsteadOf = https://github.com/
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+    insteadOf = "github:"
+[url "git@gist.github.com:"]
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"
+[github]
+    user = baruica
