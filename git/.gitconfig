@@ -15,6 +15,11 @@
 
     changes = diff --name-status
 
+    # Annuler le dernier commit
+    undo = reset --soft HEAD^
+    # Editer le dernier commit
+    amend = commit -p --amend --no-edit
+
     unstash = reset HEAD~1
 
     # Remove branches that have already been merged with master
