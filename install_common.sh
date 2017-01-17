@@ -15,6 +15,11 @@ sudo apt-get install keychain
 
 sudo apt-get install shellcheck
 
+# Chromium
+sudo add-apt-repository ppa:canonical-chromium-builds/stage
+sudo apt-get update
+sudo apt-get install chromium-browser
+
 # Java
 sudo apt-get purge openjdk*
 sudo apt-get update
