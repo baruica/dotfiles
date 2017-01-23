@@ -135,6 +135,9 @@ docker rmi $(docker ps -a -q)   # delete all images
 # Delete all un-tagged (or intermediate) images:
 docker rmi $(docker images | grep '<none>' | tr -s ' ' | cut -d ' ' -f 3)
 
+# as of Docker 1.13
+docker system prune
+
 
 # Registry
 docker tag toto/apache registry.acme.org/toto/apache
