@@ -33,8 +33,7 @@ alias grep='grep --color=auto '
 alias ctrlc='xclip -selection clipboard'
 alias ctrlv='xclip -selection clipboard -o'
 
-# Enable aliases to be sudo’ed
-alias sudo='sudo '
+alias mysql='mysql --i-am-a-dummy'
 
 # Get week number
 alias week='date +%V'

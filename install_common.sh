@@ -46,6 +46,8 @@ sudo gem install rubygems-update
 gksu nautilus /usr/share/fonts/truetype # copy font files into a dir
 sudo fc-cache -f -v                     # reload fonts
 
+# LibreOffice
+sudo snap install libreoffice
 
 # LAMP
 sudo apt-get -y purge php.*
