@@ -36,12 +36,6 @@ sudo apt-get install gradle
 
 sudo apt-get install -y bash-completion curl git git-core htop pv tig tree vim xclip
 
-# git-up
-sudo apt-get install -y ruby ruby-dev rubygems-integration
-sudo gem install git-up
-
-sudo gem install rubygems-update
-
 # fonts
 gksu nautilus /usr/share/fonts/truetype # copy font files into a dir
 sudo fc-cache -f -v                     # reload fonts
