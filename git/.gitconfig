@@ -6,7 +6,7 @@
     up  = pull --rebase --autostash
     diff = diff -w --color-words
 
-    lg   = log --oneline --graph --decorate --pretty=tformat:'%Cred%h%Creset -%C(cyan)%d %Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    lg   = log --all --graph
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
@@ -71,11 +71,12 @@
 [fetch]
     prune = true
 [format]
-    pretty = oneline
+    pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
 [help]
     autocorrect = 1
 [log]
     abbrevCommit = true
+    decorate = auto
 [pull]
     rebase = preserve
 [push]
