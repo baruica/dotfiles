@@ -9,16 +9,24 @@ check_is_sudo() {
 
 sudo apt-get install -y build-essential software-properties-common ubuntu-restricted-extras
 
-sudo apt-add-repository ppa:ansible/ansible
-
-sudo apt-get install keychain
-
-sudo apt-get install shellcheck
-
 # Chromium
 sudo add-apt-repository ppa:canonical-chromium-builds/stage
 sudo apt-get update
 sudo apt-get install chromium-browser
+
+sudo apt-add-repository ppa:ansible/ansible
+
+# VirtualBox
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian yakkety contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt update && sudo apt install virtualbox-5.1
+
+sudo apt-get install vagrant
+
+sudo apt-get install keychain
+
+sudo apt-get install shellcheck
 
 # Java
 sudo apt-get purge openjdk*
