@@ -2,13 +2,10 @@
     ci  = commit
     co  = checkout
     dc  = diff --cached  # Display the staged changes
+    diff = diff -w --color-words
+    lg   = log --all --graph
     st  = status
     up  = pull --rebase --autostash
-    diff = diff -w --color-words
-
-    lg   = log --all --graph
-    plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
-    tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
@@ -63,7 +60,7 @@
     pager        = less -FRSX
     whitespace   = fix,space-before-tab,-indent-with-non-tab,trailing-space
 [credential]
-    helper = cache --timeout=43200
+    helper = store
 [diff]
     compactionHeuristic = true
     mnemonicPrefix = true
