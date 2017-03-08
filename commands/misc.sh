@@ -29,6 +29,14 @@ php -i | grep php.ini
 # list modules
 php -m
 
+# list available PDO drivers
+php -r 'print_r(PDO::getAvailableDrivers());'
+Array
+# (
+#     [0] => mysql
+#     [1] => pgsql
+# )
+
 # Turn a Unix epoch time back into a human readable date
 date -d @728737200
 
