@@ -58,7 +58,7 @@ sudo apt-get update
 sudo apt-get install -y php php-cli php-curl php-intl php-mbstring php-pgsql php-xml
 sudo apt-get install -y php5.6 php5.6-cli php5.6-curl php5.6-intl php5.6-mbstring php5.6-pgsql php5.6-xml
 sudo apt-get install -y php7.0 php7.0-cli php7.0-curl php7.0-intl php7.0-mbstring php7.0-pgsql php7.0-xml
-sudo apt-get install -y php7.1 php7.1-cli php7.1-curl php7.1-intl php7.1-mbstring php7.1-pgsql php7.1-xml
+sudo apt-get install -y php7.1 php7.1-bcmath php7.1-cli php7.1-curl php7.1-intl php7.1-mbstring php7.1-pgsql php7.1-xml
 
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/5.6/cli/php.ini
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.0/cli/php.ini
