@@ -37,10 +37,10 @@ workspace/katas/kata-starter
 workspace/octo/octoboard"
 
 for git_repo in ${git_repos}; do
-    if [ -d ~/${git_repo} ]; then
+    if [ -d ~/"${git_repo}" ]; then
         echo
         echo ">>> ${git_repo}"
-        cd ~/${git_repo} || exit
+        cd ~/"${git_repo}" || exit
         git up
         [ -f composer.json ] && composer update
     fi

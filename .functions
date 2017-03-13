@@ -37,13 +37,13 @@ ld()
 
     zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) \
         | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
-        | mysql -uroot -pdevpass1 ${db}
+        | mysql -uroot -pdevpass1 "${db}"
 }
 
 loopdir()
 {
     command=$*
-    for d in */ ; do (cd $d; $command); done
+    for d in */ ; do (cd "$d" || exit; $command); done
 }
 
 # loop over directory based on a glob pattern loopdirp 'a*' rm deploy.yml
@@ -52,7 +52,7 @@ loopdirp()
     pattern=$1
     shift 1
     command=$*
-    for d in $pattern/ ; do (cd $d; $command); done
+    for d in $pattern/ ; do (cd "$d" || exit; $command); done
 }
 
 md()

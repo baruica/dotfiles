@@ -3,7 +3,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-readonly SCRIPT_DIR=$(dirname $(readlink -m $0))
+readonly SCRIPT_DIR=$(dirname "$(readlink -m "$0")")
 
 function main
 {
