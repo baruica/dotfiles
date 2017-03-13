@@ -73,4 +73,4 @@ alias clog='echo "" > ~/workspace/debug.log'
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
 alias hogs='for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11'
 
-alias meteo='curl -4 http://wttr.in/Paris'
+alias meteo='curl -4 http://wttr.in/Paris?lang=fr'
