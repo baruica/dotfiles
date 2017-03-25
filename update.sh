@@ -18,7 +18,7 @@ sudo_exec_if_cmd_exists()
 exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
 exec_if_cmd_exists symfony self-update
-exec_if_cmd_exists melody self-update
+exec_if_cmd_exists exercism upgrade
 
 sudo_exec_if_cmd_exists update_rubygems
 sudo_exec_if_cmd_exists gem update --system
