@@ -32,9 +32,9 @@ readonly git_repos="git-radar
 workspace/baruica/document-storage
 workspace/baruica/document-storage-aws-s3
 workspace/baruica/dotfiles
+workspace/baruica/symfony-skeleton
 workspace/baruica/xml
-workspace/katas/kata-starter
-workspace/octo/octoboard"
+workspace/katas/kata-starter"
 
 for git_repo in ${git_repos}; do
     if [ -d ~/"${git_repo}" ]; then
