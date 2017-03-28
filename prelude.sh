@@ -7,7 +7,7 @@ readonly SCRIPT_DIR=$(dirname "$(readlink -m "$0")")
 
 function main
 {
-    if [ -z "$1" ] && [ -z "$2" ]; then
+    if [[ -z "$1" ]] && [[ -z "$2" ]]; then
         error_exit "Argument Identifiant projet attentu : bash $0 path"
     fi
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-[ -r "${HOME}/.composer/vendor/bin" ] && export PATH=$PATH:~/.composer/vendor/bin
+[[ -r "${HOME}/.composer/vendor/bin" ]] && export PATH=$PATH:~/.composer/vendor/bin
 
 export SUBLIME="subl -n -w"
-export EDITOR=$(which vim)
+export EDITOR=$SUBLIME
 export VISUAL=$EDITOR
 
 # Avoid duplicate entries

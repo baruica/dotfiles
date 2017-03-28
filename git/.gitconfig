@@ -55,7 +55,7 @@
     untracked = cyan
 [core]
     autocrlf     = input
-    editor       = vi
+    editor       = subl -n -w
     excludesfile = ~/workspace/baruica/dotfiles/git/.gitignore_global
     pager        = less -FRSX
     whitespace   = fix,space-before-tab,-indent-with-non-tab,trailing-space

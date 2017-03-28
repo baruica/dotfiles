@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 check_is_sudo() {
-    if [ "$EUID" -ne 0 ]; then
+    if [[ "$EUID" -ne 0 ]]; then
         echo "Please run as root."
         exit
     fi

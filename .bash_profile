@@ -37,9 +37,9 @@ fi
 for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain "$key" &> /dev/null
 done
-if [ -e "${HOME}/.keychain/${HOSTNAME}-sh" ]; then
+if [[ -e "${HOME}/.keychain/${HOSTNAME}-sh" ]]; then
         # shellcheck source=/dev/null
-    source ~/.keychain/${HOSTNAME}-sh
+    source "${HOME}/.keychain/${HOSTNAME}-sh"
 fi
 
 cmd_exists symfony-autocomplete && eval "$(symfony-autocomplete --aliases=sf)"
