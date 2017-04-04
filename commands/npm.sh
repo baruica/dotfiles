@@ -7,6 +7,8 @@ sudo apt-get install -y nodejs
 # update npm using npm itself
 sudo npm install -g npm
 
+npm prune && npm install
+
 # Listing globally installed NPM packages and version
 npm list -g --depth=0
 
