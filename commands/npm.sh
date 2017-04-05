@@ -16,3 +16,4 @@ npm list -g --depth=0
 npm outdated -g --depth=0
 
 sudo npm install -g bower
+sudo npm install -g grunt-cli
