@@ -1,24 +1,27 @@
 [alias]
-    ci  = commit
-    co  = checkout
-    dc  = diff --cached  # Display the staged changes
+    ci   = commit
+    co   = checkout
+    dc   = diff --cached  # Display the staged changes
     diff = diff -w --color-words
     lg   = log --all --graph
-    st  = status
-    up  = pull --rebase --autostash
+    st   = status
+    up   = pull --rebase --autostash
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
     remotes = remote -v
 
+    prune = fetch --prune
+
     changes = diff --name-status
 
-    # Annuler le dernier commit
+    # undo last commit
     undo = reset --soft HEAD^
-    # Editer le dernier commit
+    # amend last commit
     amend = commit -p --amend --no-edit
 
+    stash-all = stash save --include-untracked
     unstash = reset HEAD~1
 
     # Remove branches that have already been merged with master
@@ -28,7 +31,6 @@
     whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
-    # List contributors with number of commits
     contributors = shortlog --summary --numbered --no-merges
 [apply]
     # Detect whitespace errors when applying a patch
@@ -74,10 +76,21 @@
 [log]
     abbrevCommit = true
     decorate = auto
+[merge]
+    # I pretty much never mean to do a real merge, since I use a rebase workflow.
+    # Note: this global option applies to all merges, including those done during a git pull
+    ff = only
+
+    # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
+    conflictstyle = diff3
 [pull]
     rebase = preserve
 [push]
+    # "push the current branch back to the branch whose changes are usually integrated into the current branch"
+    # "refuse to push if the upstream branch’s name is different from the local one"
     default = simple
+
+    followTags = true
 [rebase]
     autostash = true
 [status]
