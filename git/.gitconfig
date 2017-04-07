@@ -1,20 +1,19 @@
 [alias]
-    ci   = commit
-    co   = checkout
-    dc   = diff --cached  # Display the staged changes
-    diff = diff -w --color-words
-    lg   = log --all --graph
-    st   = status
-    up   = pull --rebase --autostash
+    ci = commit
+    co = checkout
+    lg = log --all --graph
+    st = status
+    up = pull --autostash --rebase --prune
+
+    # Display the staged changes
+    dc      = diff --cached
+    diff    = diff -w --color-words
+    changes = diff --name-status
 
     # Show verbose output about tags, branches or remotes
     tags = tag -l
     branches = branch -a
     remotes = remote -v
-
-    prune = fetch --prune
-
-    changes = diff --name-status
 
     # undo last commit
     undo = reset --soft HEAD^
@@ -28,33 +27,16 @@
     # a.k.a. ‘delete merged’
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
-    whatsnew = "!git diff origin/$(git currentbranch)...HEAD"
-    whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
-    currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
     contributors = shortlog --summary --numbered --no-merges
-[apply]
-    # Detect whitespace errors when applying a patch
-    whitespace = fix
+
+    currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
+    whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
+    whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
 [branch]
     autosetuprebase = always
     rebase = true
 [color]
-    # Use colors in Git commands that are capable of colored output when outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
     ui = auto
-[color "branch"]
-    current = yellow reverse
-    local   = yellow
-    remote  = green
-[color "diff"]
-    meta       = yellow
-    frag       = magenta
-    old        = red
-    new        = green
-    whitespace = red reverse
-[color "status"]
-    added     = yellow
-    changed   = green
-    untracked = cyan
 [core]
     autocrlf     = input
     editor       = subl -n -w
@@ -71,6 +53,8 @@
     prune = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
+[github]
+    user = baruica
 [help]
     autocorrect = 1
 [log]
@@ -110,5 +94,3 @@
     pushInsteadOf = "git://gist.github.com/"
 [url "git://gist.github.com/"]
     insteadOf = "gist:"
-[github]
-    user = baruica
