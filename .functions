@@ -5,6 +5,7 @@ aptclean()
     echo "Cleaning Up"
     sudo apt-get -y clean
     sudo apt-get -y autoremove --purge
+    sudo apt-get -y autoclean
     sudo apt autoremove
 }
 
