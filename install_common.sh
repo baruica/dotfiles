@@ -9,12 +9,10 @@ check_is_sudo() {
 
 sudo apt-get install -y build-essential software-properties-common ubuntu-restricted-extras
 
-# Chromium
-sudo add-apt-repository ppa:canonical-chromium-builds/stage
-sudo apt-get update
 sudo apt-get install chromium-browser
 
 sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get install ansible
 
 # VirtualBox
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian yakkety contrib" >> /etc/apt/sources.list.d/virtualbox.list'
@@ -36,7 +34,7 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java8-installer
 
-sudo apt-get install maven
+sudo apt-get install -y maven
 
 sudo add-apt-repository ppa:cwchien/gradle
 sudo apt-get update
@@ -44,23 +42,12 @@ sudo apt-get install gradle
 
 sudo apt-get install -y bash-completion curl git git-core htop pv tig tree vim xclip
 
-# fonts
-gksu nautilus /usr/share/fonts/truetype # copy font files into a dir
-sudo fc-cache -f -v                     # reload fonts
-
-# LibreOffice
-sudo snap install libreoffice
-
 # LAMP
 sudo apt-get -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install -y php php-cli php-curl php-intl php-mbstring php-pgsql php-xml
-sudo apt-get install -y php5.6 php5.6-cli php5.6-curl php5.6-intl php5.6-mbstring php5.6-pgsql php5.6-xml
 sudo apt-get install -y php7.1 php7.1-bcmath php7.1-cli php7.1-curl php7.1-intl php7.1-mbstring php7.1-pgsql php7.1-sqlite php7.1-xdebug php7.1-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/5.6/cli/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.0/cli/php.ini
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/cli/php.ini
 
 sudo apt-get install -y apache2
