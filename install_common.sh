@@ -60,11 +60,6 @@ sudo a2enmod vhost_alias rewrite
 sudo service apache2 restart
 
 sudo apt-get install -y mysql-server
-sudo apt-get install -y php5-mysql
-sudo apt-get install -y php5-curl
-sudo apt-get install -y php5-intl
-sudo apt-get install -y php5-mcrypt
-sudo php5enmod mcrypt
 
 apt-get autoremove
 apt-get autoclean
