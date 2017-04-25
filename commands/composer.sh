@@ -25,8 +25,10 @@ composer global remove hirak/prestissimo
 composer install --no-suggest
 
 # list the current versions of all installed dependencies
-composer show -i
-composer show -i <package>
+composer show
+composer show <package>
+
+composer global show
 
 # show a tree of all installed packages and their dependencies
 composer show -t -i

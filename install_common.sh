@@ -46,7 +46,7 @@ sudo apt-get install -y bash-completion curl git git-core htop pv tig tree vim x
 sudo apt-get -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
-sudo apt-get install -y php7.1 php7.1-bcmath php7.1-cli php7.1-curl php7.1-intl php7.1-mbstring php7.1-pgsql php7.1-sqlite php7.1-xdebug php7.1-xml
+sudo apt-get install -y php7.1 php7.1-bcmath php7.1-cli php7.1-curl php7.1-intl php7.1-mbstring php7.1-mysql php7.1-pgsql php7.1-sqlite php7.1-xdebug php7.1-xml
 
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/cli/php.ini
 
