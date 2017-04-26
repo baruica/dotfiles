@@ -33,7 +33,6 @@ else
     RESET="\033[m"
 fi
 
-
 function git_info()
 {
     # check if we're in a git repo
@@ -97,7 +96,6 @@ function prompt_git()
     fi
 }
 
-# set up command prompt
 function __prompt_command()
 {
     EXIT="$?"
@@ -116,7 +114,7 @@ function __prompt_command()
 
     # Put the penultimate and current directory in the iterm tab
     # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
-    PS1="$status_style"'$fill \t\n'"$prompt_style$command_style\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]"
+    PS1="\n$status_style"'$fill \t\n'"$prompt_style$command_style\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]"
 
     # create a $fill of all screen width minus the time string and a space:
     let fillsize=${COLUMNS}-9
