@@ -4,8 +4,6 @@ DIR=$(dirname "$(readlink -m "$0")")
 
 sudo ubuntu-drivers autoinstall
 
-sudo apt-get install fonts-hack-ttf
-
 cp "${DIR}"/.bash_profile_dist ~/.bash_profile
 ln -s "${DIR}"/.bashrc ~/.bashrc
 source ~/.bashrc

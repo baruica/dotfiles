@@ -29,9 +29,11 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias grep='grep --color=auto '
 
 # http://www.nurkiewicz.com/2012/09/accessing-clipboard-in-linux-terminal.html
-# ps | ctrlc
-alias ctrlc='xclip -selection clipboard'
-alias ctrlv='xclip -selection clipboard -o'
+# ps | copy
+if cmd_exists xclip; then
+    alias copy='xclip -selection clipboard'
+    alias paste='xclip -selection clipboard -o'
+fi
 
 alias mysql='mysql --i-am-a-dummy'
 
@@ -63,9 +65,6 @@ if cmd_exists php; then
     alias cache='sf cache:clear'
     alias routes='sf debug:router'
     alias services='sf debug:container'
-
-    # Disable glob expansion for Puli
-    alias puli='set -f;puli';puli() { command puli "$@";set +f; }
 fi
 
 alias clog='echo "" > ~/workspace/debug.log'

@@ -24,14 +24,12 @@ sudo_exec_if_cmd_exists update_rubygems
 sudo_exec_if_cmd_exists gem update --system
 sudo_exec_if_cmd_exists npm update -g
 
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt update
+sudo apt upgrade -y
 sudo snap refresh
 
 readonly git_repos="git-radar
-workspace/baruica/document-storage
 workspace/baruica/dotfiles
-workspace/baruica/symfony-skeleton
 workspace/baruica/xml
 workspace/katas/kata-starter"
 

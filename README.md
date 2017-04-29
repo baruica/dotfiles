@@ -1,6 +1,6 @@
-### How do I get set up? ###
+# How do I get set up
 
-```sh
+```bash
 cd ~
 mkdir -p ~/bin
 mkdir -p ~/workspace/baruica

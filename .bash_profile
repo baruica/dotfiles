@@ -33,7 +33,7 @@ if [[ -d "${HOME}/.ssh" ]]; then
     fi
 fi
 
-# SSH + keychain (sudo apt-get install keychain)
+# SSH + keychain (sudo apt install keychain)
 for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain "$key" &> /dev/null
 done
