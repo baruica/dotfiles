@@ -33,8 +33,7 @@ else
     RESET="\033[m"
 fi
 
-function git_info()
-{
+function git_info {
     # check if we're in a git repo
     git rev-parse --is-inside-work-tree &> /dev/null || return
 
@@ -44,11 +43,10 @@ function git_info()
     # check if it's dirty (via github.com/sindresorhus/pure)
     dirty=$(git diff --quiet --ignore-submodules HEAD &> /dev/null; [ $? -eq 1 ] && echo "*")
 
-    echo $WHITE$PURPLE" ⊶  $(__git_ps1 '%s') "$dirty
+    echo "${WHITE}${PURPLE} ⊶ $(__git_ps1 '%s') ${dirty}"
 }
 
-function prompt_git()
-{
+function prompt_git {
     local s='';
     local branchName='';
 
@@ -90,19 +88,14 @@ function prompt_git()
 
         [ -n "${s}" ] && s=" [${s}]"
 
-        echo -e "${1}${branchName}${blue}${s}"
+        echo -e "${1}${branchName}${s}"
     else
         return
     fi
 }
 
-function __prompt_command()
-{
+function __prompt_command {
     EXIT="$?"
-
-    # Fill with minuses
-    # (this is recalculated every time the prompt is shown in function prompt_command):
-    fill="--- "
 
     reset_style='\[\033[00m\]'
     if [ -z "$VIM" ]
@@ -112,8 +105,10 @@ function __prompt_command()
     prompt_style=$reset_style
     command_style=$reset_style'\[\033[1;29m\]' # bold black
 
+    # Fill with minuses (this is recalculated every time the prompt is shown in function prompt_command):
+    fill="--- "
+
     # Put the penultimate and current directory in the iterm tab
-    # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
     PS1="\n$status_style"'$fill \t\n'"$prompt_style$command_style\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]"
 
     # create a $fill of all screen width minus the time string and a space:
@@ -125,14 +120,13 @@ function __prompt_command()
         let fillsize=${fillsize}-1
     done
 
-
     # if logged in via ssh shows the ip of the client
-    [ -n "$SSH_CLIENT" ] && PS1+="\[$ORANGE\]("${$SSH_CLIENT%% *}")\[$Color_Off\]"
+    [ -n "$SSH_CLIENT" ] && PS1+="\[$ORANGE\](${$SSH_CLIENT%% *})\[$Color_Off\]"
 
     PS1+="\[$BPurple\]\w\[$Color_Off\]"
 
     if cmd_exists git-radar
-    then PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n" #PS1+="\$(git-radar --bash --fetch)"
+    then PS1+="$WHITE$PURPLE\$(git-radar --bash)\[$WHITE\]\[$RESET\]\n"
     else PS1+="$(git_info)\[$WHITE\]\[$RESET\]\n"
     fi
 

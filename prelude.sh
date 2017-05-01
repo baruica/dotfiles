@@ -3,10 +3,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-readonly SCRIPT_DIR=$(dirname "$(readlink -m "$0")")
+if [ "$(uname)" == "Darwin" ]; then
+    readonly SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+else
+    readonly SCRIPT_DIR=$(dirname "$(readlink -m "$0")")
+fi
 
-function main
-{
+function main {
     if [[ -z "$1" ]] && [[ -z "$2" ]]; then
         error_exit "Argument Identifiant projet attentu : bash $0 path"
     fi
@@ -19,8 +22,7 @@ function main
     local path=$1
 }
 
-function error_exit
-{
+function error_exit {
     echo "$1" 1>&2
     exit 1
 }
