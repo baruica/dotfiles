@@ -37,6 +37,8 @@ fi
 
 alias mysql='mysql --i-am-a-dummy'
 
+alias meteo='curl -4 http://wttr.in/Paris?lang=fr'
+
 # Get week number
 alias week='date +%V'
 
@@ -58,9 +60,6 @@ alias ping='ping -c 5'
 alias wget='wget -c'
 
 if cmd_exists php; then
-    alias phps='php -S localhost:8000'
-    # then just phps public/index.php
-
     alias sf='bin/console'
     alias cache='sf cache:clear'
     alias routes='sf debug:router'
@@ -71,5 +70,3 @@ alias clog='echo "" > ~/workspace/debug.log'
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
 alias hogs='for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11'
-
-alias meteo='curl -4 http://wttr.in/Paris?lang=fr'

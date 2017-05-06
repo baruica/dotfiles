@@ -51,7 +51,7 @@ function loopdirp {
 }
 
 function md {
-    mkdir -p "$@" && cd "$_"
+    mkdir -p "$@" && cd "$_" || exit
 }
 
 # Determine size of a file or total size of a directory
