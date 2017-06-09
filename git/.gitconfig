@@ -7,7 +7,7 @@
 
     # Display the staged changes
     dc      = diff --cached
-    diff    = diff -w --color-words
+    diff    = diff -w --color-words --word-diff
     changes = diff --name-status
 
     # Show verbose output about tags, branches or remotes
