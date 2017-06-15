@@ -56,3 +56,6 @@ composer update --lock
 # composertip change your composer.json to ^5.5 or similar unless you actually work with 7.0. If so: ^5.5 || ^7.0
 
 # composer forwards env vars so you can use, e.g, a Git SSH wrapper : GIT_SSH=/git_wrapper php composer.phar install --dev working with composer on a really slow connexion? `export COMPOSER_PROCESS_TIMEOUT=4000` and `composer install --prefer-dist`
+
+# Shows which packages prevent the given package from being installed
+composer why-not <package>:<version>
