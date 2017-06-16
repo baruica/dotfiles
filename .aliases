@@ -35,8 +35,6 @@ if cmd_exists xclip; then
     alias paste='xclip -selection clipboard -o'
 fi
 
-alias mysql='mysql --i-am-a-dummy'
-
 alias meteo='curl -4 http://wttr.in/Paris?lang=fr'
 
 # Get week number
