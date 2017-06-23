@@ -5,6 +5,28 @@
     st = status
     up = pull --autostash --rebase --prune
 
+    # graphical representation for all refs
+    lga = !git lg --graph --all
+    # graphical representation for branches only
+    lgb = !git lg --graph --branches
+
+    refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative)%(color:reset) %(color:magenta bold)%(authorname)%(color:reset) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
+
+    # list all local branches sorted by commit date (lbs = local branches sorted)
+    lbs = !git refs refs/heads
+    # list all remote tracking branches sorted by commit date (rbs = remote branches sorted)
+    rbs = !git refs refs/remotes
+
+    # list outdated branches that track a branch which no longer exists
+    lob = !git branch -vv | grep ': gone' | cut -d ' ' -f 3
+    # delete outdated branches
+    dob = !git lob | xargs git branch -D
+
+    # log incoming commits
+    li = !git lg HEAD..@{upstream}
+    # log outgoing commits
+    lo = !git lg @{upstream}..HEAD
+
     # Display the staged changes
     dc      = diff --cached
     diff    = diff -w --color-words --word-diff
