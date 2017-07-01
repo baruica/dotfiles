@@ -30,7 +30,6 @@ sudo snap refresh
 
 readonly git_repos="git-radar
 workspace/baruica/dotfiles
-workspace/baruica/xml
 workspace/katas/kata-starter"
 
 for git_repo in ${git_repos}; do
