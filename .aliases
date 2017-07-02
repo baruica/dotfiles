@@ -59,7 +59,7 @@ alias wget='wget -c'
 
 if cmd_exists php; then
     alias sf='bin/console'
-    alias cache='sf cache:clear'
+    alias cache='sf cache:clear --no-warmup'
     alias routes='sf debug:router'
     alias services='sf debug:container'
 fi
