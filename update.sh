@@ -33,7 +33,7 @@ workspace/baruica/dotfiles
 workspace/katas/kata-starter"
 
 for git_repo in ${git_repos}; do
-    if [[ -d "${HOME}/${git_repo}" ]]; then
+    if [[ -d ${HOME}/${git_repo} ]]; then
         echo
         echo ">>> ${git_repo}"
         cd "${HOME}/${git_repo}" || exit
@@ -42,7 +42,7 @@ for git_repo in ${git_repos}; do
     fi
 done
 
-if [[ -r "$HOME/workspace/update.sh" ]] && [[ -f "$HOME/workspace/update.sh" ]]; then
+if [[ -r $HOME/workspace/update.sh ]] && [[ -f $HOME/workspace/update.sh ]]; then
     sh "$HOME/workspace/update.sh"
 fi
 

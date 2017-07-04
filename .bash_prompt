@@ -51,12 +51,12 @@ function prompt_git {
     local branchName='';
 
     # Check if the current directory is in a Git repository.
-    if [ "$(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}")" == '0' ]; then
+    if [[ "$(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}")" == '0' ]]; then
 
         # check if the current directory is in .git before running git checks
-        if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+        if [[ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]]; then
 
-            if [[ -O "$(git rev-parse --show-toplevel)/.git/index" ]]; then
+            if [[ -O $(git rev-parse --show-toplevel)/.git/index ]]; then
                 git update-index --really-refresh -q &> /dev/null
             fi
 
@@ -71,7 +71,7 @@ function prompt_git {
             fi
 
             # Check for untracked files.
-            if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+            if [[ -n $(git ls-files --others --exclude-standard) ]]; then
                 s+='?'
             fi
 
@@ -86,7 +86,7 @@ function prompt_git {
         # Otherwise, just give up.
         branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || git rev-parse --short HEAD 2> /dev/null || echo '(unknown)')"
 
-        [ -n "${s}" ] && s=" [${s}]"
+        [[ -n ${s} ]] && s=" [${s}]"
 
         echo -e "${1}${branchName}${s}"
     else
@@ -98,7 +98,7 @@ function __prompt_command {
     EXIT="$?"
 
     reset_style='\[\033[00m\]'
-    if [ -z "$VIM" ]
+    if [[ -z $VIM ]]
     then status_style=$reset_style'\[\033[0;90m\]' # gray color; use 0;37m for lighter color
     else status_style=$reset_style'\[\033[0;90;107m\]'
     fi
@@ -130,7 +130,7 @@ function __prompt_command {
     else PS1+="$(git_info)\[$WHITE\]\[$RESET\]\n"
     fi
 
-    if [ $EXIT -eq 0 ]
+    if [[ $EXIT -eq 0 ]]
     then PS1+="\[$WHITE\]"
     else PS1+="\[$MAGENTA\]"
     fi

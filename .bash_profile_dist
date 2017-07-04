@@ -1,5 +1,5 @@
 for file in ~/.{aliases,exports,functions}; do
-    [ -r "${file}" ] && source "${file}"
+    [[ -r ${file} ]] && source "${file}"
 done
 
-[[ -d "${HOME}/workspace/baruica/dotfiles" ]] && source "${HOME}/workspace/baruica/dotfiles/.bash_profile"
+[[ -d ${HOME}/workspace/baruica/dotfiles ]] && source "${HOME}/workspace/baruica/dotfiles/.bash_profile"

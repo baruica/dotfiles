@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 for file in ~/workspace/baruica/dotfiles/.{functions,aliases,bash_prompt,exports}; do
-    if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+    if [[ -r $file ]] && [[ -f $file ]]; then
         # shellcheck source=/dev/null
         source "$file"
     fi
@@ -16,9 +16,9 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 complete -cf sudo       # Autocomple with sudo
 
-if [[ -d "${HOME}/.ssh" ]]; then
+if [[ -d ${HOME}/.ssh ]]; then
     # Add tab completion for SSH hostnames based on ~/.ssh/config ignoring wildcards
-    [[ -e "${HOME}/.ssh/config" ]] && complete -o "default" \
+    [[ -e ${HOME}/.ssh/config ]] && complete -o "default" \
         -o "nospace" \
         -W "$(grep "^Host" ~/.ssh/config | \
         grep -v "[?*]" | cut -d " " -f2 | \
@@ -26,7 +26,7 @@ if [[ -d "${HOME}/.ssh" ]]; then
 
     cat ~/workspace/baruica/dotfiles/ssh_config > ~/.ssh/config
 
-    if [ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ]; then
+    if [[ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ]]; then
         for ssh_config_file in $(find ~/.ssh -name "config.*"); do
             cat "${ssh_config_file}" >> ~/.ssh/config
         done
@@ -37,8 +37,8 @@ fi
 for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain "$key" &> /dev/null
 done
-if [[ -e "${HOME}/.keychain/${HOSTNAME}-sh" ]]; then
-        # shellcheck source=/dev/null
+if [[ -e ${HOME}/.keychain/${HOSTNAME}-sh ]]; then
+    # shellcheck source=/dev/null
     source "${HOME}/.keychain/${HOSTNAME}-sh"
 fi
 
