@@ -9,6 +9,8 @@ check_is_sudo() {
 
 sudo apt install -y build-essential python-software-properties software-properties-common ubuntu-restricted-extras
 
+sudo apt-add-repository ppa:git-core/ppa
+sudo apt update
 sudo apt install -y bash-completion chromium-browser curl fonts-hack-ttf git git-core htop keychain neofetch pv shellcheck tree xclip
 
 # Java
