@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 function aptclean {
-    sudo apt -y autoremove --purge
-    sudo apt -y autoclean
-    sudo apt -y clean
+    sudo apt autoremove -y --purge
+    sudo apt autoclean -y
+    sudo apt clean -y
     sudo apt autoremove
 }
 

@@ -26,7 +26,7 @@ sudo_exec_if_cmd_exists npm i -g npm
 sudo_exec_if_cmd_exists npm update -g
 
 sudo apt update
-sudo apt upgrade -y
+sudo apt full-upgrade -y
 sudo snap refresh
 
 readonly git_repos="git-radar
