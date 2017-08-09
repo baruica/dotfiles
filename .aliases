@@ -50,7 +50,7 @@ alias hosts='sudo vim /etc/hosts'
 
 alias df='df -H'
 alias du='du -ch'
-alias path="echo $PATH | tr ':' '\n'"
+alias paths="echo $PATH | tr ':' '\n'"
 alias cdpath="echo $CDPATH | tr ':' '\n'"
 
 alias mount='mount | column -t'
