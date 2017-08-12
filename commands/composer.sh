@@ -28,6 +28,9 @@ composer install --no-suggest
 composer show
 composer show <package>
 
+# list PHP extensons installed
+composer show --platform
+
 composer global show
 
 # show a tree of all installed packages and their dependencies
