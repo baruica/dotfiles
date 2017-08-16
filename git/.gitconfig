@@ -1,7 +1,7 @@
 [alias]
     ci = commit
     co = checkout
-    lg = log --all --graph
+    lg = log --graph
     st = status
     up = pull --autostash --rebase --prune
 
