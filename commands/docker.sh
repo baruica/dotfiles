@@ -179,3 +179,7 @@ docker images -viz | dot -Tpng -o docker.png
 # to see it, run this on the host
 python -m SimpleHTTPServer
 # then browse to http://machinename:8000/docker.png
+
+
+# check docker is running
+sudo systemctl status docker
