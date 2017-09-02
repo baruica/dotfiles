@@ -11,7 +11,7 @@ sudo apt install -y build-essential python-software-properties software-properti
 
 sudo apt-add-repository ppa:git-core/ppa
 sudo apt update
-sudo apt install -y bash-completion chromium-browser curl fonts-hack-ttf git git-core htop keychain neofetch pv shellcheck tree xclip
+sudo apt install -y bash-completion chromium-browser curl fonts-hack-ttf git git-core htop httpie keychain neofetch pv shellcheck tree xclip
 
 # Java
 sudo apt purge openjdk*
@@ -36,6 +36,6 @@ sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/c
 
 sudo apt install -y mysql-server
 
-apt autoremove
-apt autoclean
-apt clean
+sudo apt autoremove
+sudo apt autoclean
+sudo apt clean
