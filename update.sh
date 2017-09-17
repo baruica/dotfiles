@@ -27,7 +27,6 @@ exec_if_cmd_exists exercism upgrade
 
 sudo apt update
 sudo apt full-upgrade -y
-sudo snap refresh
 
 readonly git_repos="git-radar
 workspace/baruica/dotfiles
