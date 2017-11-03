@@ -14,8 +14,6 @@ sudo apt update
 sudo apt install -y bash-completion chromium-browser curl fonts-firacode fonts-hack-ttf git git-core htop keychain neofetch pv p7zip-full shellcheck tree xclip
 sudo fc-cache -fv
 
-sudo apt-get install compizconfig-settings-manager compiz-plugins -y
-
 # Java
 sudo apt purge openjdk*
 sudo add-apt-repository ppa:webupd8team/java
