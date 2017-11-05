@@ -24,7 +24,7 @@ sudo apt install -y maven
 
 sudo add-apt-repository ppa:cwchien/gradle
 sudo apt update
-sudo apt install gradle
+sudo apt install -y gradle
 
 # LAMP
 sudo apt -y purge php.*
