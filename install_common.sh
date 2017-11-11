@@ -11,7 +11,7 @@ sudo apt install -y build-essential python-software-properties software-properti
 
 sudo apt-add-repository ppa:git-core/ppa
 sudo apt update
-sudo apt install -y bash-completion chromium-browser curl fonts-firacode fonts-hack-ttf git git-core htop keychain neofetch pv p7zip-full shellcheck tree xclip
+sudo apt install -y bash-completion chromium-browser chrome-gnome-shell curl fonts-firacode fonts-hack-ttf git git-core gnome-tweak-tool htop keychain neofetch pv p7zip-full shellcheck tree xclip
 sudo fc-cache -fv
 
 # Java
