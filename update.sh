@@ -29,8 +29,7 @@ sudo apt update
 sudo apt full-upgrade -y
 
 readonly git_repos="git-radar
-workspace/baruica/dotfiles
-workspace/katas/kata-starter"
+workspace/baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
     if [[ -d ${HOME}/${git_repo} ]]; then
