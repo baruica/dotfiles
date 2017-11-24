@@ -30,7 +30,7 @@ sudo add-apt-repository ppa:cwchien/gradle
 sudo apt update
 sudo apt install -y gradle
 
-# LAMP
+# PHP
 sudo apt -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
@@ -40,6 +40,11 @@ sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/a
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/cli/php.ini
 
 sudo apt install -y mysql-server
+
+# Node
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt install -y nodejs
+sudo npm install -g tldr
 
 sudo apt autoremove
 sudo apt autoclean
