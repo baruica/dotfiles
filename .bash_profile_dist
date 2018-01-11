@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 for file in ~/.{aliases,exports,functions}; do
     [[ -r ${file} ]] && source "${file}"
 done

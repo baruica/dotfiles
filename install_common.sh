@@ -41,6 +41,9 @@ sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.1/c
 
 sudo apt install -y mysql-server
 
+composer global require bamarni/symfony-console-autocomplete
+composer global require friendsofphp/php-cs-fixer
+
 # Node
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -52,8 +55,6 @@ sudo apt clean
 
 # Insomnia
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-
 # Add public key used to verify code signature
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-
 sudo apt-get update && sudo apt-get -y install insomnia
