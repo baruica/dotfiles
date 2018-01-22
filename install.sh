@@ -17,3 +17,5 @@ git config --global include.path "${DIR}"/git/.gitconfig
 
 [[ ! -d ${HOME}/git-radar ]] && git clone https://github.com/michaeldfallen/git-radar ~/git-radar
 [[ ! -e ${HOME}/bin/git-radar ]] && ln -s ~/git-radar/git-radar ~/bin/git-radar
+
+ln -s ~/workspace/baruica/dotfiles/update.sh ~/bin/update

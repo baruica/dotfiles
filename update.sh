@@ -22,8 +22,8 @@ exec_if_cmd_exists exercism upgrade
 #sudo_exec_if_cmd_exists update_rubygems
 #sudo_exec_if_cmd_exists gem update --system
 
-sudo_exec_if_cmd_exists npm i -g npm
-sudo_exec_if_cmd_exists npm update -g
+#sudo_exec_if_cmd_exists npm i -g npm
+#sudo_exec_if_cmd_exists npm update -g
 
 sudo apt update
 sudo apt full-upgrade -y
