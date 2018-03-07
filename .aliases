@@ -2,6 +2,8 @@
 
 alias refresh='source ~/.bashrc'
 
+alias update="sudo apt update && sudo apt upgrade"
+
 alias ..="cd .."
 alias ...="cd ../.."
 
@@ -69,3 +71,5 @@ alias clog='echo "" > ~/workspace/debug.log'
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
 alias hogs='for i in G M K; do du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11'
+alias psmem="ps auxf | sort -nr -k 4" # This will show you your processes, ordered by highest RAM usage
+alias pscpu="ps auxf | sort -nr -k 3" # This will show you your processes, ordered by highest CPU usage
