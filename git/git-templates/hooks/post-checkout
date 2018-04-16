@@ -2,12 +2,26 @@
 
 # Put this file at: .git/hooks/post-checkout and make it executable
 
-file="composer.lock"
+readonly PREV_COMMIT=$1
+readonly POST_COMMIT=$2
 
-if [[ $(git diff HEAD@{1}..HEAD@{0} -- "${file}" | wc -l) -gt 0 ]]; then
-    echo
-    echo "NB : '${file}' changed, executing 'composer install'"
-    echo
-    composer install
-    echo
+[[ '0000000000000000000000000000000000000000' == "$PREV_COMMIT" ]] && exit 0
+
+readonly NOCOLOR='\e[0m'
+readonly REDCOLOR='\e[37;41m'
+
+if [[ -f composer.lock ]]; then
+    [[ $(git diff --shortstat $PREV_COMMIT..$POST_COMMIT composer.lock) != "" ]] && echo -e "$REDCOLOR composer.lock has changed. You must run composer install$NOCOLOR"
+fi
+
+if [[ -f package.json ]]; then
+    [[ $(git diff --shortstat $PREV_COMMIT..$POST_COMMIT package.json) != "" ]] && echo -e "$REDCOLOR package.json has changed. You must run npm install$NOCOLOR"
+fi
+
+if [[ -f yarn.lock ]]; then
+    [[ $(git diff --shortstat $PREV_COMMIT..$POST_COMMIT yarn.lock) != "" ]] && echo -e "$REDCOLOR yarn.lock has changed. You must run yarn$NOCOLOR"
+fi
+
+if [[ -f chef/Cheffile.lock ]]; then
+    [[ $(git diff --shortstat $PREV_COMMIT..$POST_COMMIT chef/Cheffile.lock) != "" ]] && echo -e "$REDCOLOR chef/Cheffile.lock has changed. You must run librarian-chef install$NOCOLOR"
 fi
