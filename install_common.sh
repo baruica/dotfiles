@@ -7,11 +7,11 @@ check_is_sudo() {
     fi
 }
 
-sudo apt install -y build-essential python-software-properties software-properties-common ubuntu-restricted-extras
+sudo apt install -y build-essential software-properties-common ubuntu-restricted-extras
 
 sudo apt-add-repository ppa:git-core/ppa
 sudo apt update
-sudo apt install -y bash-completion chromium-browser chrome-gnome-shell curl fonts-firacode fonts-hack-ttf git git-core gnome-tweak-tool htop jq keychain neofetch pv p7zip-full shellcheck tree xclip
+sudo apt install -y bash-completion curl fonts-firacode fonts-hack-ttf git git-core htop jq keychain neofetch pv p7zip-full shellcheck tree xclip
 sudo fc-cache -fv
 
 # Ansible
@@ -25,10 +25,6 @@ sudo apt update
 sudo apt install -y oracle-java8-installer
 
 sudo apt install -y maven
-
-sudo add-apt-repository ppa:cwchien/gradle
-sudo apt update
-sudo apt install -y gradle
 
 # PHP
 sudo apt -y purge php.*
@@ -53,9 +49,3 @@ sudo npm install -g tldr
 sudo apt autoremove
 sudo apt autoclean
 sudo apt clean
-
-# Insomnia
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-# Add public key used to verify code signature
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-sudo apt-get update && sudo apt-get -y install insomnia
