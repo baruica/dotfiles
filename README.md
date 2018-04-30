@@ -3,5 +3,5 @@
 ```bash
 [[ ! -d ${HOME}/workspace/baruica ]] && mkdir -p ~/workspace/baruica
 git clone https://github.com/baruica/dotfiles ~/workspace/baruica/dotfiles
-make install
+cd ~/workspace/baruica && make install
 ```
