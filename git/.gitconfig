@@ -3,8 +3,7 @@
     co = checkout
     lg = log --graph
     st = status
-    up = pull --autostash --rebase --prune
-    pr = pull --rebase upstream master
+    up = pull --rebase --prune
 
     # graphical representation for all refs
     lga = !git lg --graph --all
@@ -47,7 +46,7 @@
     unstash = reset HEAD~1
 
     # Remove branches that have already been merged with master
-    # a.k.a. ‘delete merged’
+    # a.k.a. â€˜delete mergedâ€™
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
     contributors = shortlog --summary --numbered --no-merges
@@ -57,16 +56,15 @@
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
 [branch]
-    autosetuprebase = always
-    rebase = true
+    autoSetupRebase = always
 [color]
     ui = auto
 [core]
-    autocrlf     = input
-    editor       = subl -n -w
-    excludesfile = ~/workspace/baruica/dotfiles/git/.gitignore_global
-    pager        = less -FRSX
-    whitespace   = fix,space-before-tab,-indent-with-non-tab,trailing-space
+    autocrlf = input
+    editor = vi
+    commentchar = !
+    pager = less -r
+    whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
 [credential]
     helper = store
 [diff]
@@ -77,27 +75,14 @@
     prune = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
-[github]
-    user = baruica
 [help]
     autocorrect = 1
 [log]
     abbrevCommit = true
     decorate = auto
-[merge]
-    # I pretty much never mean to do a real merge, since I use a rebase workflow.
-    # Note: this global option applies to all merges, including those done during a git pull
-    ff = only
-
-    # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
-    conflictstyle = diff3
 [pull]
-    rebase = preserve
+	rebase = preserve
 [push]
-    # "push the current branch back to the branch whose changes are usually integrated into the current branch"
-    # "refuse to push if the upstream branch’s name is different from the local one"
-    default = simple
-
     followTags = true
 [rebase]
     autostash = true
@@ -106,15 +91,3 @@
     showUntrackedFiles = all
 [tag]
     sort = version:refname
-[url "git@github.com:"]
-    pushInsteadOf = https://github.com/
-    pushInsteadOf = "github:"
-    pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-    insteadOf = "github:"
-[url "git@gist.github.com:"]
-    insteadOf = "gst:"
-    pushInsteadOf = "gist:"
-    pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-    insteadOf = "gist:"
