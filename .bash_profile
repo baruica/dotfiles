@@ -10,7 +10,6 @@ unset file
 
 shopt -s cdspell        # Autocorrect typos in path names when using "cd"
 shopt -s cmdhist        # Save multi-line commands as one command
-shopt -s histappend     # Append to the history file, don't overwrite it
 shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 

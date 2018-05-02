@@ -5,13 +5,8 @@
 export EDITOR="code"
 export VISUAL=$EDITOR
 
-# Avoid duplicate entries
-export HISTCONTROL="erasedups:ignoreboth"
-
 # Don't record some commands
 export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
-
-export HISTSIZE=500000
 
 # Use standard ISO 8601 timestamp
 # %F equivalent to %Y-%m-%d
