@@ -1,7 +1,0 @@
-Host bitbucket.com bitbucket bb
-    HostName bitbucket.com
-    User git
-
-Host github.com github gh
-    Hostname github.com
-    User git

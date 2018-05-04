@@ -23,7 +23,7 @@ if [[ -d ${HOME}/.ssh ]]; then
         grep -v "[?*]" | cut -d " " -f2 | \
         tr ' ' '\n')" scp sftp ssh
 
-    cat ~/workspace/baruica/dotfiles/ssh_config > ~/.ssh/config
+    [ -e ~/workspace/baruica/dotfiles/ssh_config ] && cat ~/workspace/baruica/dotfiles/ssh_config > ~/.ssh/config
 
     if [[ $(find ~/.ssh -name "config.*" | wc -l) -gt 0 ]]; then
         for ssh_config_file in $(find ~/.ssh -name "config.*"); do
