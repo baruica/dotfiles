@@ -46,7 +46,6 @@
     unstash = reset HEAD~1
 
     # Remove branches that have already been merged with master
-    # a.k.a. â€˜delete mergedâ€™
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
     contributors = shortlog --summary --numbered --no-merges
@@ -83,6 +82,7 @@
 [pull]
 	rebase = preserve
 [push]
+    default = simple
     followTags = true
 [rebase]
     autostash = true
