@@ -2,7 +2,7 @@
 
 alias refresh='source ~/.bashrc'
 
-alias update="sudo apt update && sudo apt upgrade"
+alias updatethenupgrade="sudo apt-get update && sudo apt-get upgrade"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -50,8 +50,11 @@ alias ips="sudo ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\
 # vhosts
 alias hosts='sudo vim /etc/hosts'
 
-alias df='df -H'
-alias du='du -ch'
+# Directory
+alias diskusage="df -h"
+alias folderusage="du -ch"
+alias totalfolderusage="du -sh"
+
 alias paths="echo $PATH | tr ':' '\n'"
 alias cdpath="echo $CDPATH | tr ':' '\n'"
 
