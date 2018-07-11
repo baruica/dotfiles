@@ -50,6 +50,10 @@
 
     contributors = shortlog --summary --numbered --no-merges
 
+    # https://mghignet.github.io/git-dammit-talk/#33
+    fixup = !sh -c 'SHA=$(git rev-parse $1) && git commit --fixup $SHA && git rebase -i --autosquash $SHA~' -
+    # use : git fixup {SHA}
+
     currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
     standup = log --since yesterday --author $(git config user.email) --pretty=short
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
