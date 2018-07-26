@@ -10,10 +10,6 @@ check_is_sudo() {
 sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer tree xclip
 sudo fc-cache -fv
 
-# Ansible
-sudo apt install -y python-pip
-sudo pip install ansible==2.4
-
 # Java
 sudo apt purge -y openjdk*
 sudo add-apt-repository ppa:webupd8team/java
@@ -31,12 +27,13 @@ sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/c
 
 sudo apt install -y mysql-server
 
-composer global require bamarni/symfony-console-autocomplete
-composer global require friendsofphp/php-cs-fixer
-
 # Node
 sudo npm install -g tldr
 
 sudo apt autoremove
 sudo apt autoclean
 sudo apt clean
+
+# Ansible
+sudo apt install -y python-pip
+sudo pip install ansible==2.4
