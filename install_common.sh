@@ -7,7 +7,7 @@ check_is_sudo() {
     fi
 }
 
-sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck tree xclip
+sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer tree xclip
 sudo fc-cache -fv
 
 # Ansible
