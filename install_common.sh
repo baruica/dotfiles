@@ -7,6 +7,8 @@ check_is_sudo() {
     fi
 }
 
+sudo apt-get remove -y bluez bluetooth
+
 sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer tree xclip
 sudo fc-cache -fv
 
@@ -24,11 +26,6 @@ sudo apt install -y php7.2 php7.2-bcmath php7.2-cli php7.2-curl php7.2-intl php7
 
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/apache2/php.ini
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/cli/php.ini
-
-sudo apt install -y mysql-server
-
-# Node
-sudo npm install -g tldr
 
 sudo apt autoremove
 sudo apt autoclean
