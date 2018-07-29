@@ -117,6 +117,7 @@ function repo {
     fi
 }
 
+# http://bezhermoso.github.io/2018/07/28/jump-back-up-to-git-repo-root-directory/
 function jump-to-git-root {
     local _root_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
     if [[ $? -gt 0 ]]; then
