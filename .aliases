@@ -7,6 +7,8 @@ alias updatethenupgrade="sudo apt-get update && sudo apt-get upgrade"
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias gr=jump-to-git-root
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
