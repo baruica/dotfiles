@@ -124,6 +124,7 @@ function jump-to-git-root {
         >&2 echo 'Not a Git repo!'
         exit 1
     fi
+
     local _pwd=$(pwd)
     if [[ "$_pwd" = "$_root_dir" ]]; then
         # Handle submodules:
@@ -135,8 +136,15 @@ function jump-to-git-root {
             return 0
         fi
     fi
+
     # Make `cd -` work.
     OLDPWD=$_pwd
     echo "Git repo root: $_root_dir"
     cd "$_root_dir" || exit 1
+}
+
+function fix-ssh-perms {
+    [ -d ~/.ssh ] && chmod 700 ~/.ssh
+    [ -f ~/.ssh/id_rsa.pub ] && chmod 644 ~/.ssh/id_rsa.pub
+    [ -f ~/.ssh/id_rsa ] && chmod 600 ~/.ssh/id_rsa
 }
