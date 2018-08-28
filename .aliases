@@ -2,6 +2,10 @@
 
 alias refresh='source ~/.bashrc'
 
+alias install="sudo apt-get install -y"
+alias update="sudo apt-get update -y"
+alias upgrade="sudo apt-get upgrade -y"
+
 alias updatethenupgrade="sudo apt-get update && sudo apt-get upgrade"
 
 alias ..="cd .."
