@@ -27,9 +27,8 @@ sudo apt install -y php7.2 php7.2-bcmath php7.2-cli php7.2-curl php7.2-intl php7
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/apache2/php.ini
 sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/cli/php.ini
 
-sudo apt autoremove
-sudo apt autoclean
 sudo apt clean
+sudo apt autoremove
 
 # Ansible
 sudo apt install -y python-pip
