@@ -7,8 +7,7 @@ cp "${DIR}"/.bash_profile_dist ~/.bash_profile
 
 rm -f ~/.bashrc
 ln -s "${DIR}"/.bashrc ~/.bashrc
-# shellcheck source=/dev/null
-source ~/.bashrc
+. ~/.bashrc
 
 git config --global user.name "Nelson da Costa"
 git config --global user.email "ndc@octo.com"

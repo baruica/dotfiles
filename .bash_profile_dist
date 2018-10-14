@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 for file in ~/.{aliases,exports,functions}; do
-    # shellcheck source=/dev/null
-    [[ -r ${file} ]] && source "${file}"
+    [[ -r ${file} ]] && . "${file}"
 done
 
-# shellcheck source=/dev/null
-[[ -d ${HOME}/workspace/baruica/dotfiles ]] && source "${HOME}/workspace/baruica/dotfiles/.bash_profile"
+[[ -d ${HOME}/workspace/baruica/dotfiles ]] && . "${HOME}/workspace/baruica/dotfiles/.bash_profile"

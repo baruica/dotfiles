@@ -2,8 +2,7 @@
 
 for file in ~/workspace/baruica/dotfiles/.{functions,aliases,bash_prompt,exports}; do
     if [[ -r $file ]] && [[ -f $file ]]; then
-        # shellcheck source=/dev/null
-        source "$file"
+        . "$file"
     fi
 done
 unset file
@@ -37,8 +36,7 @@ for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain "$key" &> /dev/null
 done
 if [[ -e ${HOME}/.keychain/${HOSTNAME}-sh ]]; then
-    # shellcheck source=/dev/null
-    source "${HOME}/.keychain/${HOSTNAME}-sh"
+    . "${HOME}/.keychain/${HOSTNAME}-sh"
 fi
 
 cmd_exists symfony-autocomplete && eval "$(symfony-autocomplete --aliases=sf)"
