@@ -4,8 +4,8 @@ alias refresh='. ~/.bashrc'
 
 alias apt-get='sudo apt-get'
 alias install='sudo apt-get install -y'
-alias update='sudo apt-get update -y'
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt-get update'
+alias update='sudo apt-get update && sudo apt-get upgrade -y'
 
 alias ..='cd ..'
 alias ...='cd ../..'
