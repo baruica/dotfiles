@@ -20,30 +20,25 @@ exec_if_cmd_exists exercism upgrade
 #exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
 
-#sudo_exec_if_cmd_exists update_rubygems
-#sudo_exec_if_cmd_exists gem update --system
-
-#sudo_exec_if_cmd_exists npm i -g npm
-#sudo_exec_if_cmd_exists npm update -g
-
 sudo apt update
 sudo apt full-upgrade -y
 
 readonly git_repos="git-radar
+z
 workspace/baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
-    if [[ -d ${HOME}/${git_repo} ]]; then
+    if [[ -d ~/${git_repo} ]]; then
         echo
         echo ">>> ${git_repo}"
-        cd "${HOME}/${git_repo}" || exit
+        cd ~/"${git_repo}" || exit
         git up
         [[ -f composer.json ]] && composer update
     fi
 done
 
-if [[ -r $HOME/workspace/update.sh ]] && [[ -f $HOME/workspace/update.sh ]]; then
-    sh "$HOME/workspace/update.sh"
+if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
+    sh ~/workspace/update.sh
 fi
 
 exec_if_cmd_exists aptclean

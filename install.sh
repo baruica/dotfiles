@@ -10,9 +10,12 @@ ln -s "${DIR}"/.bashrc ~/.bashrc
 . ~/.bashrc
 
 git config --global user.name "Nelson da Costa"
-git config --global user.email "ndc@octo.com"
 git config --global include.path "${DIR}"/git/.gitconfig
 
-[[ ! -d ${HOME}/bin ]] && mkdir ~/bin
-[[ ! -d ${HOME}/git-radar ]] && git clone https://github.com/michaeldfallen/git-radar ~/git-radar
-[[ ! -e ${HOME}/bin/git-radar ]] && ln -s ~/git-radar/git-radar ~/bin/git-radar
+[[ ! -d ~/bin ]] && mkdir ~/bin
+
+[[ ! -d ~/git-radar ]] && git clone https://github.com/michaeldfallen/git-radar ~/git-radar
+[[ ! -e ~/bin/git-radar ]] && ln -s ~/git-radar/git-radar ~/bin/git-radar
+
+[[ ! -d ~/z ]] && git clone https://github.com/rupa/z ~/z
+[[ ! -e ~/z/z.sh ]] && chmod u+x ~/z/z.sh

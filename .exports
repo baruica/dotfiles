@@ -2,7 +2,7 @@
 
 export CDPATH=.:~/workspace/baruica:~/workspace/katas
 
-[[ -r ${HOME}/.composer/vendor/bin ]] && export PATH=$PATH:~/.composer/vendor/bin
+[[ -r ~/.composer/vendor/bin ]] && export PATH=$PATH:~/.composer/vendor/bin
 
 export EDITOR="code"
 export VISUAL=$EDITOR

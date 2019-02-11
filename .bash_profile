@@ -14,9 +14,11 @@ shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
 complete -cf sudo       # Autocomple with sudo
 
-if [[ -d ${HOME}/.ssh ]]; then
+[[ -x ~/z/z.sh ]] && . ~/z/z.sh
+
+if [[ -d ~/.ssh ]]; then
     # Add tab completion for SSH hostnames based on ~/.ssh/config ignoring wildcards
-    [[ -e ${HOME}/.ssh/config ]] && complete -o "default" \
+    [[ -e ~/.ssh/config ]] && complete -o "default" \
         -o "nospace" \
         -W "$(grep "^Host" ~/.ssh/config | \
         grep -v "[?*]" | cut -d " " -f2 | \
@@ -35,8 +37,8 @@ fi
 for key in $(find ~/.ssh -name "*.key" -type f); do
     keychain "$key" &> /dev/null
 done
-if [[ -e ${HOME}/.keychain/${HOSTNAME}-sh ]]; then
-    . "${HOME}/.keychain/${HOSTNAME}-sh"
+if [[ -e ~/.keychain/"${HOSTNAME}"-sh ]]; then
+    . ~/.keychain/"${HOSTNAME}"-sh
 fi
 
 cmd_exists symfony-autocomplete && eval "$(symfony-autocomplete --aliases=sf)"
