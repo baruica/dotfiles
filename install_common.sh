@@ -20,10 +20,14 @@ sudo apt install -y maven
 
 # PHP
 sudo apt -y purge php.*
-sudo apt install -y php7.2 php7.2-bcmath php7.2-cli php7.2-curl php7.2-intl php7.2-mbstring php7.2-mysql php7.2-pgsql php7.2-sqlite php7.2-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/apache2/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.2/cli/php.ini
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+
+sudo apt install -y php7.3 php7.3-bcmath php7.3-cli php7.3-curl php7.3-intl php7.3-mbstring php7.3-mysql php7.3-pgsql php7.3-sqlite php7.3-xml
+
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.3/apache2/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.3/cli/php.ini
 
 sudo apt clean
 sudo apt autoremove
