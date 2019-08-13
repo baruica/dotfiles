@@ -17,7 +17,7 @@ sudo_exec_if_cmd_exists()
 
 exec_if_cmd_exists exercism upgrade
 
-#exec_if_cmd_exists composer self-update
+exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
 
 sudo apt update

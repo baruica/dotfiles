@@ -72,18 +72,7 @@ alias hogs='for i in G M K; do /usr/bin/du -ah | grep [0-9]$i | sort -nr -k 1; d
 alias psmem="ps auxf | sort -nr -k 4" # This will show you your processes, ordered by highest RAM usage
 alias pscpu="ps auxf | sort -nr -k 3" # This will show you your processes, ordered by highest CPU usage
 
-if cmd_exists bat; then
-    alias cat='bat'
-fi
-
-if cmd_exists prettyping; then
-    alias ping='prettyping --nolegend'
-fi
-
-if cmd_exists ncdu; then
-    alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-fi
-
-if cmd_exists tldr; then
-    alias help='tldr'
-fi
+cmd_exists bat && alias cat='bat'
+cmd_exists prettyping && alias ping='prettyping --nolegend'
+cmd_exists ncdu && alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
+cmd_exists tldr && alias help='tldr'
