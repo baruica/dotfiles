@@ -57,14 +57,6 @@ alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
 
-if cmd_exists php; then
-    alias sf='bin/console'
-    alias cache='sf cache:clear --no-warmup && sf cache:warmup'
-    alias tcache='sf cache:clear --no-warmup -e=test && sf cache:warmup -e=test'
-    alias routes='sf debug:router'
-    alias services='sf debug:container'
-fi
-
 alias clog='echo "" > ~/workspace/debug.log'
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
