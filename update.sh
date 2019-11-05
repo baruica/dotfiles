@@ -20,9 +20,6 @@ exec_if_cmd_exists exercism upgrade
 exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
 
-sudo apt update
-sudo apt full-upgrade -y
-
 readonly git_repos="git-radar
 z
 workspace/baruica/dotfiles"
@@ -40,5 +37,8 @@ done
 if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
     sh ~/workspace/update.sh
 fi
+
+sudo apt update
+sudo apt full-upgrade -y
 
 exec_if_cmd_exists aptclean
