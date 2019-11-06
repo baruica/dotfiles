@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # install Docker
 wget -qO- https://get.docker.com/ | sh
 # upgrade Docker by using wget's -N flag

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # http://scotch.io/tutorials/how-to-setup-ssh-public-key-authentication
 
 ssh-keygen -t rsa -C "barui.ca@gmail.com"

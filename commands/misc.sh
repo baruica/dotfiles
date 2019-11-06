@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # display the physical current working directory (all symlinks resolved)
 pwd -P
 

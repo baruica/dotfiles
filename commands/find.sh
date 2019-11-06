@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 find /var -name "*.log" -size +500M -exec ls -lh {} \;
 
 # 5 biggest files
