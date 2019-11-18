@@ -64,8 +64,8 @@
     ui = auto
 [core]
     autocrlf = input
-    editor = vi
     commentchar = !
+    editor = vi
     pager = less -r
     whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
 [credential]
