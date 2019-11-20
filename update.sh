@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 function cmd_exists
 {
@@ -12,8 +13,7 @@ function exec_if_cmd_exists
 
 readonly git_repos="git-radar
 z
-workspace/baruica/dotfiles
-workspace/katas/kata-starter"
+workspace/baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
     if [[ -d ~/${git_repo} ]]; then
