@@ -35,6 +35,7 @@ exec_if_cmd_exists exercism upgrade
 
 exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
+exec_if_cmd_exists yes | symfony self:update
 
 sudo apt update
 sudo apt full-upgrade -y
