@@ -2,13 +2,7 @@
 
 alias refresh='. ~/.bashrc'
 
-alias apt-get='sudo apt-get'
-alias install='sudo apt-get install -y'
-alias update='sudo apt-get update'
-alias update='sudo apt-get update && sudo apt-get upgrade -y'
-
-alias ..='cd ..'
-alias ...='cd ../..'
+alias install='sudo apt install -y'
 
 alias gr=jump-to-git-root
 
@@ -56,8 +50,6 @@ alias cdpath="echo $CDPATH | tr ':' '\n'"
 alias mount='mount | column -t'
 alias ping='ping -c 5'
 alias wget='wget -c'
-
-alias clog='echo "" > ~/workspace/debug.log'
 
 alias top_process='ps -eo pcpu,pid,user,args | sort -k 1 -r | head -5'
 alias hogs='for i in G M K; do /usr/bin/du -ah | grep [0-9]$i | sort -nr -k 1; done | head -n 11'

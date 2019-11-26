@@ -7,7 +7,7 @@ check_is_sudo() {
     fi
 }
 
-sudo apt-get remove -y bluez bluetooth
+sudo apt remove -y bluez bluetooth
 
 sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer tree xclip
 sudo fc-cache -fv
@@ -22,7 +22,7 @@ sudo apt install -y maven
 sudo apt -y purge php.*
 
 sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
+sudo apt update
 
 sudo apt install -y php7.3 php7.3-bcmath php7.3-cli php7.3-curl php7.3-intl php7.3-mbstring php7.3-mysql php7.3-pgsql php7.3-sqlite php7.3-xml
 
