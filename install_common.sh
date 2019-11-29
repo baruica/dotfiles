@@ -24,10 +24,10 @@ sudo apt -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 
-sudo apt install -y php7.3 php7.3-bcmath php7.3-cli php7.3-curl php7.3-intl php7.3-mbstring php7.3-mysql php7.3-pgsql php7.3-sqlite php7.3-xml
+sudo apt install -y php7.4 php7.4-bcmath php7.4-cli php7.4-curl php7.4-intl php7.4-mbstring php7.4-mysql php7.4-pgsql php7.4-sqlite php7.4-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.3/apache2/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.3/cli/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.4/apache2/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.4/cli/php.ini
 
 sudo apt clean
 sudo apt autoremove
