@@ -32,8 +32,6 @@ if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
 fi
 
 exec_if_cmd_exists exercism upgrade
-
-exec_if_cmd_exists composer self-update
 exec_if_cmd_exists composer global update
 exec_if_cmd_exists yes | symfony self:update
 
