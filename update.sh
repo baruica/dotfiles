@@ -12,7 +12,6 @@ function exec_if_cmd_exists
 }
 
 readonly git_repos="git-radar
-z
 workspace/baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
