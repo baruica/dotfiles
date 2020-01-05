@@ -9,7 +9,7 @@ check_is_sudo() {
 
 sudo apt remove -y bluez bluetooth
 
-sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer tree xclip
+sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer ttf-ancient-fonts tree xclip
 sudo fc-cache -fv
 
 # Java
