@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-function aptclean {
+function aptclean() {
     sudo apt clean -y
     sudo apt autoremove -y --purge
 }
 
-function explain {
+function explain() {
     if [[ $# -eq 0 ]]; then
-        while read  -p "Command: " cmd; do
+        while read -p "Command: " cmd; do
             curl -Gs "https://www.mankier.com/api/explain/?cols="$(tput cols) --data-urlencode "q=$cmd"
         done
         echo "Bye!"
@@ -24,37 +24,43 @@ function explain {
 # curl: (35) Cannot communicate securely with peer: no common encryption algorithm(s).
 # If so, try specifying a cipher in the curl commands: curl --ciphers ecdhe_ecdsa_aes_128_sha
 
-function ld {
+function ld() {
     app=${1:-app}
     dump_prefix=${2:-app}
 
     db="dev_${app}"
 
-    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) \
-        | pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" \
-        | mysql -uroot -pdevpass1 "${db}"
+    zcat $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) |
+        pv --progress --size $(gzip -l $(ls -1 ~/temp/dumps/${dump_prefix}-* | tail -1) | sed -n 2p | awk '{print $2}') --name "${db}" |
+        mysql -uroot -pdevpass1 "${db}"
 }
 
-function loopdir {
+function loopdir() {
     command=$*
-    for d in */ ; do (cd "$d" || exit; $command); done
+    for d in */; do (
+        cd "$d" || exit
+        $command
+    ); done
 }
 
 # loop over directory based on a glob pattern loopdirp 'a*' rm deploy.yml
-function loopdirp {
+function loopdirp() {
     pattern=$1
     shift 1
     command=$*
-    for d in $pattern/ ; do (cd "$d" || exit; $command); done
+    for d in $pattern/; do (
+        cd "$d" || exit
+        $command
+    ); done
 }
 
-function md {
+function md() {
     mkdir -p "$@" && cd "$_" || exit
 }
 
 # Determine size of a file or total size of a directory
-function fs {
-    if du -b /dev/null > /dev/null 2>&1; then
+function fs() {
+    if du -b /dev/null >/dev/null 2>&1; then
         local arg=-sbh
     else
         local arg=-sh
@@ -74,26 +80,26 @@ if [[ $? -eq 0 ]]; then
     }
 fi
 
-function cmd_exists {
+function cmd_exists() {
     hash "$1" &>/dev/null
 }
 
-function exec_if_cmd_exists {
+function exec_if_cmd_exists() {
     cmd_exists "$1" && "$@"
 }
 
-function sudo_exec_if_cmd_exists {
+function sudo_exec_if_cmd_exists() {
     cmd_exists "$1" && sudo "$@"
 }
 
 # `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring the `.git` directory, listing directories first.
 # The output gets piped into `less` with options to preserve color and line numbers, unless the output is small enough for one screen.
-function tre {
+function tre() {
     tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
 # Call from a local repo to open the repository on github/bitbucket in browser
-function repo {
+function repo() {
     local giturl
     giturl=$(git config --get remote.origin.url | sed 's/git@/\/\//g' | sed 's/.git$//' | sed 's/https://g' | sed 's/:/\//g')
     if [[ ${giturl} == "" ]]; then
@@ -117,15 +123,15 @@ function repo {
 }
 
 # http://bezhermoso.github.io/2018/07/28/jump-back-up-to-git-repo-root-directory/
-function jump-to-git-root {
+function jump-to-git-root() {
     local _root_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
     if [[ $? -gt 0 ]]; then
-        >&2 echo 'Not a Git repo!'
+        echo >&2 'Not a Git repo!'
         exit 1
     fi
 
     local _pwd=$(pwd)
-    if [[ "$_pwd" = "$_root_dir" ]]; then
+    if [[ "$_pwd" == "$_root_dir" ]]; then
         # Handle submodules:
         # If parent dir is also managed under Git then we are in a submodule.
         # If so, cd to nearest Git parent project.
@@ -142,7 +148,7 @@ function jump-to-git-root {
     cd "$_root_dir" || exit 1
 }
 
-function fix-ssh-perms {
+function fix-ssh-perms() {
     [ -d ~/.ssh ] && chmod 700 ~/.ssh
     [ -f ~/.ssh/id_rsa.pub ] && chmod 644 ~/.ssh/id_rsa.pub
     [ -f ~/.ssh/id_rsa ] && chmod 600 ~/.ssh/id_rsa

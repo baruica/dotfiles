@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-export CDPATH=.:~/workspace/baruica:~/workspace/katas
+export CDPATH=.:~/workspace/baruica:~/workspace/katas:~/workspace/clients
 
 [[ -r ~/.config/composer/vendor/bin ]] && export PATH=$PATH:~/.config/composer/vendor/bin
+[ -z ${NVM_BIN+x} ] && export PATH=$PATH:$NVM_BIN
 
 export EDITOR="code"
 export VISUAL=$EDITOR

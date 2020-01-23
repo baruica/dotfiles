@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 set -e
 
-function cmd_exists
-{
+function cmd_exists() {
     hash "$1" >/dev/null 2>&1
 }
 
-function exec_if_cmd_exists
-{
+function exec_if_cmd_exists() {
     cmd_exists "$1" && "$@"
 }
 

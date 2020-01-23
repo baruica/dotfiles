@@ -16,6 +16,3 @@ git config --global include.path "${DIR}"/git/.gitconfig
 
 [[ ! -d ~/git-radar ]] && git clone https://github.com/michaeldfallen/git-radar ~/git-radar
 [[ ! -e ~/bin/git-radar ]] && ln -s ~/git-radar/git-radar ~/bin/git-radar
-
-[[ ! -d ~/z ]] && git clone https://github.com/rupa/z ~/z
-[[ ! -e ~/z/z.sh ]] && chmod u+x ~/z/z.sh

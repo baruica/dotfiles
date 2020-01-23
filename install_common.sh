@@ -9,7 +9,10 @@ check_is_sudo() {
 
 sudo apt remove -y bluez bluetooth
 
-sudo apt install -y bash-completion curl fonts-firacode git htop jq keychain neofetch shellcheck ttf-mscorefonts-installer ttf-ancient-fonts tree xclip
+sudo apt install -y bash-completion curl git htop jq keychain neofetch shellcheck tree xclip
+
+# fonts
+sudo apt install -y fonts-firacode ttf-mscorefonts-installer ttf-ancient-fonts
 sudo fc-cache -fv
 
 # Java
@@ -24,10 +27,11 @@ sudo apt -y purge php.*
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 
-sudo apt install -y php7.4 php7.4-bcmath php7.4-cli php7.4-curl php7.4-intl php7.4-mbstring php7.4-mysql php7.4-pgsql php7.4-sqlite php7.4-xml
+readonly PHP_VERSION="7.4"
+sudo apt install -y php$PHP_VERSION php$PHP_VERSION-bcmath php$PHP_VERSION-cli php$PHP_VERSION-curl php$PHP_VERSION-intl php$PHP_VERSION-mbstring php$PHP_VERSION-pgsql php$PHP_VERSION-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.4/apache2/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/7.4/cli/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/$PHP_VERSION/apache2/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/$PHP_VERSION/cli/php.ini
 
 sudo apt clean
 sudo apt autoremove
