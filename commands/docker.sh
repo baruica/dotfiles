@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
 # install Docker
-wget -qO- https://get.docker.com/ | sh
-# upgrade Docker by using wget's -N flag
-wget -N https://get.docker.com/ | sh
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt install docker.io
 
 # install docker compose
-sudo -i
-curl -L https://github.com/docker/compose/releases/download/1.3.1/docker-compose-$(uname -s)-$(uname -m) > ~/bin/docker-compose
-chmod u+x ~/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 # docker-compose completion
-curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --version | awk 'NR==1{print $NF}')/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
-# will work after logout
-exit
+sudo curl -L https://raw.githubusercontent.com/docker/compose/1.25.3/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 # test it
 sudo docker run hello-world
 
