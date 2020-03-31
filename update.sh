@@ -6,8 +6,7 @@ workspace/baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
     if [[ -d ~/${git_repo} ]]; then
-        echo
-        echo ">>> ${git_repo}"
+        echo && echo ">>> ${git_repo}"
         cd ~/"${git_repo}" || exit
         git up
         [[ -f composer.json ]] && composer update
@@ -20,13 +19,15 @@ if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
     sh ~/workspace/update.sh
 fi
 
-exercism upgrade
-composer self-update
-composer global update
-yes | symfony self:update
+echo && echo ">>> exercism" && exercism upgrade
+echo && echo ">>> composer" && composer self-update
+echo && echo ">>> composer global" && composer global update
+echo && echo ">>> symfony" && yes | symfony self:update
 
+echo
 sudo apt update
 sudo apt full-upgrade -y
 
+echo && echo ">>> cleanup"
 sudo apt clean -y
 sudo apt autoremove -y --purge
