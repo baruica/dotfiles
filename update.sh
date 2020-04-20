@@ -25,9 +25,8 @@ echo && echo ">>> composer global" && composer global update
 echo && echo ">>> symfony" && yes | symfony self:update
 
 echo && echo ">>> java"
-#export SDKMAN_DIR="$HOME/.sdkman"
-if [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
+if [[ -s ~/.sdkman/bin/sdkman-init.sh ]]; then
+    source ~/.sdkman/bin/sdkman-init.sh
     sdk selfupdate
     sdk update
     sdk upgrade java
