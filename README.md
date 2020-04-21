@@ -1,7 +1,10 @@
-# How do I get set up
+# dotfiles
+
+[![Twitter: baruica](https://img.shields.io/twitter/follow/baruica.svg?style=social)](https://twitter.com/baruica)
+
+## How to set up
 
 ```bash
-[[ ! -d ~/workspace/baruica ]] && mkdir -p ~/workspace/baruica
-git clone https://github.com/baruica/dotfiles ~/workspace/baruica/dotfiles
-cd ~/workspace/baruica && make install
+git clone https://github.com/baruica/dotfiles
+cd ~/dotfiles && make install
 ```
