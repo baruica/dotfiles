@@ -13,7 +13,7 @@ sudo fc-cache -fv
 sudo apt purge -y openjdk*
 sudo apt install -y default-jdk
 
-sudo apt install -y maven
+sudo apt install -y gradle maven
 
 # PHP
 sudo apt -y purge php.*
