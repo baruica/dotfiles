@@ -24,14 +24,6 @@ echo && echo ">>> composer" && composer self-update
 echo && echo ">>> composer global" && composer global update
 echo && echo ">>> symfony" && yes | symfony self:update
 
-echo && echo ">>> java"
-if [[ -s ~/.sdkman/bin/sdkman-init.sh ]]; then
-    source ~/.sdkman/bin/sdkman-init.sh
-    sdk selfupdate
-    sdk update
-    sdk upgrade java
-fi
-
 echo
 sudo apt update
 sudo apt full-upgrade -y
