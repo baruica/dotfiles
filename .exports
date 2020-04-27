@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-export CDPATH=.:~/workspace/baruica:~/workspace/katas:~/workspace/clients
-
-[[ -r ~/.config/composer/vendor/bin ]] && export PATH=$PATH:~/.config/composer/vendor/bin
-
-[ -e "$HOME/.jdks/current" ] && export JAVA_HOME="$HOME/.jdks/current"
-[ -d "$JAVA_HOME/bin" ] && export PATH=$PATH:$JAVA_HOME/bin
-
-[ -z ${NVM_BIN+x} ] && export PATH=$PATH:$NVM_BIN
-
 export EDITOR="code"
 export VISUAL=$EDITOR
 
