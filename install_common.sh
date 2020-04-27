@@ -2,27 +2,27 @@
 
 sudo apt remove -y bluez bluetooth
 
-sudo add-apt-repository multiverse
+sudo add-apt-repository -yes multiverse
 sudo apt install -y bash-completion chrome-gnome-shell curl git htop jq keychain neofetch shellcheck tree ubuntu-restricted-extras xclip
-
-# fonts
-sudo apt install -y fonts-firacode ttf-mscorefonts-installer ttf-ancient-fonts
-sudo fc-cache -fv
 
 # Java
 sudo apt purge -y openjdk*
-sudo apt install -y default-jdk
+
+wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+sudo apt update
+sudo apt install adoptopenjdk-14-openj9
 
 sudo apt install -y maven
 
-sudo add-apt-repository ppa:cwchien/gradle
+sudo add-apt-repository -yes ppa:cwchien/gradle
 sudo apt update
 sudo apt install -y gradle
 
 # PHP
 sudo apt -y purge php.*
 
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository -yes ppa:ondrej/php
 sudo apt update
 
 readonly PHP_VERSION="7.4"
