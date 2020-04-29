@@ -2,18 +2,18 @@
 
 # install Docker
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get purge -y docker-engine docker docker.io docker-ce
+sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
 sudo apt install docker.io
+sudo usermod -aG docker $(whoami)
+# restart
 
 # install docker compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 # docker-compose completion
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.25.3/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-# test it
-sudo docker run hello-world
 
-sudo groupadd docker
-sudo gpasswd -a $(whoami) docker
 sudo service docker restart
 # test it
 docker run hello-world
