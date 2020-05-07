@@ -23,6 +23,7 @@ echo && echo ">>> exercism" && exercism upgrade
 echo && echo ">>> composer" && composer self-update
 echo && echo ">>> composer global" && composer global update
 echo && echo ">>> symfony" && yes | symfony self:update
+echo && echo ">>> npm" && npm update -g
 
 echo
 sudo apt update
