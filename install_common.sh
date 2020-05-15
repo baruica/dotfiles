@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt remove -y bluez bluetooth
+sudo apt remove -y apport apport-gtk
 
 sudo add-apt-repository -yes multiverse
 sudo apt install -y bash-completion chrome-gnome-shell curl git htop jq keychain neofetch shellcheck tree ubuntu-restricted-extras xclip
@@ -33,7 +33,3 @@ sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/$PHP_
 
 sudo apt clean
 sudo apt autoremove
-
-# Ansible
-sudo apt install -y python-pip
-sudo pip install ansible==2.4
