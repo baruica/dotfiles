@@ -4,6 +4,7 @@
     lg = log --graph
     st = status
     up = pull --rebase --prune
+    ff = merge --ff-only
 
     # graphical representation for all refs
     lga = !git lg --graph --all
@@ -41,6 +42,9 @@
     undo = reset --soft HEAD^
     # amend last commit
     amend = commit -p --amend --no-edit
+
+    # root of the current git repository
+    home = rev-parse --show-toplevel
 
     stash-all = stash save --include-untracked
     unstash = reset HEAD~1
