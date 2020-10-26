@@ -26,8 +26,8 @@ echo && echo ">>> symfony" && yes | symfony self:update
 echo && echo ">>> npm" && npm update -g
 
 echo
-sudo apt update
-sudo apt full-upgrade -y
+sudo apt -y update
+sudo apt -y full-upgrade
 
 echo && echo ">>> cleanup"
 sudo apt clean -y
