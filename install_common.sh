@@ -22,13 +22,12 @@ sudo apt install -y gradle
 sudo apt -y purge php.*
 
 sudo add-apt-repository -yes ppa:ondrej/php
-sudo apt update
+sudo apt-get update
 
-readonly PHP_VERSION="7.4"
-sudo apt install -y php$PHP_VERSION php$PHP_VERSION-bcmath php$PHP_VERSION-cli php$PHP_VERSION-curl php$PHP_VERSION-intl php$PHP_VERSION-mbstring php$PHP_VERSION-pgsql php$PHP_VERSION-xml
+sudo apt install -y php8.0 php8.0-bcmath php8.0-cli php8.0-curl php8.0-intl php8.0-mbstring php8.0-pgsql php8.0-xml
 
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/$PHP_VERSION/apache2/php.ini
-sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/$PHP_VERSION/cli/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/8.0/apache2/php.ini
+sudo sed -i "s/;date.timezone =.*/date.timezone = Europe\/Paris/" /etc/php/8.0/cli/php.ini
 
 sudo apt clean
 sudo apt autoremove
