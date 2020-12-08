@@ -8,10 +8,9 @@ sudo apt install -y bash-completion blueman chrome-gnome-shell curl git htop jq 
 # Java
 sudo apt purge -y openjdk*
 
-wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-sudo apt update
-sudo apt install adoptopenjdk-14-openj9
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk install java 15.0.9.hs-adpt
 
 sudo apt install -y maven
 

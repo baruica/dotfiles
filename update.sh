@@ -25,6 +25,9 @@ echo && echo ">>> composer global" && composer global update
 echo && echo ">>> symfony" && yes | symfony self:update
 echo && echo ">>> npm" && npm update -g
 
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+echo && echo ">>> sdkman" && sdk selfupdate && sdk update
+
 echo
 sudo apt -y update
 sudo apt -y full-upgrade
