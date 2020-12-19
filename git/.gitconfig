@@ -60,6 +60,7 @@
 
     currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
     standup = log --since yesterday --author $(git config user.email) --pretty=short
+    wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
 [branch]
