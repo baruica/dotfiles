@@ -12,11 +12,8 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install java 15.0.9.hs-adpt
 
-sudo apt install -y maven
-
-sudo add-apt-repository -yes ppa:cwchien/gradle
-sudo apt update
-sudo apt install -y gradle
+sdk install maven
+sdk install gradle
 
 # PHP
 sudo apt -y purge php.*
