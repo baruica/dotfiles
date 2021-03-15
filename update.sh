@@ -30,7 +30,7 @@ echo && echo ">>> sdkman" && sdk selfupdate && sdk update
 
 echo
 sudo apt -y update
-sudo apt -y full-upgrade
+sudo apt -y full-upgrade --allow-downgrades
 
 echo && echo ">>> cleanup"
 sudo apt clean -y
