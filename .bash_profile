@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-for file in ~/workspace/baruica/dotfiles/.{functions,aliases,bash_prompt,exports}; do
+#readonly BASH_PROMPT="~/workspace/baruica/dotfiles/.bash_prompt"
+#[[ -r $BASH_PROMPT ]] && [[ -f $BASH_PROMPT ]] && . $BASH_PROMPT
+
+for file in ~/workspace/baruica/dotfiles/.{functions,aliases,exports}; do
     if [[ -r $file ]] && [[ -f $file ]]; then
         . "$file"
     fi
