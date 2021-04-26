@@ -19,7 +19,6 @@ if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
     sh ~/workspace/update.sh
 fi
 
-echo && echo ">>> exercism" && exercism upgrade
 echo && echo ">>> composer" && composer self-update
 echo && echo ">>> composer global" && composer global update
 echo && echo ">>> symfony" && yes | symfony self:update
