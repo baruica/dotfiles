@@ -1,0 +1,4 @@
+[include]
+    path = ~/baruica/dotfiles/git/.gitconfig
+[includeIf "gitdir:~/baruica/"]
+    path = ~/baruica/baruica.gitconfig
