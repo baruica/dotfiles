@@ -4,4 +4,4 @@ for file in ~/.{aliases,exports,functions}; do
     [[ -r ${file} ]] && . "${file}"
 done
 
-[[ -d ~/dotfiles ]] && . ~/baruica/dotfiles/.bash_profile
+[[ -d ~/baruica/dotfiles ]] && . ~/baruica/dotfiles/.bash_profile
