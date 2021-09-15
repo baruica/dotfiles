@@ -2,7 +2,7 @@
 set -e
 
 readonly git_repos="git-radar
-workspace/baruica/dotfiles"
+baruica/dotfiles"
 
 for git_repo in ${git_repos}; do
     if [[ -d ~/${git_repo} ]]; then
@@ -15,8 +15,8 @@ done
 
 echo
 
-if [[ -r ~/workspace/update.sh ]] && [[ -f ~/workspace/update.sh ]]; then
-    sh ~/workspace/update.sh
+if [[ -r ~/update.sh ]] && [[ -f ~/update.sh ]]; then
+    sh ~/update.sh
 fi
 
 echo && echo ">>> composer" && composer self-update
