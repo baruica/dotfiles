@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+function cmd_exists() {
+    hash "$1" &>/dev/null
+}
+
 readonly git_repos="git-radar
 baruica/dotfiles"
 
@@ -9,7 +13,7 @@ for git_repo in ${git_repos}; do
         echo && echo ">>> ${git_repo}"
         cd ~/"${git_repo}" || exit
         git up
-        [[ -f composer.json ]] && composer update
+        cmd_exists composer && [[ -f composer.json ]] && composer update
     fi
 done
 
@@ -19,13 +23,15 @@ if [[ -r ~/update.sh ]] && [[ -f ~/update.sh ]]; then
     sh ~/update.sh
 fi
 
-echo && echo ">>> composer" && composer self-update
-echo && echo ">>> composer global" && composer global update
-echo && echo ">>> symfony" && yes | symfony self:update
-echo && echo ">>> npm" && npm update -g
+cmd_exists composer && echo && echo ">>> composer" && composer self-update
+cmd_exists composer && echo && echo ">>> composer global" && composer global update
+cmd_exists symfony && echo && echo ">>> symfony" && yes | symfony self:update
+cmd_exists npm && echo && echo ">>> npm" && npm update -g
 
-source "$HOME/.sdkman/bin/sdkman-init.sh"
-echo && echo ">>> sdkman" && sdk selfupdate && sdk update
+if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    echo && echo ">>> sdkman" && sdk selfupdate && sdk update
+fi
 
 echo
 sudo apt -y update
