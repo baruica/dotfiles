@@ -90,6 +90,11 @@
 [log]
     abbrevCommit = true
     decorate = auto
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
 [pull]
 	rebase = preserve
 [push]
