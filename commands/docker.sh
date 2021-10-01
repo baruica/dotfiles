@@ -18,6 +18,9 @@ sudo service docker restart
 # test it
 docker run hello-world
 
+# activer la compression de la RAM
+sudo apt-get install zram-config
+sudo service zram-config start
 
 docker ps       # list running containers
 docker ps -a    # shows all containers
