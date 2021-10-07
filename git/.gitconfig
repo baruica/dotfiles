@@ -87,6 +87,8 @@
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
 [help]
     autocorrect = 1
+[init]
+    defaultBranch = main
 [log]
     abbrevCommit = true
     decorate = auto
