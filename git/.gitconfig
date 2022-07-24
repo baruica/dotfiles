@@ -100,6 +100,7 @@
 [pull]
 	rebase = preserve
 [push]
+    autoSetupRemote = true
     default = simple
     followTags = true
 [rebase]
