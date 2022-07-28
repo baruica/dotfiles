@@ -8,7 +8,7 @@ alias gr=jump-to-git-root
 
 if cmd_exists exa; then
     alias ll="exa -l"
-    alias lt="exa -l -T --git"
+    alias lt="exa -l -T"
 else
     # List all files colorized in long format, including dot files
     # shellcheck disable=SC2139
