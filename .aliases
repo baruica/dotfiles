@@ -6,9 +6,14 @@ alias install='sudo apt install -y'
 
 alias gr=jump-to-git-root
 
-# List all files colorized in long format, including dot files
-# shellcheck disable=SC2139
-alias ll='ls -laF --color'
+if cmd_exists exa; then
+    alias ll="exa -l"
+    alias lt="exa -l -T --git"
+else
+    # List all files colorized in long format, including dot files
+    # shellcheck disable=SC2139
+    alias ll='ls -laF --color'
+fi
 
 # List only directories
 # shellcheck disable=SC2139
