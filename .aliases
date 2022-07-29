@@ -7,8 +7,8 @@ alias install='sudo apt install -y'
 alias gr=jump-to-git-root
 
 if cmd_exists exa; then
-    alias ll="exa -l"
-    alias lt="exa -l -T"
+    alias ll="exa -l -a"
+    alias lt="exa -l -a -T"
 else
     # List all files colorized in long format, including dot files
     # shellcheck disable=SC2139
