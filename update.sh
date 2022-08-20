@@ -23,9 +23,6 @@ if [[ -r ~/update.sh ]] && [[ -f ~/update.sh ]]; then
     sh ~/update.sh
 fi
 
-cmd_exists composer && echo && echo ">>> composer" && composer self-update
-cmd_exists composer && echo && echo ">>> composer global" && composer global update
-cmd_exists symfony && echo && echo ">>> symfony" && yes | symfony self:update
 cmd_exists npm && echo && echo ">>> npm" && npm update -g
 
 if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
@@ -34,8 +31,7 @@ if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
 fi
 
 echo
-sudo apt -y update
-sudo apt -y full-upgrade --allow-downgrades
+sudo apt -y update && sudo apt -y full-upgrade --allow-downgrades
 
 echo && echo ">>> cleanup"
 sudo apt clean -y
