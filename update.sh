@@ -23,7 +23,7 @@ if [[ -r ~/update.sh ]] && [[ -f ~/update.sh ]]; then
     sh ~/update.sh
 fi
 
-cmd_exists npm && echo && echo ">>> npm" && npm update -g
+cmd_exists npm && echo && echo ">>> npm" && npm update --location=global
 
 if [[ -f "$HOME/.sdkman/bin/sdkman-init.sh" ]]; then
     source "$HOME/.sdkman/bin/sdkman-init.sh"
