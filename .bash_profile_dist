@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for file in ~/.{aliases,exports,functions}; do
+for file in ~/.{functions,aliases,exports}; do
     [[ -r ${file} ]] && . "${file}"
 done
 
