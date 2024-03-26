@@ -73,10 +73,12 @@
     autocrlf = input
     commentchar = !
     editor = vi
+    pager = delta
     whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
 [credential]
     helper = store
 [diff]
+    colorMoved = default
     compactionHeuristic = true
     mnemonicPrefix = true
     renames = copies
@@ -88,9 +90,13 @@
     autocorrect = 1
 [init]
     defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
 [log]
     abbrevCommit = true
     decorate = auto
+[merge]
+    conflictstyle = diff3
 [pager]
     diff = delta
     log = delta
