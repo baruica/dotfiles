@@ -12,11 +12,11 @@ sudo apt remove -y apport apport-gtk
 sudo add-apt-repository -y multiverse
 sudo apt update
 
-sudo apt install -y curl git jq neofetch ubuntu-restricted-extras cargo libssl-dev pkg-config
+sudo apt install -y curl git jq ubuntu-restricted-extras cargo libssl-dev pkg-config
 
 cargo install cargo-update
 cargo install topgrade
 
-cargo install startship --locked
+cargo install starship --locked
 echo "eval \"$(starship init bash)\"" >> ~/.bashrc
 cp -rf "${DIR}"/starship.toml ~/.config/
