@@ -12,7 +12,7 @@ sudo apt remove -y apport apport-gtk
 sudo add-apt-repository -y multiverse
 sudo apt update
 
-sudo apt install -y curl git jq ubuntu-restricted-extras cargo libssl-dev pkg-config
+sudo apt install -y curl git jq ubuntu-restricted-extras cargo libssl-dev pkg-config nala
 
 cargo install cargo-update
 cargo install topgrade
