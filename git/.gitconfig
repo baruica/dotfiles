@@ -108,6 +108,8 @@
     followTags = true
 [rebase]
     autostash = true
+[remote "origin"]
+	prune = true
 [status]
     submoduleSummary = true
     showUntrackedFiles = all
