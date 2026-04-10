@@ -1,0 +1,101 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": true,
+  "instructions": ["AGENTS.md"],
+  "enabled_providers": ["github-copilot"],
+  "model": "github-copilot/gpt-5.3-codex",
+  "default_agent": "plan",
+  "small_model": "github-copilot/gpt-5-mini",
+  "mcp": {
+    "notion": {
+      "enabled": true,
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
+    }
+  },
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "edit": "deny",
+    "task": "deny",
+    "bash": {
+      "*": "deny",
+      "pwd": "allow",
+      "ls *": "allow",
+      "cat *": "allow",
+      "grep *": "allow",
+      "wc *": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git branch*": "allow",
+      "git rev-parse*": "allow",
+      "git remote get-url*": "allow",
+      "yarn nx graph*": "allow",
+      "yarn nx show*": "allow"
+    },
+    "external_directory": {
+      "~/payfit/**": "allow",
+      "~/Desktop/**": "allow"
+    }
+  },
+  "agent": {
+    "plan": {
+      "model": "github-copilot/gpt-5.3-codex",
+      "description": "Read-only analysis and planning",
+      "mode": "primary",
+      "reasoningEffort": "high",
+      "color": "#FFD166"
+    },
+    "build": {
+      "model": "github-copilot/claude-sonnet-4.5",
+      "description": "Default coding agent - fast, accurate, daily driver",
+      "mode": "primary",
+      "reasoningEffort": "medium",
+      "permission": {
+        "edit": "allow",
+        "task": "allow",
+        "bash": {
+          "*": "deny",
+          "pwd": "allow",
+          "ls *": "allow",
+          "cat *": "allow",
+          "grep *": "allow",
+          "wc *": "allow",
+          "git status*": "allow",
+          "git fetch*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow",
+          "git show*": "allow",
+          "git branch*": "allow",
+          "git rev-parse*": "allow",
+          "git remote get-url*": "allow",
+          "git checkout*": "allow",
+          "git add *": "allow",
+          "git commit *": "allow",
+          "git stash*": "allow",
+          "git rebase*": "allow",
+          "npm *": "allow",
+          "npx *": "allow",
+          "yarn *": "allow",
+          "yarn nx graph*": "allow",
+          "yarn nx show*": "allow",
+          "gh pr create *": "allow",
+          "gh pr view *": "allow",
+          "gh pr merge *": "ask",
+          "git push --force*": "deny",
+          "git push -f *": "deny",
+          "git push --force-with-lease*": "allow",
+          "git push -u*": "allow",
+          "rm -rf *": "deny"
+        }
+      },
+      "color": "#00D1FF"
+    }
+  }
+}
