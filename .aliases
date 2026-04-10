@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-alias refresh='. ~/.bashrc'
+alias ll='ls -alF'
+alias refresh='. ~/.zshrc'
 
 alias install='sudo apt install -y'
 alias system_upgrade="sudo apt-get update -y && sudo apt-get full-upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean -y && sudo apt-get autoclean -y"
