@@ -46,4 +46,4 @@ Thumbs.db
 *.iml
 *.ipr
 
-.cartog.db
+.cartog.db*
