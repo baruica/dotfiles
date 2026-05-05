@@ -15,7 +15,7 @@ shopt -s cmdhist        # Save multi-line commands as one command
 shopt -s histverify
 shopt -s nocaseglob     # Case-insensitive globbing (used in pathname expansion)
 
-complete -cf sudo       # Autocomple with sudo
+complete -cf sudo       # Autocomplete with sudo
 
 if [[ -d ~/.ssh ]]; then
     # Add tab completion for SSH hostnames based on ~/.ssh/config ignoring wildcards

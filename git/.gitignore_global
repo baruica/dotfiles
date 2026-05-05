@@ -45,3 +45,5 @@ Thumbs.db
 *.iws
 *.iml
 *.ipr
+
+.cartog.db

@@ -98,30 +98,6 @@ function tre() {
     tree -aC -I '.git' --dirsfirst "$@" | less -FRNX
 }
 
-# Call from a local repo to open the repository on github/bitbucket in browser
-function repo() {
-    local giturl
-    giturl=$(git config --get remote.origin.url | sed 's/git@/\/\//g' | sed 's/.git$//' | sed 's/https://g' | sed 's/:/\//g')
-    if [[ ${giturl} == "" ]]; then
-        echo "Not a git repository or no remote.origin.url is set."
-    else
-        local gitbranch
-        gitbranch=$(git rev-parse --abbrev-ref HEAD)
-        local giturl="http:${giturl}"
-
-        if [[ ${gitbranch} != "master" ]]; then
-            if echo "${giturl}" | grep -i "bitbucket" > /dev/null ; then
-                local giturl="${giturl}/branch/${gitbranch}"
-            else
-                local giturl="${giturl}/tree/${gitbranch}"
-            fi
-        fi
-
-        echo "$giturl"
-        open "$giturl"
-    fi
-}
-
 # http://bezhermoso.github.io/2018/07/28/jump-back-up-to-git-repo-root-directory/
 function jump-to-git-root() {
     local _root_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
