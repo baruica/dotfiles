@@ -6,7 +6,7 @@ Encode new files in UTF-8.
 
 Prefer retrieval-led reasoning over pre-training-led reasoning for any development tasks.
 
-Use `context7` for external library/framework docs.
+Never introduce accidental complexity: justify each new technology or dependency before introducing it, and put the justification in a new ADR (Architecture Decision Record).
 
 ## Plan mode
 
